@@ -19,6 +19,19 @@ public class Course {
     private String CourseExpire;
     private String CourseOwner;
     private ArrayList<Quiz> Quiz;
+    
+    public Course(){
+        
+    }
+    public Course(int CourseID, String CourseName, int CourseScore, String CourseRelease, String CourseExpire, String CourseOwner, ArrayList<Quiz> Quiz){
+        setCourseID(CourseID);
+        setCourseName(CourseName);
+        setCourseScore(CourseScore);
+        setCourseRelease(CourseRelease);
+        setCourseExpire(CourseExpire);
+        setCourseOwner(CourseOwner);
+        setQuiz(Quiz);
+    }
 
     public int getCourseID() {
         return CourseID;

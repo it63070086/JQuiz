@@ -9,23 +9,51 @@
  * @author pc
  */
 class User {
-    private String Name;
-    private String Surname;
+    private String FullName;
     private String Mail;
     private String ID;
     private String Permission;
+    private String UserName;
+    private String UserPassword;
     
     public User(){
-        this("", "", "", "", "");
+        this("", "", "", "", "", "");
     }
-    public User(String Name, String Surname, String ID, String Mail, String Permission){
-        setName(Name);
-        setSurname(Surname);
+    
+    public User(String FullName, String ID, String Mail, String Permission, String UserName, String UserPassword){
+        setFullName(FullName);
         setID(ID);
         setMail(Mail);
         setPermission(Permission);
+        setUserName(UserName);;
+        setUserPassword(UserPassword);
     }
 
+    public String getFullName() {
+        return FullName;
+    }
+
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
+    }
+
+    public String getUserPassword() {
+        return UserPassword;
+    }
+
+    public void setUserPassword(String UserPassword) {
+        this.UserPassword = UserPassword;
+    }
+    
+    
     public String getID() {
         return ID;
     }
@@ -40,22 +68,6 @@ class User {
 
     public void setPermission(String Permission) {
         this.Permission = Permission;
-    }
-    
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getSurname() {
-        return Surname;
-    }
-
-    public void setSurname(String Surname) {
-        this.Surname = Surname;
     }
 
     public String getMail() {

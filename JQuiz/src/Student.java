@@ -10,9 +10,10 @@
  */
 public class Student extends User{
     public Student(){
-        this("", "", "", "", "Student");
+        this("", "", "", "Student", "", "");
     }
-    public Student(String Name, String Surname, String ID, String Mail, String Permission){
-        super(Name, Surname, ID, Mail, "Student");
+
+    public Student(String FullName, String ID, String Mail, String Role, String UserName, String UserPassword){
+        super(FullName, ID, Mail, "Student", UserName, UserPassword);
     }
 }
