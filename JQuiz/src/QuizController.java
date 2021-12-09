@@ -6,7 +6,7 @@ import java.sql.*;
 import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-public class QuizController implements ActionListener{
+public class QuizController implements ActionListener, KeyListener{
     private LoginView loginView = new LoginView();
     private RegView regView = new RegView();
     private MainView mainView = new MainView();
@@ -33,6 +33,7 @@ public class QuizController implements ActionListener{
         loginView.getBtnReg().addActionListener(this);
         regView.getBtnReg().addActionListener(this);
         loginView.getBtnLogin().addActionListener(this);
+        regView.getTfEmail().addKeyListener(this);
     }
     public static void main(String[] args) {
         new QuizController();
@@ -48,17 +49,25 @@ public class QuizController implements ActionListener{
             String password = regView.getTfPassword().getText();
             String fullname = regView.getTfFirstname().getText()+" "+regView.getTfLastname().getText();
             String email = regView.getTfEmail().getText();
-            String findSql = "SELECT userName, userPassword FROM user WHERE userName = '"+username+"'";
+            String findSql = "SELECT userName, userPassword FROM user WHERE userName = '"+username+"' OR userEmail = '"+email+"'";
             String insertSql = "INSERT INTO user (userName, userPassword, userFullname, UserEmail, userRole) VALUES ('"+username+"', '"+password+"', '"+fullname+"', '"+email+"', 'Student');";
             try {
                 pst = con.prepareStatement(findSql);
                 rs = pst.executeQuery();
                 if (rs.next() == true){
-                    JOptionPane.showMessageDialog(null, "Username or Password Incorrect", "Invalid Information", JOptionPane.WARNING_MESSAGE);
-                }else{
-//                Valid input check By toenTeen
+                    JOptionPane.showMessageDialog(null, "Already User Or Email", "Duplicate Information", JOptionPane.WARNING_MESSAGE);
                 }
-
+                //                  Valid input check By toenTeen
+                else if(username == "" || password == "" || fullname == "" || email == ""){
+                    JOptionPane.showMessageDialog(null, "Empty Informatin !!", "Empty Information", JOptionPane.WARNING_MESSAGE);
+                }
+                else if(regView.getTfEmail().getText().indexOf("@") == -1){
+                    JOptionPane.showMessageDialog(null, "Invalid Email Information !!", "Invalid Email", JOptionPane.WARNING_MESSAGE);
+                }
+                else{
+                    //pst = con.prepareStatement(insertSql);
+                    //rs = pst.executeQuery();
+                }
                 
             } catch (SQLException ex) {
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,7 +93,24 @@ public class QuizController implements ActionListener{
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        
     }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        if(regView.getTfEmail().getText().indexOf("@") == -1){
+            regView.getLbEmail().setText("Fuck Oof");
+        }
+        else{
+            regView.getLbEmail().setText("");
+        }
+    }
+    
 }
