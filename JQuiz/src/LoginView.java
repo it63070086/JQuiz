@@ -1,4 +1,5 @@
 import javax.swing.JButton;
+import javax.swing.JTextField;
 public class LoginView extends javax.swing.JFrame {
 
     public LoginView() {
@@ -13,7 +14,22 @@ public class LoginView extends javax.swing.JFrame {
     public JButton getBtnReg() {
         return btnReg;
     }
-    
+
+    public JTextField getTfUserPassword() {
+        return tfUserPassword;
+    }
+
+    public void setTfUserPassword(JTextField tfUserPassword) {
+        this.tfUserPassword = tfUserPassword;
+    }
+
+    public JTextField getTfUsername() {
+        return tfUsername;
+    }
+
+    public void setTfUsername(JTextField tfUsername) {
+        this.tfUsername = tfUsername;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -23,9 +39,9 @@ public class LoginView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfUserPassword = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
@@ -46,20 +62,20 @@ public class LoginView extends javax.swing.JFrame {
         jLabel1.setText("Login With Username");
         jPanel1.add(jLabel1);
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
+        jPanel1.add(tfUsername);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Password");
         jPanel1.add(jLabel3);
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(jTextField2);
+        tfUserPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(tfUserPassword);
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -120,9 +136,9 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfUsernameActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
@@ -171,7 +187,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField tfUserPassword;
+    private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }

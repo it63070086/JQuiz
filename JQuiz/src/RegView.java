@@ -1,5 +1,6 @@
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 
 public class RegView extends javax.swing.JFrame {
@@ -15,6 +16,27 @@ public class RegView extends javax.swing.JFrame {
     public JButton getBtnReg() {
         return btnReg;
     }
+
+    public JTextField getTfFirstname() {
+        return tfFirstname;
+    }
+
+    public JTextField getTfUsername() {
+        return tfUsername;
+    }
+
+    public JTextField getTfEmail() {
+        return tfEmail;
+    }
+
+    public JTextField getTfLastname() {
+        return tfLastname;
+    }
+
+    public JTextField getTfPassword() {
+        return tfPassword;
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -24,19 +46,20 @@ public class RegView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tfFirstname = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfLastname = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tfPassword = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tfEmail = new javax.swing.JTextField();
         btnReg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,40 +70,44 @@ public class RegView extends javax.swing.JFrame {
         jLabel2.setText("Wellcome TO JQuiz");
         jPanel4.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jPanel1.setLayout(new java.awt.GridLayout(9, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(11, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("subscribe with username");
         jPanel1.add(jLabel1);
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfUsernameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1);
+        jPanel1.add(tfUsername);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("first name");
         jPanel1.add(jLabel3);
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(jTextField2);
+        tfFirstname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(tfFirstname);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("surname");
         jPanel1.add(jLabel4);
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(jTextField3);
+        tfLastname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(tfLastname);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("password");
         jPanel1.add(jLabel5);
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(jTextField4);
+        tfPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(tfPassword);
+
+        jLabel6.setText("Email");
+        jPanel1.add(jLabel6);
+        jPanel1.add(tfEmail);
 
         btnReg.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnReg.setText("REGISTER");
@@ -116,9 +143,9 @@ public class RegView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfUsernameActionPerformed
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
         // TODO add your handling code here:
@@ -166,11 +193,13 @@ public class RegView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfFirstname;
+    private javax.swing.JTextField tfLastname;
+    private javax.swing.JTextField tfPassword;
+    private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }
