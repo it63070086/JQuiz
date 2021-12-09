@@ -10,10 +10,9 @@
  */
 public class Admin extends User{
     public Admin(){
-        this("", "", "", "Admin", "", "");
+        this("", "", "", "", "Admin");
     }
-
-    public Admin(String FullName, String ID, String Mail, String Role, String UserName, String UserPassword){
-        super(FullName, ID, Mail, "Admin", UserName, UserPassword);
+    public Admin(String Name, String Surname, String ID, String Mail, String Permission){
+        super(Name, Surname, ID, Mail, "Admin");
     }
 }

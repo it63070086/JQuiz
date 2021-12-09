@@ -5,7 +5,7 @@ public class Connect {
         try{
 //            find Driver
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/dbmysql";
+            String url = "jdbc:mysql://localhost/JQuiz";
 //            connect database with url user password
             Connection con = DriverManager.getConnection(url, "root", "");
             return con;
