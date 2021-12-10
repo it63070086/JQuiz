@@ -29,7 +29,6 @@ public class CourseModel {
             while (rs.next()){
                 Course acourse = new Course(Integer.parseInt(rs.getString("courseId")), rs.getString("courseName"), Integer.parseInt(rs.getString("CourseScore")), 
                     rs.getString("CourseRelease"), rs.getString("CourseExpire"), rs.getString("CourseOwner"), new ArrayList<Quiz>());
-                System.out.println("kuy");
                 course.add(acourse);
             }
         } catch (SQLException ex) {

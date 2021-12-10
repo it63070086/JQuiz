@@ -10,6 +10,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private RegView regView = new RegView();
     private MainView mainView = new MainView();
     private CourseModel courseModel = new CourseModel();
+    private CardCourseModel cardCourse = new CardCourseModel();
     private Connection con = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
@@ -31,16 +32,19 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         loginView.getBtnLogin().addActionListener(this);
         regView.getTfEmail().addKeyListener(this);
         mainView.addWindowListener(this);
-        mainView.getBtnCourse().addActionListener(this);
-        mainView.getBtnEnter().addActionListener(this);
     }
     public static void main(String[] args) {
         new QuizController();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(mainView.getBtnEnter())){
-            
+        
+        for (CardCourseView i: cardCourse.getCardCourse()){
+            if (e.getSource().equals(i.getBtnEnter())){
+                System.out.println("test");
+                System.out.println(i);
+                System.out.println(e);
+            }
         }
         
         if (e.getSource().equals(loginView.getBtnReg())){
@@ -102,7 +106,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             }
         }
     }
-
     @Override
     public void keyTyped(KeyEvent ke) {
     }
@@ -126,10 +129,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         courseModel.load();
         course = courseModel.getCourse();
         for (int i=0; i<course.size(); i++){
-            mainView.addCoure(course.get(i).getCourseName(), course.get(i).getCourseScore(), course.get(i).getCourseRelease(), course.get(i).getCourseExpire(), course.get(i).getCourseOwner());
+//            mainView.addCoure(course.get(i).getCourseName(), course.get(i).getCourseScore(), course.get(i).getCourseRelease(), course.get(i).getCourseExpire(), course.get(i).getCourseOwner());
+            cardCourse.getCardCourse().add(new CardCourseView(course.get(i).getCourseID(),course.get(i).getCourseName(), course.get(i).getCourseScore(), course.get(i).getCourseRelease(), course.get(i).getCourseExpire(), course.get(i).getCourseOwner()));
+            mainView.getCardPanel().add(cardCourse.getCardCourse().get(i));
+            cardCourse.getCardCourse().get(i).getBtnEnter().addActionListener(this);
         }
-        System.out.println("test");
         mainView.setVisible(true);
+//        mainView.setVisible(true);
+        System.out.println(cardCourse.getCardCourse().size());
     }
     @Override
     public void windowClosing(WindowEvent we) {
