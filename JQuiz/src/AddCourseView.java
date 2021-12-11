@@ -2,8 +2,6 @@
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-
-
 public class AddCourseView extends javax.swing.JFrame {
 
     /**
@@ -42,10 +40,7 @@ public class AddCourseView extends javax.swing.JFrame {
         tfCourseName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfCourseScore = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         btnCreateCourse = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,36 +72,21 @@ public class AddCourseView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         jPanel1.add(tfCourseScore, gridBagConstraints);
 
-        jLabel3.setText("Course Release");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
-        jPanel1.add(jLabel3, gridBagConstraints);
-
-        jLabel4.setText("Course Expire");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
-        jPanel1.add(jLabel4, gridBagConstraints);
-
         btnCreateCourse.setText("Create Course");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         jPanel1.add(btnCreateCourse, gridBagConstraints);
-        jPanel1.add(jDateChooser1, new java.awt.GridBagConstraints());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
         );
 
         pack();
@@ -149,11 +129,8 @@ public class AddCourseView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateCourse;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField tfCourseName;
     private javax.swing.JTextField tfCourseScore;
