@@ -2,6 +2,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.awt.event.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class QuizController implements ActionListener, KeyListener, WindowListener{
@@ -13,10 +14,11 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private CardCourseModel cardCourse = new CardCourseModel();
     private AdminMainView adminMainView = new AdminMainView();
     private AddCourseView addCourseView = new AddCourseView();
+    private int lastestId = 0;
     private Connection con = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
-    private String userRoleCurrent = "User";
+    private String userRoleCurrent = "Student";
     private String userNameCurrent = "NOT FOUND CURRENT USER";
     public void ShowDataToForm(){
         String selectSql = "SELECT * FROM course";
@@ -47,21 +49,25 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     }
     public void reAdminMainView(){
         adminMainView.getCardPanel().removeAll();
+        adminMainView.getCardPanel().repaint();
         courseModel.load();
         course = courseModel.getCourse();
+        cardCourse.getCardCourse().clear();
         for (int i=0; i < course.size(); i++){
-            System.out.println(course.get(i).getCourseID());
             cardCourse.getCardCourse().add(new CardCourseView(course.get(i).getCourseID(),
-                    course.get(i).getCourseName(), 
-                    course.get(i).getCourseScore(), 
-                    course.get(i).getCourseRelease(), 
-                    course.get(i).getCourseExpire(), 
+                    course.get(i).getCourseName(),
+                    course.get(i).getCourseScore(),
+                    course.get(i).getCourseRelease(),
+                    course.get(i).getCourseExpire(),
                     course.get(i).getCourseOwner()));
             adminMainView.getCardPanel().add(cardCourse.getCardCourse().get(i));
             cardCourse.getCardCourse().get(i).getBtnEnter().addActionListener(this);
+            cardCourse.getCardCourse().get(i).getBtnRemove().addActionListener(this);
+            if (course.get(i).getCourseID() > lastestId){
+                lastestId = course.get(i).getCourseID();
+            }
         }
         adminMainView.setVisible(true);
-        
     }
     public void reMainView(){
         mainView.getCardPanel().removeAll();
@@ -70,9 +76,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         for (int i=0; i<course.size(); i++){
             cardCourse.getCardCourse().add(new CardCourseView(course.get(i).getCourseID(),course.get(i).getCourseName(), course.get(i).getCourseScore(), course.get(i).getCourseRelease(), course.get(i).getCourseExpire(), course.get(i).getCourseOwner()));
             mainView.getCardPanel().add(cardCourse.getCardCourse().get(i));
+            cardCourse.getCardCourse().get(i).getBtnRemove().setVisible(false);
+//            (cardCourse.getCardCourse().get(i).getBtnRemove());
             cardCourse.getCardCourse().get(i).getBtnEnter().addActionListener(this);
             mainView.setVisible(true);
         }
+        
     }
 //    Press BTN
     @Override
@@ -84,13 +93,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             ArrayList<Course> data = courseModel.getCourse();
 //            Create Course
         if (e.getSource().equals(addCourseView.getBtnCreateCourse())){
-            data.add(new Course(data.size()+1, 
+            data.add(new Course(lastestId+1, 
                     addCourseView.getTfCourseName().getText(),
                     Integer.parseInt(addCourseView.getTfCourseScore().getText()),
                     addCourseView.getTfCourseRelease().getText(), 
                     addCourseView.getTfCourseExpire().getText(),
+                    
                     userNameCurrent,
-                    new QuizModel(data.size()+1).getQuiz()));
+                    new QuizModel(lastestId+1).getQuiz()));
             courseModel.save(addCourseView.getTfCourseName().getText(), 
                     Integer.parseInt(addCourseView.getTfCourseScore().getText()),
                     addCourseView.getTfCourseRelease().getText(),
@@ -100,20 +110,30 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     addCourseView.dispose();
         }
 //        Login WIth User
-        if (this.userRoleCurrent.equals("User")){
+        if (this.userRoleCurrent.equals("Student")){
             for (CardCourseView i: cardCourse.getCardCourse()){
                 if (e.getSource().equals(i.getBtnEnter())){
-                    System.out.println(cardCourse.getCardCourse().indexOf(i)+1);
+//                    System.out.println(cardCourse.getCardCourse().indexOf(i)+1);
                 }
             }
         }
 //        Login With Admin
-        if (this.userRoleCurrent.equals("Admin")){
-            for (CardCourseView i: cardCourse.getCardCourse()){
-                if (e.getSource().equals(i.getBtnEnter())){
-                    System.out.println(cardCourse.getCardCourse().indexOf(i)+1);
+        if ((this.userRoleCurrent.equals("Admin")) && (!e.getSource().equals(adminMainView.getBtnAddCourse())) && (!e.getSource().equals(adminMainView.getBtnCourse()))){
+            ArrayList<CardCourseView> tmp = new ArrayList<>(cardCourse.getCardCourse());
+            for (int i=0; i < cardCourse.getCardCourse().size(); i++){
+                if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnEnter())){
+//                    System.out.println(cardCourse.getCardCourse().indexOf(i)+1);
+                }
+                
+                if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnRemove())){
+                    tmp.remove(cardCourse.getCardCourse().get(i));
+                    courseModel.delete(course.get(i).getCourseID());
                 }
             }
+            cardCourse.getCardCourse().clear();
+            cardCourse.getCardCourse().addAll(tmp);
+            reAdminMainView();
+            
         }
         
 //        Register Login View
@@ -128,7 +148,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             String fullname = regView.getTfFirstname().getText()+" "+regView.getTfLastname().getText();
             String email = regView.getTfEmail().getText();
             String findSql = "SELECT userName, userPassword FROM user WHERE userName = '"+username+"' OR userEmail = '"+email+"'";
-            String insertSql = "INSERT INTO user (userName, userPassword, userFullname, UserEmail, userRole) VALUES (?, ?, ?, ?, ?);";
+            String insertSql = "INSERT INTO user (userName, userPassword, userFullname, UserEmail, userRole) VALUES (?, ?, ?, ?, ?)";
             try {
                 pst = con.prepareStatement(findSql);
                 rs = pst.executeQuery();
@@ -174,7 +194,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     }else{
                         loginView.setVisible(false);
                         mainView.setVisible(true);
-                        this.userRoleCurrent = "User";
+                        this.userRoleCurrent = "Student";
                     }
                 }else{
                     JOptionPane.showMessageDialog(null, "Username or Password Incorrect", "Invalid Information", JOptionPane.WARNING_MESSAGE);
@@ -215,9 +235,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             
         }
         if (we.getSource().equals(adminMainView)){
-            
+            reAdminMainView();
         }
-        
     }
     @Override
     public void windowClosing(WindowEvent we) {

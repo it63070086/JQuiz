@@ -44,6 +44,8 @@ public class AddCourseView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tfCourseRelease = new javax.swing.JTextField();
         tfCourseExpire = new javax.swing.JTextField();
+        jDatePicker_Date1 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
+        jDatePicker_Date2 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +108,8 @@ public class AddCourseView extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         jPanel1.add(tfCourseExpire, gridBagConstraints);
+        jPanel1.add(jDatePicker_Date1, new java.awt.GridBagConstraints());
+        jPanel1.add(jDatePicker_Date2, new java.awt.GridBagConstraints());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +162,8 @@ public class AddCourseView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateCourse;
+    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date1;
+    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
