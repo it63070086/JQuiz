@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/JAVA%20Files/JQuiz/src/CardCourseModel.java</file>
+            <file>file:/D:/JAVA%20Files/JQuiz/src/AddQuizView.java</file>
+            <file>file:/D:/JAVA%20Files/JQuiz/src/CardQuizView.java</file>
+            <file>file:/D:/JAVA%20Files/JQuiz/src/CardQuizModel.java</file>
+            <file>file:/D:/JAVA%20Files/JQuiz/src/AllQuizView.java</file>
             <file>file:/D:/JAVA%20Files/JQuiz/src/QuizController.java</file>
             <file>file:/D:/JAVA%20Files/JQuiz/src/CardCourseView.java</file>
         </group>

@@ -1,26 +1,19 @@
+
 import javax.swing.JButton;
-import javax.swing.JLabel;
-public class CourseView extends javax.swing.JFrame {
-    public CourseView() {
+
+
+public class AllQuizView extends javax.swing.JFrame {
+
+    public AllQuizView() {
         initComponents();
     }
 
-    public JLabel getLbCourseName() {
-        return lbCourseName;
+    public JButton getBtnAddQuiz() {
+        return btnAddQuiz;
     }
-
-
-    public JLabel getLbUserName() {
-        return lbUserName;
-    }
-
 
     public JButton getBtnCourse() {
         return btnCourse;
-    }
-
-    public JButton getBtnAllQuiz() {
-        return btnAllQuiz;
     }
     
     
@@ -30,14 +23,12 @@ public class CourseView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        lbUserName = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         btnCourse = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        lbCourseName = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        btnAllQuiz = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAddQuiz = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cardPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,10 +39,10 @@ public class CourseView extends javax.swing.JFrame {
         jLabel1.setText("JQuiz");
         jPanel1.add(jLabel1);
 
-        lbUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbUserName.setText("Thiraphop Phokied");
-        jPanel1.add(lbUserName);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Thiraphop Phokied");
+        jPanel1.add(jLabel3);
 
         btnCourse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCourse.setText("Course");
@@ -62,36 +53,37 @@ public class CourseView extends javax.swing.JFrame {
         });
         jPanel1.add(btnCourse);
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
-
-        lbCourseName.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbCourseName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbCourseName.setText("Problem Solving in Information Technology 2021 (IT) ");
-        jPanel2.add(lbCourseName, java.awt.BorderLayout.PAGE_START);
-
-        jPanel3.setLayout(new java.awt.GridBagLayout());
-
-        btnAllQuiz.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnAllQuiz.setText("Available Quiz");
-        btnAllQuiz.setPreferredSize(new java.awt.Dimension(240, 200));
-        jPanel3.add(btnAllQuiz, new java.awt.GridBagConstraints());
-
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton4.setText("Student Attend");
-        jButton4.setPreferredSize(new java.awt.Dimension(240, 200));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnAddQuiz.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAddQuiz.setText("Add Question");
+        btnAddQuiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnAddQuizActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new java.awt.GridBagConstraints());
+        jPanel1.add(btnAddQuiz);
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setText("Course Score");
-        jButton5.setPreferredSize(new java.awt.Dimension(240, 200));
-        jPanel3.add(jButton5, new java.awt.GridBagConstraints());
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 200));
 
-        jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
+        cardPanel.setPreferredSize(new java.awt.Dimension(800, 1080));
+        jScrollPane1.setViewportView(cardPanel);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,15 +92,15 @@ public class CourseView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -119,13 +111,10 @@ public class CourseView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCourseActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnAddQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddQuizActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnAddQuizActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -140,34 +129,33 @@ public class CourseView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllQuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllQuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllQuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllQuizView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CourseView().setVisible(true);
+                new AllQuizView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAllQuiz;
+    private javax.swing.JButton btnAddQuiz;
     private javax.swing.JButton btnCourse;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lbCourseName;
-    private javax.swing.JLabel lbUserName;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

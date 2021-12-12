@@ -1,3 +1,6 @@
+
+import javax.swing.JButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,9 +22,21 @@ public class AddQuizView extends javax.swing.JFrame {
         this.buttonGroup1.add(rbtn2);
         this.buttonGroup1.add(rbtn3);
         this.buttonGroup1.add(rbtn4);
-        
-        
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
+
+    public JButton getBtnSave1() {
+        return btnSave1;
+    }
+
+    public JButton getBtnSave2() {
+        return btnSave2;
+    }
+
+    public JButton getBtnSave3() {
+        return btnSave3;
+    }
+    
     
 
     /**
@@ -54,19 +69,20 @@ public class AddQuizView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tfQuestion2 = new javax.swing.JTextField();
         btnSave2 = new javax.swing.JButton();
-        rbtn9 = new javax.swing.JRadioButton();
         jTextField5 = new javax.swing.JTextField();
-        rbtn10 = new javax.swing.JRadioButton();
         jTextField6 = new javax.swing.JTextField();
-        rbtn11 = new javax.swing.JRadioButton();
         jTextField7 = new javax.swing.JTextField();
-        rbtn12 = new javax.swing.JRadioButton();
         jTextField8 = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         tfQuestion4 = new javax.swing.JTextField();
         tfAnswer = new javax.swing.JTextField();
         btnSave3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +97,7 @@ public class AddQuizView extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(200, 200));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Question");
         jPanel2.add(jLabel2, new java.awt.GridBagConstraints());
 
         tfQuestion1.setText("jTextField1");
@@ -153,7 +169,7 @@ public class AddQuizView extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Question");
         jPanel3.add(jLabel3, new java.awt.GridBagConstraints());
 
         tfQuestion2.setText("jTextField2");
@@ -165,26 +181,12 @@ public class AddQuizView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         jPanel3.add(btnSave2, gridBagConstraints);
 
-        rbtn9.setText("(A)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel3.add(rbtn9, gridBagConstraints);
-
         jTextField5.setText("jTextField1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 49;
         jPanel3.add(jTextField5, gridBagConstraints);
-
-        rbtn10.setText("(B)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel3.add(rbtn10, gridBagConstraints);
 
         jTextField6.setText("jTextField2");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -193,26 +195,12 @@ public class AddQuizView extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 49;
         jPanel3.add(jTextField6, gridBagConstraints);
 
-        rbtn11.setText("(C)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel3.add(rbtn11, gridBagConstraints);
-
         jTextField7.setText("jTextField3");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 49;
         jPanel3.add(jTextField7, gridBagConstraints);
-
-        rbtn12.setText("(D)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel3.add(rbtn12, gridBagConstraints);
 
         jTextField8.setText("jTextField4");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -221,11 +209,35 @@ public class AddQuizView extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 49;
         jPanel3.add(jTextField8, gridBagConstraints);
 
+        jCheckBox1.setText("(A)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        jPanel3.add(jCheckBox1, gridBagConstraints);
+
+        jCheckBox2.setText("(B)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        jPanel3.add(jCheckBox2, gridBagConstraints);
+
+        jCheckBox3.setText("(C)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        jPanel3.add(jCheckBox3, gridBagConstraints);
+
+        jCheckBox4.setText("(D)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        jPanel3.add(jCheckBox4, gridBagConstraints);
+
         jTabbedPane1.addTab("Multi Choice", jPanel3);
 
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Question");
         jPanel4.add(jLabel4, new java.awt.GridBagConstraints());
 
         tfQuestion4.setText("jTextField3");
@@ -233,9 +245,8 @@ public class AddQuizView extends javax.swing.JFrame {
 
         tfAnswer.setText("jTextField4");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
         jPanel4.add(tfAnswer, gridBagConstraints);
 
         btnSave3.setText("Save");
@@ -244,6 +255,12 @@ public class AddQuizView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         jPanel4.add(btnSave3, gridBagConstraints);
+
+        jLabel5.setText("Answer");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        jPanel4.add(jLabel5, gridBagConstraints);
 
         jTabbedPane1.addTab("Fill Answer", jPanel4);
 
@@ -308,10 +325,15 @@ public class AddQuizView extends javax.swing.JFrame {
     private javax.swing.JButton btnSave2;
     private javax.swing.JButton btnSave3;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -326,13 +348,9 @@ public class AddQuizView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JRadioButton rbtn1;
-    private javax.swing.JRadioButton rbtn10;
-    private javax.swing.JRadioButton rbtn11;
-    private javax.swing.JRadioButton rbtn12;
     private javax.swing.JRadioButton rbtn2;
     private javax.swing.JRadioButton rbtn3;
     private javax.swing.JRadioButton rbtn4;
-    private javax.swing.JRadioButton rbtn9;
     private javax.swing.JTextField tfAnswer;
     private javax.swing.JTextField tfQuestion1;
     private javax.swing.JTextField tfQuestion2;
