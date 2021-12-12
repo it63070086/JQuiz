@@ -26,317 +26,212 @@ public class AddquizView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        kGradientPanel2 = new keeptoo.KGradientPanel();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        rbtn1 = new javax.swing.JRadioButton();
-        rbtn2 = new javax.swing.JRadioButton();
-        rbtn3 = new javax.swing.JRadioButton();
-        rbtn4 = new javax.swing.JRadioButton();
-        btnSave1 = new javax.swing.JButton();
-        tfQuestion4 = new javax.swing.JTextField();
-        tfQuestion8 = new javax.swing.JTextField();
-        tfQuestion9 = new javax.swing.JTextField();
-        tfQuestion10 = new javax.swing.JTextField();
-        tfQuestion11 = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        tfQuestion12 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        tfQuestion19 = new javax.swing.JTextField();
-        tfQuestion20 = new javax.swing.JTextField();
-        tfQuestion21 = new javax.swing.JTextField();
-        tfQuestion22 = new javax.swing.JTextField();
-        btnSave2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        kGradientPanel3 = new keeptoo.KGradientPanel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        btnSave3 = new javax.swing.JButton();
-        tfQuestion23 = new javax.swing.JTextField();
-        tfQuestion24 = new javax.swing.JTextField();
+        kGradientPanel4 = new keeptoo.KGradientPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 102, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(153, 255, 153));
+        kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kGradientPanel2.setkEndColor(new java.awt.Color(255, 255, 102));
+        kGradientPanel2.setkStartColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jRadioButton2.setText("(D)");
+        jRadioButton2.setOpaque(false);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+
+        jRadioButton3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jRadioButton3.setText("(A)");
+        jRadioButton3.setOpaque(false);
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+
+        jRadioButton4.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jRadioButton4.setText("(B)");
+        jRadioButton4.setOpaque(false);
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
+
+        jRadioButton5.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jRadioButton5.setText("(C)");
+        jRadioButton5.setOpaque(false);
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        kGradientPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        jButton1.setText("SAVE");
+        kGradientPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 275, 80, 40));
+
+        jLabel2.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        jLabel2.setText("ข้อที่");
+        kGradientPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 30));
+
+        jTextField1.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 450, 30));
+
+        jTextField2.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 490, 30));
+
+        jTextField3.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 450, 30));
+
+        jTextField4.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 450, 30));
+
+        jTextField5.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 450, 30));
+
+        jTabbedPane1.addTab("Choice", kGradientPanel2);
+
+        kGradientPanel3.setkEndColor(new java.awt.Color(255, 255, 102));
+        kGradientPanel3.setkStartColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField6.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 490, 30));
+
+        jLabel3.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        jLabel3.setText("ข้อที่");
+        kGradientPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 40, 30));
+
+        jTextField7.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 450, 30));
+
+        jTextField8.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 450, 30));
+
+        jTextField9.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel3.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 450, 30));
+
+        jTextField10.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel3.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 450, 30));
+
+        jButton2.setText("SAVE");
+        kGradientPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 275, 80, 40));
+
+        jCheckBox1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jCheckBox1.setText("(D)");
+        jCheckBox1.setOpaque(false);
+        kGradientPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+
+        jCheckBox2.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jCheckBox2.setText("(A)");
+        jCheckBox2.setOpaque(false);
+        kGradientPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+
+        jCheckBox3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jCheckBox3.setText("(B)");
+        jCheckBox3.setOpaque(false);
+        kGradientPanel3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
+
+        jCheckBox4.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jCheckBox4.setText("(C)");
+        jCheckBox4.setOpaque(false);
+        kGradientPanel3.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        jTabbedPane1.addTab("Multi Choice", kGradientPanel3);
+
+        kGradientPanel4.setkEndColor(new java.awt.Color(255, 255, 102));
+        kGradientPanel4.setkStartColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel4.setText("Answer");
+        kGradientPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 70, 30));
+
+        jTextField11.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel4.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 490, 30));
+
+        jTextField12.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        kGradientPanel4.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 450, 30));
+
+        jLabel5.setFont(new java.awt.Font("Angsana New", 0, 20)); // NOI18N
+        jLabel5.setText("ข้อที่");
+        kGradientPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 40, 30));
+
+        jButton3.setText("SAVE");
+        kGradientPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 275, 80, 40));
+
+        jTabbedPane1.addTab("Fill Answer", kGradientPanel4);
+
+        kGradientPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 710, 360));
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 48)); // NOI18N
         jLabel1.setText("Add Quiz");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, 50));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 200));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel2.setText("ข้อที่ ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
-
-        rbtn1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        rbtn1.setText("(A)");
-        jPanel2.add(rbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 50, 40));
-
-        rbtn2.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        rbtn2.setText("(B)");
-        jPanel2.add(rbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 50, 40));
-
-        rbtn3.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        rbtn3.setText("(C)");
-        jPanel2.add(rbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 50, 40));
-
-        rbtn4.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        rbtn4.setText("(D)");
-        jPanel2.add(rbtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 50, -1));
-
-        btnSave1.setText("Save");
-        jPanel2.add(btnSave1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 80, 40));
-
-        tfQuestion4.setColumns(40);
-        tfQuestion4.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfQuestion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 390, -1));
-
-        tfQuestion8.setColumns(40);
-        tfQuestion8.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion8ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfQuestion8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 390, -1));
-
-        tfQuestion9.setColumns(40);
-        tfQuestion9.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion9ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfQuestion9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 390, -1));
-
-        tfQuestion10.setColumns(40);
-        tfQuestion10.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion10ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfQuestion10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 390, -1));
-
-        tfQuestion11.setColumns(40);
-        tfQuestion11.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion11ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfQuestion11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 390, -1));
-
-        jTabbedPane1.addTab("Choice", jPanel2);
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tfQuestion12.setColumns(40);
-        tfQuestion12.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion12ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tfQuestion12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 390, -1));
-
-        jLabel4.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel4.setText("ข้อที่ ");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 40, 40));
-
-        tfQuestion19.setColumns(40);
-        tfQuestion19.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion19ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tfQuestion19, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 390, -1));
-
-        tfQuestion20.setColumns(40);
-        tfQuestion20.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion20ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tfQuestion20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 390, -1));
-
-        tfQuestion21.setColumns(40);
-        tfQuestion21.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion21ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tfQuestion21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 390, -1));
-
-        tfQuestion22.setColumns(40);
-        tfQuestion22.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion22ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tfQuestion22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 390, -1));
-
-        btnSave2.setText("Save");
-        jPanel3.add(btnSave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 80, 40));
-
-        jCheckBox1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jCheckBox1.setText("(D)");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
-
-        jCheckBox2.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jCheckBox2.setText("(A)");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
-
-        jCheckBox3.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jCheckBox3.setText("(B)");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
-
-        jCheckBox4.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jCheckBox4.setText("(C)");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-
-        jTabbedPane1.addTab("Multi Choice", jPanel3);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel6.setText("Answer");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 60, 40));
-
-        jLabel7.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jLabel7.setText("ข้อที่ ");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 60, 40));
-
-        btnSave3.setText("Save");
-        jPanel4.add(btnSave3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 80, 40));
-
-        tfQuestion23.setColumns(40);
-        tfQuestion23.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion23ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(tfQuestion23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 390, -1));
-
-        tfQuestion24.setColumns(40);
-        tfQuestion24.setFont(new java.awt.Font("Angsana New", 0, 28)); // NOI18N
-        tfQuestion24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfQuestion24ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(tfQuestion24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 390, -1));
-
-        jTabbedPane1.addTab("Fill Answer", jPanel4);
-
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 540, 385));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -6, 830, 520));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfQuestion24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion24ActionPerformed
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion24ActionPerformed
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void tfQuestion23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion23ActionPerformed
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion23ActionPerformed
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void tfQuestion22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion22ActionPerformed
-
-    private void tfQuestion21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion21ActionPerformed
-
-    private void tfQuestion20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion20ActionPerformed
-
-    private void tfQuestion19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion19ActionPerformed
-
-    private void tfQuestion12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion12ActionPerformed
-
-    private void tfQuestion11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion11ActionPerformed
-
-    private void tfQuestion10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion10ActionPerformed
-
-    private void tfQuestion9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion9ActionPerformed
-
-    private void tfQuestion8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion8ActionPerformed
-
-    private void tfQuestion4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfQuestion4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfQuestion4ActionPerformed
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -374,38 +269,38 @@ public class AddquizView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSave1;
-    private javax.swing.JButton btnSave2;
-    private javax.swing.JButton btnSave3;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JRadioButton rbtn1;
-    private javax.swing.JRadioButton rbtn2;
-    private javax.swing.JRadioButton rbtn3;
-    private javax.swing.JRadioButton rbtn4;
-    private javax.swing.JTextField tfQuestion10;
-    private javax.swing.JTextField tfQuestion11;
-    private javax.swing.JTextField tfQuestion12;
-    private javax.swing.JTextField tfQuestion19;
-    private javax.swing.JTextField tfQuestion20;
-    private javax.swing.JTextField tfQuestion21;
-    private javax.swing.JTextField tfQuestion22;
-    private javax.swing.JTextField tfQuestion23;
-    private javax.swing.JTextField tfQuestion24;
-    private javax.swing.JTextField tfQuestion4;
-    private javax.swing.JTextField tfQuestion8;
-    private javax.swing.JTextField tfQuestion9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private keeptoo.KGradientPanel kGradientPanel1;
+    private keeptoo.KGradientPanel kGradientPanel2;
+    private keeptoo.KGradientPanel kGradientPanel3;
+    private keeptoo.KGradientPanel kGradientPanel4;
     // End of variables declaration//GEN-END:variables
 }
