@@ -20,7 +20,6 @@ public class AdminMainView extends javax.swing.JFrame {
     public AdminMainView() {
         initComponents();
     }
-    
 
     public JButton getBtnAddCourse() {
         return btnAddCourse;
