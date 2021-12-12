@@ -33,6 +33,14 @@ public class QuizModel{
         }
     return false;
     }
+    public void deleteData(int quizId){
+        System.out.println(quizId);
+        File myObj = new File("quiz/"+quizId+".JQuiz"); 
+        if (myObj.delete()) {
+          System.out.println("Deleted the file: " + myObj.getName());
+        }
+    }
+//    young miatongcum
     public boolean saveData(){
         try(FileOutputStream fOut = new FileOutputStream("dataQuiz.dat");
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {

@@ -2,10 +2,9 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.awt.event.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-public class QuizController implements ActionListener, KeyListener, WindowListener{
+public class QuizController implements ActionListener, KeyListener, WindowListener, MouseListener{
     private ArrayList<Course> course = new ArrayList<Course>();
     private LoginView loginView = new LoginView();
     private RegView regView = new RegView();
@@ -14,6 +13,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private CardCourseModel cardCourse = new CardCourseModel();
     private AdminMainView adminMainView = new AdminMainView();
     private AddCourseView addCourseView = new AddCourseView();
+    private QuizModel quizModel = new QuizModel();
     private int lastestId = 0;
     private Connection con = null;
     private ResultSet rs = null;
@@ -35,7 +35,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //        AddAction
         loginView.getBtnReg().addActionListener(this);
         regView.getBtnReg().addActionListener(this);
-        loginView.getBtnLogin().addActionListener(this);
+        loginView.getBtnLogin().addMouseListener(this);
         regView.getTfEmail().addKeyListener(this);
         mainView.addWindowListener(this);
         adminMainView.addWindowListener(this);
@@ -126,8 +126,13 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 }
                 
                 if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnRemove())){
-                    tmp.remove(cardCourse.getCardCourse().get(i));
-                    courseModel.delete(course.get(i).getCourseID());
+                    int x = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
+                    if (x == 2){
+                        tmp.remove(cardCourse.getCardCourse().get(i));
+                        courseModel.delete(course.get(i).getCourseID());
+                        quizModel.deleteData(course.get(i).getCourseID());
+                    }
+                    
                 }
             }
             cardCourse.getCardCourse().clear();
@@ -178,31 +183,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             }
         }
 //        Login
-        if (e.getSource().equals(loginView.getBtnLogin())){
-            String username = loginView.getTfUsername().getText();
-            String userPassWord = loginView.getTfUserPassword().getText();
-            String findSql = "SELECT userName, userPassword, userRole FROM user WHERE userName = '"+username+"' AND userPassword = '"+userPassWord+"'";
-            try {
-                pst = con.prepareStatement(findSql);
-                rs = pst.executeQuery();
-                if (rs.next()){
-                    this.userNameCurrent = rs.getString("userName");
-                    if (rs.getString("userRole").equals("Admin")){
-                        loginView.setVisible(false);
-                        adminMainView.setVisible(true);
-                        this.userRoleCurrent = "Admin";
-                    }else{
-                        loginView.setVisible(false);
-                        mainView.setVisible(true);
-                        this.userRoleCurrent = "Student";
-                    }
-                }else{
-                    JOptionPane.showMessageDialog(null, "Username or Password Incorrect", "Invalid Information", JOptionPane.WARNING_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        
         if (e.getSource().equals(adminMainView.getBtnCourse())){
             reAdminMainView();
         }
@@ -255,5 +236,45 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     }
     @Override
     public void windowDeactivated(WindowEvent we) {
+    }
+    @Override
+    public void mouseClicked(MouseEvent me) {
+        if (me.getSource().equals(loginView.getBtnLogin())){
+            String username = loginView.getTfUsername().getText();
+            String userPassWord = loginView.getTfUserPassword().getText();
+            String findSql = "SELECT userName, userPassword, userRole FROM user WHERE userName = '"+username+"' AND userPassword = '"+userPassWord+"'";
+            try {
+                pst = con.prepareStatement(findSql);
+                rs = pst.executeQuery();
+                if (rs.next()){
+                    this.userNameCurrent = rs.getString("userName");
+                    if (rs.getString("userRole").equals("Admin")){
+                        loginView.setVisible(false);
+                        adminMainView.setVisible(true);
+                        this.userRoleCurrent = "Admin";
+                    }else{
+                        loginView.setVisible(false);
+                        mainView.setVisible(true);
+                        this.userRoleCurrent = "Student";
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Username or Password Incorrect", "Invalid Information", JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    @Override
+    public void mousePressed(MouseEvent me) {
+    }
+    @Override
+    public void mouseReleased(MouseEvent me) {
+    }
+    @Override
+    public void mouseEntered(MouseEvent me) {
+    }
+    @Override
+    public void mouseExited(MouseEvent me) {
     }
 }
