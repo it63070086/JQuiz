@@ -47,7 +47,6 @@ public class CourseModel {
     public void delete(int courseId){
         System.out.println(courseId);
         String deleteSql = "DELETE FROM course WHERE courseId='"+(courseId)+"'";
-//        St"DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';";
         try {
             pst = con.prepareStatement(deleteSql);
             pst.execute();

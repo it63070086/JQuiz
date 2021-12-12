@@ -2,36 +2,34 @@ import java.util.*;
 import java.io.*;
 
 public class QuizModel{
-    private ArrayList<Quiz> Quiz;
+    private ArrayList<Quiz> quiz;
     public QuizModel(){
-        Quiz = new ArrayList<Quiz>();
-        
+        quiz = new ArrayList<Quiz>();
     }
     public QuizModel(int courseId){
-        Quiz = new ArrayList<Quiz>();
+        quiz = new ArrayList<Quiz>();
         createQuiz(courseId);
-        
     }
     public void createQuiz(int quizId){
         File f = new File("quiz/"+quizId+".JQuiz");
         try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
-            oout.writeObject(Quiz);
+            oout.writeObject(quiz);
         } catch (Exception i) {
         }
     }
-    public boolean loadData(){
-        File f = new File("dataQuiz.dat");
+    public boolean loadData(int quizId){
+        File f = new File("quiz/"+quizId+".JQuiz");
         if (f.exists()) {
             try (FileInputStream fin = new FileInputStream("dataQuiz.dat");
                 ObjectInputStream in = new ObjectInputStream(fin);){
-                Quiz = (ArrayList<Quiz>) in.readObject();
+                quiz = (ArrayList<Quiz>) in.readObject();
                 return true;
             } catch (Exception i) {
                 return false;
             }
         }
-    return false;
+        return false;
     }
     public void deleteData(int quizId){
         System.out.println(quizId);
@@ -44,7 +42,7 @@ public class QuizModel{
     public boolean saveData(){
         try(FileOutputStream fOut = new FileOutputStream("dataQuiz.dat");
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
-            oout.writeObject(Quiz);
+            oout.writeObject(quiz);
             return true;
         } catch (Exception i) {
             return false;
@@ -52,11 +50,11 @@ public class QuizModel{
     }
 
     public ArrayList<Quiz> getQuiz() {
-        return Quiz;
+        return quiz;
     }
 
-    public void setQuiz(ArrayList<Quiz> Quiz) {
-        this.Quiz = Quiz;
+    public void setQuiz(ArrayList<Quiz> quiz) {
+        this.quiz = quiz;
     }
     
     

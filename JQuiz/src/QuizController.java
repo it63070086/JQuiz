@@ -18,6 +18,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private CourseView courseView = new CourseView();
     private CardCourseView cardCourseView = new CardCourseView();
     private AddQuizView addQuizView = new AddQuizView();
+    private int courseIdCurrent = 0;
+    private int courseIndexCurrent = 0;
     private int lastestId = 0;
     private Connection con = null;
     private ResultSet rs = null;
@@ -154,6 +156,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     courseView.getLbCourseName().setText(course.get(i).getCourseName());
                     courseView.getLbUserName().setText(userNameCurrent);
                     state = "btnEnter";
+                    courseIdCurrent = course.get(i).getCourseID();
                 }
                 if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnRemove())){
                     int x = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
@@ -256,6 +259,20 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             allQuizView.setVisible(true);
             allQuizView.setLocationRelativeTo(null);
             courseView.setVisible(false);
+        }
+        if (e.getSource().equals(addQuizView.getBtnSave1())){
+            quizModel.loadData(courseIdCurrent);
+            ArrayList<Quiz> quiz = courseModel.getCourse().get(courseIndexCurrent).getQuiz();
+            
+            Choice choice = new Choice(quiz.size()+1, 
+                                        addQuizView.getTfQuestion1().getText(),
+                                        addQuizView.getTfChoiceA().getText(),
+                                        addQuizView.getTfChoiceB().getText(),
+                                        addQuizView.getTfChoiceC().getText(),
+                                        addQuizView.getTfChoiceD().getText(),
+                                        addQuizView.getBtngChoice().getSelection().getActionCommand(),
+                                        "Choice");
+            quiz.add(choice);
         }
     }
     @Override
