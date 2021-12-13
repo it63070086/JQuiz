@@ -37,7 +37,7 @@ public class CouresSelect extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         kGradientPanel2 = new keeptoo.KGradientPanel();
-        jButton1 = new javax.swing.JLabel();
+        btnCourse = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         kGradientPanel3 = new keeptoo.KGradientPanel();
         kGradientPanel4 = new keeptoo.KGradientPanel();
@@ -120,25 +120,21 @@ public class CouresSelect extends javax.swing.JFrame {
         kGradientPanel2.setkGradientFocus(400);
         kGradientPanel2.setkStartColor(new java.awt.Color(255, 204, 204));
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("LOG OUT");
+        btnCourse.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnCourse.setForeground(new java.awt.Color(255, 255, 255));
+        btnCourse.setText("COURSE");
+        btnCourse.setBorder(null);
+        btnCourse.setContentAreaFilled(false);
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(27, 27, 27))
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -263,6 +259,7 @@ public class CouresSelect extends javax.swing.JFrame {
         );
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -418,6 +415,7 @@ public class CouresSelect extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCourse;
     private CardCouresView cardCouresView10;
     private CardCouresView cardCouresView11;
     private CardCouresView cardCouresView12;
@@ -425,7 +423,6 @@ public class CouresSelect extends javax.swing.JFrame {
     private CardCouresView cardCouresView6;
     private CardCouresView cardCouresView8;
     private CardCouresView cardCouresView9;
-    private javax.swing.JLabel jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

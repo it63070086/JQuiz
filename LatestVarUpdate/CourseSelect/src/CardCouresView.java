@@ -29,7 +29,7 @@ public class CardCouresView extends javax.swing.JPanel {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel200 = new javax.swing.JLabel();
         kGradientPanel2 = new keeptoo.KGradientPanel();
-        btnEnter = new javax.swing.JLabel();
+        btnEnter = new javax.swing.JButton();
         jLabel400 = new javax.swing.JLabel();
         jLabel300 = new javax.swing.JLabel();
         jLabel500 = new javax.swing.JLabel();
@@ -56,21 +56,21 @@ public class CardCouresView extends javax.swing.JPanel {
         kGradientPanel2.setkGradientFocus(150);
         kGradientPanel2.setkStartColor(new java.awt.Color(204, 204, 255));
 
-        btnEnter.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        btnEnter.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnEnter.setForeground(new java.awt.Color(255, 255, 255));
-        btnEnter.setText("     ENTER");
+        btnEnter.setText("ENTER");
+        btnEnter.setBorder(null);
+        btnEnter.setContentAreaFilled(false);
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         jLabel400.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -96,7 +96,7 @@ public class CardCouresView extends javax.swing.JPanel {
         kGradientPanel6.setLayout(kGradientPanel6Layout);
         kGradientPanel6Layout.setHorizontalGroup(
             kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
         );
         kGradientPanel6Layout.setVerticalGroup(
             kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +226,7 @@ public class CardCouresView extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnEnter;
+    private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel200;

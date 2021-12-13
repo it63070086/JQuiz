@@ -112,7 +112,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfUsername" max="32767" attributes="0"/>
+                                  <Component id="tfUsername" pref="326" max="32767" attributes="0"/>
                                   <Component id="tfFirstname" max="32767" attributes="0"/>
                                   <Component id="tfLastname" max="32767" attributes="0"/>
                                   <Component id="tfPassword" max="32767" attributes="0"/>
@@ -474,25 +474,26 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnReg" alignment="0" pref="326" max="32767" attributes="0"/>
+                      <Component id="btnReg" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnReg" alignment="1" pref="67" max="32767" attributes="0"/>
+                      <Component id="btnReg" alignment="0" pref="67" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="btnReg">
+                <Component class="javax.swing.JButton" name="btnReg">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="36" style="1"/>
+                      <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="          confirm"/>
+                    <Property name="text" type="java.lang.String" value="REGISTER"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
               </SubComponents>

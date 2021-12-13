@@ -32,7 +32,7 @@ public class MainQuizView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         nameLbl = new javax.swing.JLabel();
         kGradientPanel4 = new keeptoo.KGradientPanel();
-        btnCourse = new javax.swing.JLabel();
+        btnCourse = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,7 +41,7 @@ public class MainQuizView extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         kGradientPanel5 = new keeptoo.KGradientPanel();
-        btnSubmit = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 600));
@@ -71,7 +71,7 @@ public class MainQuizView extends javax.swing.JFrame {
             .addGroup(kGradientPanel3Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(kGradientPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,19 +90,21 @@ public class MainQuizView extends javax.swing.JFrame {
         kGradientPanel4.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel4.setkStartColor(new java.awt.Color(255, 182, 179));
 
-        btnCourse.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btnCourse.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnCourse.setForeground(new java.awt.Color(255, 255, 255));
-        btnCourse.setText("          COURSE");
+        btnCourse.setText("COURSE");
+        btnCourse.setBorder(null);
+        btnCourse.setContentAreaFilled(false);
 
         javax.swing.GroupLayout kGradientPanel4Layout = new javax.swing.GroupLayout(kGradientPanel4);
         kGradientPanel4.setLayout(kGradientPanel4Layout);
         kGradientPanel4Layout.setHorizontalGroup(
             kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         kGradientPanel4Layout.setVerticalGroup(
             kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JQUIZ (15).png"))); // NOI18N
@@ -157,7 +159,7 @@ public class MainQuizView extends javax.swing.JFrame {
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 726, Short.MAX_VALUE)
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,9 +202,11 @@ public class MainQuizView extends javax.swing.JFrame {
         kGradientPanel5.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel5.setkStartColor(new java.awt.Color(255, 204, 204));
 
-        btnSubmit.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("       SUBMIT");
+        btnSubmit.setText("SUBMIT");
+        btnSubmit.setBorder(null);
+        btnSubmit.setContentAreaFilled(false);
 
         javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
         kGradientPanel5.setLayout(kGradientPanel5Layout);
@@ -212,7 +216,7 @@ public class MainQuizView extends javax.swing.JFrame {
         );
         kGradientPanel5Layout.setVerticalGroup(
             kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+            .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -299,8 +303,8 @@ public class MainQuizView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnCourse;
-    private javax.swing.JLabel btnSubmit;
+    private javax.swing.JButton btnCourse;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

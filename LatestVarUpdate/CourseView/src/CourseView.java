@@ -32,19 +32,19 @@ public class CourseView extends javax.swing.JFrame {
         lbUserName = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         kGradientPanel8 = new keeptoo.KGradientPanel();
-        btnCourse = new javax.swing.JLabel();
+        btnCourse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnAllQuiz = new keeptoo.KGradientPanel();
-        jLabel2 = new javax.swing.JLabel();
+        panelquiz = new keeptoo.KGradientPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new keeptoo.KGradientPanel();
-        jLabel4 = new javax.swing.JLabel();
+        btnAllQuiz = new javax.swing.JButton();
+        stdpanel = new keeptoo.KGradientPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton5 = new keeptoo.KGradientPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        scorepanel = new keeptoo.KGradientPanel();
         jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         kGradientPanel5 = new keeptoo.KGradientPanel();
         kGradientPanel7 = new keeptoo.KGradientPanel();
 
@@ -92,17 +92,17 @@ public class CourseView extends javax.swing.JFrame {
         kGradientPanel8.setkEndColor(new java.awt.Color(255, 182, 179));
         kGradientPanel8.setkStartColor(new java.awt.Color(204, 204, 255));
 
-        btnCourse.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        btnCourse.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnCourse.setForeground(new java.awt.Color(255, 255, 255));
-        btnCourse.setText("      COURSE");
+        btnCourse.setText("COURSE");
+        btnCourse.setBorder(null);
+        btnCourse.setContentAreaFilled(false);
 
         javax.swing.GroupLayout kGradientPanel8Layout = new javax.swing.GroupLayout(kGradientPanel8);
         kGradientPanel8.setLayout(kGradientPanel8Layout);
         kGradientPanel8Layout.setHorizontalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel8Layout.createSequentialGroup()
-                .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         kGradientPanel8Layout.setVerticalGroup(
             kGradientPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,104 +154,104 @@ public class CourseView extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnAllQuiz.setkEndColor(new java.awt.Color(204, 204, 255));
-        btnAllQuiz.setkStartColor(new java.awt.Color(255, 204, 204));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Available Quiz");
+        panelquiz.setkEndColor(new java.awt.Color(204, 204, 255));
+        panelquiz.setkStartColor(new java.awt.Color(255, 204, 204));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quiz (1).png"))); // NOI18N
 
-        javax.swing.GroupLayout btnAllQuizLayout = new javax.swing.GroupLayout(btnAllQuiz);
-        btnAllQuiz.setLayout(btnAllQuizLayout);
-        btnAllQuizLayout.setHorizontalGroup(
-            btnAllQuizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnAllQuizLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        btnAllQuiz.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        btnAllQuiz.setForeground(new java.awt.Color(255, 255, 255));
+        btnAllQuiz.setText("Available Quiz");
+        btnAllQuiz.setBorder(null);
+        btnAllQuiz.setContentAreaFilled(false);
+        btnAllQuiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAllQuizActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelquizLayout = new javax.swing.GroupLayout(panelquiz);
+        panelquiz.setLayout(panelquizLayout);
+        panelquizLayout.setHorizontalGroup(
+            panelquizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelquizLayout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(29, 29, 29))
-            .addGroup(btnAllQuizLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addComponent(btnAllQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btnAllQuizLayout.setVerticalGroup(
-            btnAllQuizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAllQuizLayout.createSequentialGroup()
+        panelquizLayout.setVerticalGroup(
+            panelquizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelquizLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGap(63, 63, 63)
+                .addComponent(btnAllQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        jButton4.setkEndColor(new java.awt.Color(255, 204, 204));
-        jButton4.setkStartColor(new java.awt.Color(204, 204, 255));
-        jButton4.setPreferredSize(new java.awt.Dimension(200, 400));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Student Attend");
+        stdpanel.setkEndColor(new java.awt.Color(255, 204, 204));
+        stdpanel.setkStartColor(new java.awt.Color(204, 204, 255));
+        stdpanel.setPreferredSize(new java.awt.Dimension(200, 400));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/students.png"))); // NOI18N
 
-        javax.swing.GroupLayout jButton4Layout = new javax.swing.GroupLayout(jButton4);
-        jButton4.setLayout(jButton4Layout);
-        jButton4Layout.setHorizontalGroup(
-            jButton4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jButton4Layout.createSequentialGroup()
-                .addGroup(jButton4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jButton4Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jButton4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Student Attend");
+        jButton4.setBorder(null);
+        jButton4.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout stdpanelLayout = new javax.swing.GroupLayout(stdpanel);
+        stdpanel.setLayout(stdpanelLayout);
+        stdpanelLayout.setHorizontalGroup(
+            stdpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(stdpanelLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jButton4Layout.setVerticalGroup(
-            jButton4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jButton4Layout.createSequentialGroup()
+        stdpanelLayout.setVerticalGroup(
+            stdpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stdpanelLayout.createSequentialGroup()
                 .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(62, 62, 62)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(81, 81, 81)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
-        jButton5.setkEndColor(new java.awt.Color(204, 204, 255));
-        jButton5.setkStartColor(new java.awt.Color(255, 204, 204));
-        jButton5.setPreferredSize(new java.awt.Dimension(200, 400));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Course Score");
+        scorepanel.setkEndColor(new java.awt.Color(204, 204, 255));
+        scorepanel.setkStartColor(new java.awt.Color(255, 204, 204));
+        scorepanel.setPreferredSize(new java.awt.Dimension(200, 400));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/score.png"))); // NOI18N
 
-        javax.swing.GroupLayout jButton5Layout = new javax.swing.GroupLayout(jButton5);
-        jButton5.setLayout(jButton5Layout);
-        jButton5Layout.setHorizontalGroup(
-            jButton5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jButton5Layout.createSequentialGroup()
-                .addGroup(jButton5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jButton5Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel7))
-                    .addGroup(jButton5Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel5)))
-                .addContainerGap(24, Short.MAX_VALUE))
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Course Score");
+        jButton5.setBorder(null);
+        jButton5.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout scorepanelLayout = new javax.swing.GroupLayout(scorepanel);
+        scorepanel.setLayout(scorepanelLayout);
+        scorepanelLayout.setHorizontalGroup(
+            scorepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(scorepanelLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel7)
+                .addContainerGap(34, Short.MAX_VALUE))
+            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jButton5Layout.setVerticalGroup(
-            jButton5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jButton5Layout.createSequentialGroup()
+        scorepanelLayout.setVerticalGroup(
+            scorepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scorepanelLayout.createSequentialGroup()
                 .addContainerGap(67, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(82, 82, 82)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
 
         kGradientPanel5.setkEndColor(new java.awt.Color(204, 204, 255));
@@ -287,19 +287,16 @@ public class CourseView extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 14, Short.MAX_VALUE)
-                        .addComponent(btnAllQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(panelquiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(stdpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(kGradientPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(scorepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(kGradientPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kGradientPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35))
         );
         jPanel2Layout.setVerticalGroup(
@@ -309,9 +306,9 @@ public class CourseView extends javax.swing.JFrame {
                 .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAllQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stdpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scorepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelquiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -334,6 +331,10 @@ public class CourseView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAllQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllQuizActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAllQuizActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,16 +372,13 @@ public class CourseView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private keeptoo.KGradientPanel btnAllQuiz;
-    private javax.swing.JLabel btnCourse;
-    private keeptoo.KGradientPanel jButton4;
-    private keeptoo.KGradientPanel jButton5;
+    private javax.swing.JButton btnAllQuiz;
+    private javax.swing.JButton btnCourse;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -392,5 +390,8 @@ public class CourseView extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel7;
     private keeptoo.KGradientPanel kGradientPanel8;
     private javax.swing.JLabel lbUserName;
+    private keeptoo.KGradientPanel panelquiz;
+    private keeptoo.KGradientPanel scorepanel;
+    private keeptoo.KGradientPanel stdpanel;
     // End of variables declaration//GEN-END:variables
 }
