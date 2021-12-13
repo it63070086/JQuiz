@@ -3,22 +3,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author NetworkDevelopement
- */
 public class EditChoiceView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form EditMultiChoiceView
-     */
     public EditChoiceView() {
         initComponents();
         this.buttonGroup1.add(rbtnA);
@@ -28,6 +13,10 @@ public class EditChoiceView extends javax.swing.JPanel {
     }
     public EditChoiceView(String question, String a, String b, String c, String d, String answer){
         initComponents();
+        this.buttonGroup1.add(rbtnA);
+        this.buttonGroup1.add(rbtnB);
+        this.buttonGroup1.add(rbtnC);
+        this.buttonGroup1.add(rbtnD);
         this.tfQuestion.setText(question);
         this.tfChoiceA.setText(a);
         this.tfChoiceB.setText(b);
