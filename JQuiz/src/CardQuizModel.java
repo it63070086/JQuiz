@@ -5,7 +5,8 @@ public class CardQuizModel {
     public CardQuizModel(){
         cardQuiz = new ArrayList<CardQuizView>();
     }
-    public ArrayList<CardQuizView> getCardCourse(){
+    public ArrayList<CardQuizView> getCardQuiz(){
         return cardQuiz;
     }
+    
 }

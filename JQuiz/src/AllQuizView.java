@@ -1,5 +1,6 @@
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 
 public class AllQuizView extends javax.swing.JFrame {
@@ -14,6 +15,10 @@ public class AllQuizView extends javax.swing.JFrame {
 
     public JButton getBtnCourse() {
         return btnCourse;
+    }
+
+    public JPanel getCardPanel() {
+        return cardPanel;
     }
     
     

@@ -18,6 +18,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private CourseView courseView = new CourseView();
     private CardCourseView cardCourseView = new CardCourseView();
     private AddQuizView addQuizView = new AddQuizView();
+    private CardQuizModel cardQuiz = new CardQuizModel();
     private int courseIdCurrent = 0;
     private int courseIndexCurrent = 0;
     private int lastestId = 0;
@@ -59,6 +60,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         addQuizView.getBtnSave2().addActionListener(this);
         addQuizView.getBtnSave3().addActionListener(this);
         allQuizView.getBtnCourse().addActionListener(this);
+        allQuizView.addWindowListener(this);
         
     }   
     public static void main(String[] args) {
@@ -86,6 +88,41 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         adminMainView.setVisible(true);
         adminMainView.setLocationRelativeTo(null);
+    }
+//    quiz all
+    public void reAdminQuiz(){
+        allQuizView.getCardPanel().removeAll();
+        allQuizView.getCardPanel().repaint();
+        ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
+        System.out.println(allQuiz);
+        cardQuiz.getCardQuiz().clear();
+        if (allQuiz != null){
+            for (int i=0; i < allQuiz.size(); i++){
+            if (allQuiz.get(i).getType().equals("Choice")){
+                cardQuiz.getCardQuiz().add((CardQuizView) new CardQuizView().add(new EditChoiceView(((Choice)allQuiz.get(i)).getQuestion(),
+                                                      ((Choice)allQuiz.get(i)).getChoiceA(),
+                                                      ((Choice)allQuiz.get(i)).getChoiceB(),
+                                                      ((Choice)allQuiz.get(i)).getChoiceC(),
+                                                      ((Choice)allQuiz.get(i)).getChoiceD(),
+                                                      ((Choice)allQuiz.get(i)).getAnswer())));
+            
+            allQuizView.getCardPanel().add(cardQuiz.getCardQuiz().get(i));
+            allQuiz.getCardCourse().get(i).getBtnEnter().addActionListener(this);
+            allQuiz.getCardCourse().get(i).getBtnRemove().addActionListener(this);
+            if (course.get(i).getCourseID() > lastestId){
+                lastestId = course.get(i).getCourseID();
+            }
+            }else if (allQuiz.get(i).getType().equals("MultipleChoice")){
+                System.out.println("MultipleChoice");
+            }else{
+                System.out.println("FieldAnswer");
+            }
+        }
+        
+            
+        }
+        allQuizView.setVisible(true);
+        allQuizView.setLocationRelativeTo(null);
     }
     public void reMainView(){
         mainView.getCardPanel().removeAll();
@@ -257,14 +294,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             addQuizView.setVisible(true);
             addQuizView.setLocationRelativeTo(null);
         }
-        if (e.getSource().equals(addQuizView.getBtnSave1()) ||
-                e.getSource().equals(addQuizView.getBtnSave2()) ||
-                e.getSource().equals(addQuizView.getBtnSave3())){
-            addQuizView.setVisible(false);
-            allQuizView.setEnabled(true);
-            allQuizView.setAlwaysOnTop(true);
-            
-        }
         if (e.getSource().equals(courseView.getBtnAllQuiz())){
             allQuizView.setVisible(true);
             allQuizView.setLocationRelativeTo(null);
@@ -281,11 +310,10 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     addQuizView.getBtngChoice().getSelection().getActionCommand(),
                     "Choice");
             course.get(courseIndexCurrent).getQuiz().add(quiz);
-            System.out.println(courseIdCurrent + "- " +courseIndexCurrent);
             quizModel.saveData(courseIdCurrent, course.get(courseIndexCurrent).getQuiz());
-            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
-                System.out.println(i.getAnswer());
-            }
+//            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+//                System.out.println(i.getAnswer());
+//            }
         }
         if (e.getSource().equals(addQuizView.getBtnSave2())){
             String answer = "";
@@ -301,7 +329,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             if(addQuizView.getCbMCD().isSelected()){
                 answer += "D";
             }
-            System.out.println(answer);
+//            System.out.println(answer);
             MultipleChoice quiz = new MultipleChoice(course.get(courseIndexCurrent).getQuiz().size() + 1, 
                     addQuizView.getTfQuestion2().getText(),
                     addQuizView.getMultiChoiceA().getText(),
@@ -311,11 +339,10 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     answer,
                     "MultipleChoice");
             course.get(courseIndexCurrent).getQuiz().add(quiz);
-            System.out.println(courseIdCurrent + "- " +courseIndexCurrent);
             quizModel.saveData(courseIdCurrent, course.get(courseIndexCurrent).getQuiz());
-            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
-                System.out.println(i.getAnswer());
-            }
+//            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+//                System.out.println(i.getAnswer());
+//            }
             
         }
         if (e.getSource().equals(addQuizView.getBtnSave3())){
@@ -324,11 +351,18 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     addQuizView.getTfAnswer().getText(),
                     "FillAnswer");
             course.get(courseIndexCurrent).getQuiz().add(quiz);
-            System.out.println(courseIdCurrent + "- " +courseIndexCurrent);
             quizModel.saveData(courseIdCurrent, course.get(courseIndexCurrent).getQuiz());
-            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
-                System.out.println(i.getAnswer());
-            }
+//            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+//                System.out.println(i.getAnswer());
+//            }
+        }
+        if (e.getSource().equals(addQuizView.getBtnSave1()) ||
+                e.getSource().equals(addQuizView.getBtnSave2()) ||
+                e.getSource().equals(addQuizView.getBtnSave3())){
+            addQuizView.setVisible(false);
+            allQuizView.setEnabled(true);
+            allQuizView.setAlwaysOnTop(true);
+            reAdminQuiz();
         }
     }
     @Override
@@ -351,6 +385,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //    windowevent
     @Override
     public void windowOpened(WindowEvent we) {
+        if (we.getSource().equals(allQuizView)){
+            reAdminQuiz();
+        }
         
         if (we.getSource().equals(mainView)){
             
