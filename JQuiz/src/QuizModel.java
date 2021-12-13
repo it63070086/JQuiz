@@ -18,18 +18,18 @@ public class QuizModel{
         } catch (Exception i) {
         }
     }
-    public boolean loadData(int quizId){
+    public ArrayList<Quiz> loadData(int quizId){
         File f = new File("quiz/"+quizId+".JQuiz");
         if (f.exists()) {
-            try (FileInputStream fin = new FileInputStream("dataQuiz.dat");
+            try (FileInputStream fin = new FileInputStream(f);
                 ObjectInputStream in = new ObjectInputStream(fin);){
                 quiz = (ArrayList<Quiz>) in.readObject();
-                return true;
+                return quiz;
             } catch (Exception i) {
-                return false;
+                return null;
             }
         }
-        return false;
+        return null;
     }
     public void deleteData(int quizId){
         System.out.println(quizId);
@@ -39,8 +39,9 @@ public class QuizModel{
         }
     }
 //    young miatongcum
-    public boolean saveData(){
-        try(FileOutputStream fOut = new FileOutputStream("dataQuiz.dat");
+    public boolean saveData(int quizId){
+        File f = new File("quiz/"+quizId+".JQuiz");
+        try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
             oout.writeObject(quiz);
             return true;
@@ -48,7 +49,7 @@ public class QuizModel{
             return false;
         }
     }
-
+    
     public ArrayList<Quiz> getQuiz() {
         return quiz;
     }

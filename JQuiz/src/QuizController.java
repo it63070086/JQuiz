@@ -58,6 +58,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         addQuizView.getBtnSave1().addActionListener(this);
         addQuizView.getBtnSave2().addActionListener(this);
         addQuizView.getBtnSave3().addActionListener(this);
+        allQuizView.getBtnCourse().addActionListener(this);
         
     }   
     public static void main(String[] args) {
@@ -66,7 +67,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     public void reAdminMainView(){
         adminMainView.getCardPanel().removeAll();
         adminMainView.getCardPanel().repaint();
-        courseModel.load();
+        courseModel.load(quizModel);
         course = courseModel.getCourse();
         cardCourse.getCardCourse().clear();
         for (int i=0; i < course.size(); i++){
@@ -88,7 +89,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     }
     public void reMainView(){
         mainView.getCardPanel().removeAll();
-        courseModel.load();
+        courseModel.load(quizModel);
         course = courseModel.getCourse();
         for (int i=0; i<course.size(); i++){
             cardCourse.getCardCourse().add(new CardCourseView(course.get(i).getCourseID(),course.get(i).getCourseName(), course.get(i).getCourseScore(), course.get(i).getCourseRelease(), course.get(i).getCourseExpire(), course.get(i).getCourseOwner()));
@@ -144,7 +145,10 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 (!e.getSource().equals(adminMainView.getBtnAddCourse())) && 
                 (!e.getSource().equals(adminMainView.getBtnCourse())) &&
                 (!e.getSource().equals(courseView.getBtnAllQuiz())) &&
-                (!e.getSource().equals(allQuizView.getBtnAddQuiz()))){
+                (!e.getSource().equals(allQuizView.getBtnAddQuiz())) &&
+                (!e.getSource().equals(addQuizView.getBtnSave1())) &&
+                (!e.getSource().equals(addQuizView.getBtnSave2())) &&
+                (!e.getSource().equals(addQuizView.getBtnSave3()))){
             String state = "btnNull";
 //&&           
             ArrayList<CardCourseView> tmp = new ArrayList<>(cardCourse.getCardCourse());
@@ -222,6 +226,10 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if (e.getSource().equals(allQuizView.getBtnCourse())){
+            allQuizView.setVisible(false);
+            reAdminMainView();
+        }
 //        Login
         
         if (e.getSource().equals(adminMainView.getBtnCourse())){
@@ -261,18 +269,60 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             courseView.setVisible(false);
         }
         if (e.getSource().equals(addQuizView.getBtnSave1())){
-            quizModel.loadData(courseIdCurrent);
-            ArrayList<Quiz> quiz = courseModel.getCourse().get(courseIndexCurrent).getQuiz();
+            Choice quiz = new Choice(course.get(courseIndexCurrent).getQuiz().size() + 1, 
+                    addQuizView.getTfQuestion1().getText(),
+                    addQuizView.getTfChoiceA().getText(),
+                    addQuizView.getTfChoiceB().getText(),
+                    addQuizView.getTfChoiceC().getText(),
+                    addQuizView.getTfChoiceD().getText(),
+                    addQuizView.getBtngChoice().getSelection().getActionCommand(),
+                    "Choice");
+            course.get(courseIndexCurrent).getQuiz().add(quiz);
+            quizModel.saveData(courseIndexCurrent);
+            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+                System.out.println(i.getAnswer());
+            }
+        }
+        if (e.getSource().equals(addQuizView.getBtnSave2())){
+            String answer = "";
+            if(addQuizView.getCbMCA().isSelected()){
+                answer += "A";
+            }
+            if(addQuizView.getCbMCB().isSelected()){
+                answer += "B";
+            }
+            if(addQuizView.getCbMCC().isSelected()){
+                answer += "C";
+            }
+            if(addQuizView.getCbMCD().isSelected()){
+                answer += "D";
+            }
+            System.out.println(answer);
+            MultipleChoice quiz = new MultipleChoice(course.get(courseIndexCurrent).getQuiz().size() + 1, 
+                    addQuizView.getTfQuestion2().getText(),
+                    addQuizView.getMultiChoiceA().getText(),
+                    addQuizView.getMultiChoiceB().getText(),
+                    addQuizView.getMultiChoiceC().getText(),
+                    addQuizView.getMultiChoiceD().getText(),
+                    answer,
+                    "MultipleChoice");
+            course.get(courseIndexCurrent).getQuiz().add(quiz);
+            quizModel.saveData(courseIndexCurrent);
+            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+                System.out.println(i.getAnswer());
+            }
             
-            Choice choice = new Choice(quiz.size()+1, 
-                                        addQuizView.getTfQuestion1().getText(),
-                                        addQuizView.getTfChoiceA().getText(),
-                                        addQuizView.getTfChoiceB().getText(),
-                                        addQuizView.getTfChoiceC().getText(),
-                                        addQuizView.getTfChoiceD().getText(),
-                                        addQuizView.getBtngChoice().getSelection().getActionCommand(),
-                                        "Choice");
-            quiz.add(choice);
+        }
+        if (e.getSource().equals(addQuizView.getBtnSave3())){
+            FillAnswer quiz = new FillAnswer(course.get(courseIndexCurrent).getQuiz().size() + 1, 
+                    addQuizView.getTfQuestion3().getText(),
+                    addQuizView.getTfAnswer().getText(),
+                    "FillAnswer");
+            course.get(courseIndexCurrent).getQuiz().add(quiz);
+            quizModel.saveData(courseIndexCurrent);
+            for(Quiz i: course.get(courseIndexCurrent).getQuiz()){
+                System.out.println(i.getAnswer());
+            }
         }
     }
     @Override

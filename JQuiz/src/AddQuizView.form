@@ -237,7 +237,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="multiChoiceA">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField1"/>
                   </Properties>
@@ -247,7 +247,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="multiChoiceB">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField2"/>
                   </Properties>
@@ -257,7 +257,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="multiChoiceC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField3"/>
                   </Properties>
@@ -267,7 +267,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="multiChoiceD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField4"/>
                   </Properties>
@@ -277,7 +277,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                <Component class="javax.swing.JCheckBox" name="cbMCA">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="(A)"/>
                   </Properties>
@@ -287,7 +287,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                <Component class="javax.swing.JCheckBox" name="cbMCB">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="(B)"/>
                   </Properties>
@@ -297,7 +297,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                <Component class="javax.swing.JCheckBox" name="cbMCC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="(C)"/>
                   </Properties>
@@ -307,7 +307,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+                <Component class="javax.swing.JCheckBox" name="cbMCD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="(D)"/>
                   </Properties>
@@ -340,7 +340,7 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfQuestion4">
+                <Component class="javax.swing.JTextField" name="tfQuestion3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField3"/>
                   </Properties>

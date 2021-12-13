@@ -1,6 +1,7 @@
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 /*
@@ -62,7 +63,48 @@ public class AddQuizView extends javax.swing.JFrame {
     public JTextField getTfQuestion1() {
         return tfQuestion1;
     }
+
+    public JCheckBox getCbMCA() {
+        return cbMCA;
+    }
+
+    public JCheckBox getCbMCB() {
+        return cbMCB;
+    }
+
+    public JCheckBox getCbMCC() {
+        return cbMCC;
+    }
+
+    public JCheckBox getCbMCD() {
+        return cbMCD;
+    }
+
+    public JTextField getMultiChoiceA() {
+        return multiChoiceA;
+    }
+
+    public JTextField getMultiChoiceB() {
+        return multiChoiceB;
+    }
+
+    public JTextField getMultiChoiceC() {
+        return multiChoiceC;
+    }
+    public JTextField getMultiChoiceD() {
+        return multiChoiceD;
+    }
+    public JTextField getTfAnswer() {
+        return tfAnswer;
+    }
+
+    public JTextField getTfQuestion3() {
+        return tfQuestion3;
+    }
     
+    public JTextField getTfQuestion2() {
+        return tfQuestion2;
+    }
     
     
 
@@ -96,17 +138,17 @@ public class AddQuizView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tfQuestion2 = new javax.swing.JTextField();
         btnSave2 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        multiChoiceA = new javax.swing.JTextField();
+        multiChoiceB = new javax.swing.JTextField();
+        multiChoiceC = new javax.swing.JTextField();
+        multiChoiceD = new javax.swing.JTextField();
+        cbMCA = new javax.swing.JCheckBox();
+        cbMCB = new javax.swing.JCheckBox();
+        cbMCC = new javax.swing.JCheckBox();
+        cbMCD = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        tfQuestion4 = new javax.swing.JTextField();
+        tfQuestion3 = new javax.swing.JTextField();
         tfAnswer = new javax.swing.JTextField();
         btnSave3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -208,57 +250,57 @@ public class AddQuizView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         jPanel3.add(btnSave2, gridBagConstraints);
 
-        jTextField5.setText("jTextField1");
+        multiChoiceA.setText("jTextField1");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 49;
-        jPanel3.add(jTextField5, gridBagConstraints);
+        jPanel3.add(multiChoiceA, gridBagConstraints);
 
-        jTextField6.setText("jTextField2");
+        multiChoiceB.setText("jTextField2");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 49;
-        jPanel3.add(jTextField6, gridBagConstraints);
+        jPanel3.add(multiChoiceB, gridBagConstraints);
 
-        jTextField7.setText("jTextField3");
+        multiChoiceC.setText("jTextField3");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 49;
-        jPanel3.add(jTextField7, gridBagConstraints);
+        jPanel3.add(multiChoiceC, gridBagConstraints);
 
-        jTextField8.setText("jTextField4");
+        multiChoiceD.setText("jTextField4");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 49;
-        jPanel3.add(jTextField8, gridBagConstraints);
+        jPanel3.add(multiChoiceD, gridBagConstraints);
 
-        jCheckBox1.setText("(A)");
+        cbMCA.setText("(A)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        jPanel3.add(jCheckBox1, gridBagConstraints);
+        jPanel3.add(cbMCA, gridBagConstraints);
 
-        jCheckBox2.setText("(B)");
+        cbMCB.setText("(B)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        jPanel3.add(jCheckBox2, gridBagConstraints);
+        jPanel3.add(cbMCB, gridBagConstraints);
 
-        jCheckBox3.setText("(C)");
+        cbMCC.setText("(C)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        jPanel3.add(jCheckBox3, gridBagConstraints);
+        jPanel3.add(cbMCC, gridBagConstraints);
 
-        jCheckBox4.setText("(D)");
+        cbMCD.setText("(D)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        jPanel3.add(jCheckBox4, gridBagConstraints);
+        jPanel3.add(cbMCD, gridBagConstraints);
 
         jTabbedPane1.addTab("Multi Choice", jPanel3);
 
@@ -267,8 +309,8 @@ public class AddQuizView extends javax.swing.JFrame {
         jLabel4.setText("Question");
         jPanel4.add(jLabel4, new java.awt.GridBagConstraints());
 
-        tfQuestion4.setText("jTextField3");
-        jPanel4.add(tfQuestion4, new java.awt.GridBagConstraints());
+        tfQuestion3.setText("jTextField3");
+        jPanel4.add(tfQuestion3, new java.awt.GridBagConstraints());
 
         tfAnswer.setText("jTextField4");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -352,10 +394,10 @@ public class AddQuizView extends javax.swing.JFrame {
     private javax.swing.JButton btnSave2;
     private javax.swing.JButton btnSave3;
     private javax.swing.ButtonGroup btngChoice;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox cbMCA;
+    private javax.swing.JCheckBox cbMCB;
+    private javax.swing.JCheckBox cbMCC;
+    private javax.swing.JCheckBox cbMCD;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -366,10 +408,10 @@ public class AddQuizView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField multiChoiceA;
+    private javax.swing.JTextField multiChoiceB;
+    private javax.swing.JTextField multiChoiceC;
+    private javax.swing.JTextField multiChoiceD;
     private javax.swing.JRadioButton rbtnA;
     private javax.swing.JRadioButton rbtnB;
     private javax.swing.JRadioButton rbtnC;
@@ -381,6 +423,6 @@ public class AddQuizView extends javax.swing.JFrame {
     private javax.swing.JTextField tfChoiceD;
     private javax.swing.JTextField tfQuestion1;
     private javax.swing.JTextField tfQuestion2;
-    private javax.swing.JTextField tfQuestion4;
+    private javax.swing.JTextField tfQuestion3;
     // End of variables declaration//GEN-END:variables
 }

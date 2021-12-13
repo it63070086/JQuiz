@@ -9,13 +9,13 @@ public class CourseModel {
     private ResultSet rs = null;
     private PreparedStatement pst = null;
     public CourseModel(){
-        course = new ArrayList<Course>();
+        course = new ArrayList<>();
         con = Connect.ConnectDB();
     }
     public ArrayList<Course> getCourse(){
         return course;
     }
-    public void load(){
+    public void load(QuizModel quizModel){
         String selectSql = "SELECT * FROM course";
         try {
             pst = con.prepareStatement(selectSql);
@@ -23,7 +23,7 @@ public class CourseModel {
             course.clear();
             while (rs.next()){
                 Course acourse = new Course(Integer.parseInt(rs.getString("courseId")), rs.getString("courseName"), Integer.parseInt(rs.getString("CourseScore")), 
-                    rs.getString("CourseRelease"), rs.getString("CourseExpire"), rs.getString("CourseOwner"), new ArrayList<Quiz>());
+                    rs.getString("CourseRelease"), rs.getString("CourseExpire"), rs.getString("CourseOwner"), quizModel.loadData(Integer.parseInt(rs.getString("courseId"))));
                 course.add(acourse);
             }
         } catch (SQLException ex) {
