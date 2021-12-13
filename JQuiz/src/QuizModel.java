@@ -24,6 +24,7 @@ public class QuizModel{
             try (FileInputStream fin = new FileInputStream(f);
                 ObjectInputStream in = new ObjectInputStream(fin);){
                 quiz = (ArrayList<Quiz>) in.readObject();
+                System.out.println("Load Data to" + quizId + " Quiz");
                 return quiz;
             } catch (Exception i) {
                 return null;
@@ -39,11 +40,12 @@ public class QuizModel{
         }
     }
 //    young miatongcum
-    public boolean saveData(int quizId){
+    public boolean saveData(int quizId, ArrayList<Quiz> quiz){
         File f = new File("quiz/"+quizId+".JQuiz");
         try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
             oout.writeObject(quiz);
+            System.out.println("Save Quiz" +quizId);
             return true;
         } catch (Exception i) {
             return false;

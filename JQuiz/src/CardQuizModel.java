@@ -8,7 +8,4 @@ public class CardQuizModel {
     public ArrayList<CardQuizView> getCardCourse(){
         return cardQuiz;
     }
-    public void loadData(){
-       
-    }
 }
