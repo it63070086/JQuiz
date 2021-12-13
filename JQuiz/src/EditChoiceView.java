@@ -27,11 +27,12 @@ public class EditChoiceView extends javax.swing.JPanel {
         this.buttonGroup1.add(rbtnD);
     }
     public EditChoiceView(String question, String a, String b, String c, String d, String answer){
+        initComponents();
         this.tfQuestion.setText(question);
-        this.rbtnA.setText(a);
-        this.rbtnB.setText(b);
-        this.rbtnC.setText(c);
-        this.rbtnD.setText(d);
+        this.tfChoiceA.setText(a);
+        this.tfChoiceB.setText(b);
+        this.tfChoiceC.setText(c);
+        this.tfChoiceD.setText(d);
         
     }
 
@@ -82,13 +83,13 @@ public class EditChoiceView extends javax.swing.JPanel {
         tfQuestion = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         rbtnA = new javax.swing.JRadioButton();
-        jTextField6 = new javax.swing.JTextField();
+        tfChoiceA = new javax.swing.JTextField();
         rbtnC = new javax.swing.JRadioButton();
-        jTextField7 = new javax.swing.JTextField();
+        tfChoiceC = new javax.swing.JTextField();
         rbtnB = new javax.swing.JRadioButton();
-        jTextField8 = new javax.swing.JTextField();
+        tfChoiceB = new javax.swing.JTextField();
         rbtnD = new javax.swing.JRadioButton();
-        jTextField9 = new javax.swing.JTextField();
+        tfChoiceD = new javax.swing.JTextField();
         btnDelQuiz = new javax.swing.JButton();
         btnEditQuiz = new javax.swing.JButton();
 
@@ -107,11 +108,11 @@ public class EditChoiceView extends javax.swing.JPanel {
         gridBagConstraints.ipady = 4;
         jPanel2.add(rbtnA, gridBagConstraints);
 
-        jTextField6.setText("jTextField6");
+        tfChoiceA.setText("jTextField6");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
-        jPanel2.add(jTextField6, gridBagConstraints);
+        jPanel2.add(tfChoiceA, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -119,23 +120,23 @@ public class EditChoiceView extends javax.swing.JPanel {
         gridBagConstraints.ipady = 4;
         jPanel2.add(rbtnC, gridBagConstraints);
 
-        jTextField7.setText("jTextField7");
+        tfChoiceC.setText("jTextField7");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
-        jPanel2.add(jTextField7, gridBagConstraints);
+        jPanel2.add(tfChoiceC, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
         jPanel2.add(rbtnB, gridBagConstraints);
 
-        jTextField8.setText("jTextField8");
+        tfChoiceB.setText("jTextField8");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
-        jPanel2.add(jTextField8, gridBagConstraints);
+        jPanel2.add(tfChoiceB, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -143,13 +144,13 @@ public class EditChoiceView extends javax.swing.JPanel {
         gridBagConstraints.ipady = 4;
         jPanel2.add(rbtnD, gridBagConstraints);
 
-        jTextField9.setText("jTextField9");
+        tfChoiceD.setText("jTextField9");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
-        jPanel2.add(jTextField9, gridBagConstraints);
+        jPanel2.add(tfChoiceD, gridBagConstraints);
 
         add(jPanel2);
 
@@ -170,14 +171,14 @@ public class EditChoiceView extends javax.swing.JPanel {
     private javax.swing.JButton btnEditQuiz;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton rbtnA;
     private javax.swing.JRadioButton rbtnB;
     private javax.swing.JRadioButton rbtnC;
     private javax.swing.JRadioButton rbtnD;
+    private javax.swing.JTextField tfChoiceA;
+    private javax.swing.JTextField tfChoiceB;
+    private javax.swing.JTextField tfChoiceC;
+    private javax.swing.JTextField tfChoiceD;
     private javax.swing.JTextField tfQuestion;
     // End of variables declaration//GEN-END:variables
 }

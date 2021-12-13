@@ -1,11 +1,11 @@
 
 import java.util.ArrayList;
 public class CardQuizModel {
-    private ArrayList<CardQuizView> cardQuiz;
+    private ArrayList cardQuiz;
     public CardQuizModel(){
-        cardQuiz = new ArrayList<CardQuizView>();
+        cardQuiz = new ArrayList();
     }
-    public ArrayList<CardQuizView> getCardQuiz(){
+    public ArrayList getCardQuiz(){
         return cardQuiz;
     }
     
