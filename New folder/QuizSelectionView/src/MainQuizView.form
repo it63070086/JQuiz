@@ -107,14 +107,11 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="kGradientPanel3" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="kGradientPanel4" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="kGradientPanel3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="kGradientPanel4" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -338,41 +335,15 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="textAns1" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="multiple2" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="selectionC1" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace pref="618" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="734" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="multiple2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                          <Component id="selectionC1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                          <Component id="textAns1" min="-2" pref="329" max="-2" attributes="0"/>
-                          <EmptySpace pref="277" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="839" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
-              <SubComponents>
-                <Component class="Multiple" name="multiple2">
-                </Component>
-                <Component class="SelectionC" name="selectionC1">
-                </Component>
-                <Component class="TextAns" name="textAns1">
-                </Component>
-              </SubComponents>
             </Container>
           </SubComponents>
         </Container>
