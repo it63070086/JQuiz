@@ -56,7 +56,7 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 153, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(153, 51, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 255));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -290,7 +290,7 @@ public class Register extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        kGradientPanel2.setkEndColor(new java.awt.Color(153, 51, 255));
+        kGradientPanel2.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel2.setkStartColor(new java.awt.Color(255, 153, 153));
         kGradientPanel2.setPreferredSize(new java.awt.Dimension(100, 2));
 
