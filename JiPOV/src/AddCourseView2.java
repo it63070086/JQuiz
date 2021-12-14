@@ -37,9 +37,7 @@ public class AddCourseView2 extends javax.swing.JPanel {
         kGradientPanel3 = new keeptoo.KGradientPanel();
         jLabel4 = new javax.swing.JLabel();
         kGradientPanel4 = new keeptoo.KGradientPanel();
-        jDatePicker_Date1 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
         jLabel5 = new javax.swing.JLabel();
-        jDatePicker_Date2 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
         kGradientPanel9 = new keeptoo.KGradientPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -132,13 +130,11 @@ public class AddCourseView2 extends javax.swing.JPanel {
         );
 
         jPanel3.add(kGradientPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 300, 2));
-        jPanel3.add(jDatePicker_Date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Course Release :");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 140, 40));
-        jPanel3.add(jDatePicker_Date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 140, 150, -1));
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
@@ -253,8 +249,6 @@ public class AddCourseView2 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date1;
-    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -38,11 +38,9 @@ public class AddCourseView extends javax.swing.JPanel {
         kGradientPanel5 = new keeptoo.KGradientPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jDatePicker_Date2 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
         kGradientPanel7 = new keeptoo.KGradientPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jDatePicker_Date1 = new net.sourceforge.jdatepicker.impl.JDatePicker_Date();
         kGradientPanel9 = new keeptoo.KGradientPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -133,17 +131,6 @@ public class AddCourseView extends javax.swing.JPanel {
         jLabel4.setText("Course Release:");
         jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 8, 150, 50));
 
-        jDatePicker_Date2.setBackground(new java.awt.Color(255, 255, 255));
-        jDatePicker_Date2.setForeground(new java.awt.Color(0, 0, 0));
-        jDatePicker_Date2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jDatePicker_Date2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jDatePicker_Date2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jDatePicker_Date2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jDatePicker_Date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 180, -1));
-
         javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
         kGradientPanel5.setLayout(kGradientPanel5Layout);
         kGradientPanel5Layout.setHorizontalGroup(
@@ -167,15 +154,6 @@ public class AddCourseView extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Course Expire:");
 
-        jDatePicker_Date1.setBackground(new java.awt.Color(255, 255, 255));
-        jDatePicker_Date1.setForeground(new java.awt.Color(0, 0, 0));
-        jDatePicker_Date1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jDatePicker_Date1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jDatePicker_Date1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -183,19 +161,13 @@ public class AddCourseView extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(jDatePicker_Date1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jDatePicker_Date1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
 
         javax.swing.GroupLayout kGradientPanel7Layout = new javax.swing.GroupLayout(kGradientPanel7);
@@ -320,8 +292,6 @@ public class AddCourseView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date1;
-    private net.sourceforge.jdatepicker.impl.JDatePicker_Date jDatePicker_Date2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
