@@ -49,6 +49,7 @@ public class AdminMainView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnCourse = new javax.swing.JButton();
         btnAddCourse = new javax.swing.JButton();
+        btnUser = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         cardPanel = new javax.swing.JPanel();
@@ -84,6 +85,10 @@ public class AdminMainView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAddCourse);
+
+        btnUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnUser.setText("User");
+        jPanel1.add(btnUser);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 200));
@@ -177,6 +182,7 @@ public class AdminMainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCourse;
     private javax.swing.JButton btnCourse;
+    private javax.swing.JButton btnUser;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

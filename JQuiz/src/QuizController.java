@@ -3,7 +3,6 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 import java.awt.event.*;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,6 +45,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         loginView.setVisible(true);
         loginView.setLocationRelativeTo(null);
 //        addevent
+        scoreView.addWindowListener(this);
         quizView.getBtnCourse().addActionListener(this);
         addCourseView.addWindowListener(this);
         loginView.getBtnReg().addActionListener(this);
@@ -605,13 +605,13 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             submitted = submittedModel.getSubmitted();
             submitted.add(sendSubmit);
             submittedModel.saveData(courseIdCurrent, submitted);
-            System.out.println(submitted + "Add Sub");
+            JOptionPane.showMessageDialog(null, 
+                    "Your Score Is "+(int) Math.round(score)+"/"+course.get(courseIndexCurrent).getCourseScore()+"\nPercentage "+(int) Math.round(score)*100/course.get(courseIndexCurrent).getCourseScore()+"%",
+                    "Your Score",
+                    JOptionPane.INFORMATION_MESSAGE);
+            scoreView.setVisible(false);
+            courseView.setVisible(true);
             
-            scoreView.setVisible(true);
-            scoreView.getTbScore().setModel(scoreView.getTableModel());
-            System.out.println(score);
-            Object[] objs = {userNameCurrent, (int) Math.round(score), formattedDateTime};
-            scoreView.getTableModel().addRow(objs);
         }
         if (e.getSource().equals(quizView.getBtnCourse())){
             quizView.dispose();
@@ -622,7 +622,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             scoreView.setVisible(true);
         }
         if (e.getSource().equals(scoreView.getBtnCourse())){
-            scoreView.dispose();
+            scoreView.setVisible(false);
             courseView.setVisible(true);
         }
     }
@@ -655,6 +655,19 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         if (we.getSource().equals(adminMainView)){
             reAdminMainView();
+        }
+        if (we.getSource().equals(scoreView)){
+            
+            scoreView.getTbScore().removeAll();
+//            scoreView.repaint();
+            submittedModel.loadData(courseIdCurrent);
+            scoreView.getTbScore().setModel(scoreView.getTableModel());
+            ArrayList <Submitted> submitted = submittedModel.getSubmitted();
+            for (int i=0; i < submitted.size(); i++){
+                Object[] objs = {submitted.get(i).getName(), (int) Math.round(submitted.get(i).getScore()), submitted.get(i).getDate()};
+                scoreView.getTableModel().addRow(objs);
+            }
+            scoreView.setVisible(true);
         }
     }
     @Override
