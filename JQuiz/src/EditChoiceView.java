@@ -56,6 +56,23 @@ public class EditChoiceView extends javax.swing.JPanel {
     public JTextField getTfQuestion() {
         return tfQuestion;
     }
+
+    public JTextField getTfChoiceA() {
+        return tfChoiceA;
+    }
+
+    public JTextField getTfChoiceB() {
+        return tfChoiceB;
+    }
+
+    public JTextField getTfChoiceC() {
+        return tfChoiceC;
+    }
+
+    public JTextField getTfChoiceD() {
+        return tfChoiceD;
+    }
+    
     
     
     /**

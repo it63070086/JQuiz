@@ -45,7 +45,7 @@ public class QuizModel{
         try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
             oout.writeObject(quiz);
-            System.out.println("Save Quiz" +quizId);
+            System.out.println("Save Quiz " +quizId);
             return true;
         } catch (Exception i) {
             return false;
