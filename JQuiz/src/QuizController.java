@@ -19,6 +19,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private AddQuizView addQuizView = new AddQuizView();
     private CardQuizModel cardQuiz = new CardQuizModel();
     private QuizView quizView = new QuizView();
+    private SubmittedModel submittedModel = new SubmittedModel();
     private int courseIdCurrent = 0;
     private int courseIndexCurrent = 0;
     private int lastestId = 0;
@@ -229,7 +230,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     public void actionPerformed(ActionEvent e) {
 //        Show AddCourse
         if (e.getSource().equals(adminMainView.getBtnAddCourse())){
-            adminMainView.setAlwaysOnTop(false);
             adminMainView.setEnabled(false);
             addCourseView.setVisible(true);
             addCourseView.setLocationRelativeTo(null);
@@ -244,6 +244,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     addCourseView.getTfCourseRelease().getText(), 
                     addCourseView.getTfCourseExpire().getText(),
                     userNameCurrent,
+                    
                     new QuizModel(lastestId+1).getQuiz()));
             courseModel.save(addCourseView.getTfCourseName().getText(), 
                     Integer.parseInt(addCourseView.getTfCourseScore().getText()),
@@ -253,7 +254,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     reAdminMainView();
                     addCourseView.dispose();
                     adminMainView.setEnabled(true);
-                    adminMainView.setAlwaysOnTop(true);
+                    submittedModel.createSubmitted(courseIdCurrent);
         }
 //        Login WIth User
         if ((this.userRoleCurrent.equals("Student"))&& 
@@ -323,6 +324,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 adminMainView.setVisible(false);
             }
             if (checkEvent == 0){
+                System.out.println("test");
                 ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
                 ArrayList<Quiz> allQuizTmp = new ArrayList<>(allQuiz);
                 for (int i=0; i < allQuiz.size(); i++){
@@ -465,7 +467,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
 //        Add Quiz
         if (e.getSource().equals(allQuizView.getBtnAddQuiz())){
-            allQuizView.setAlwaysOnTop(false);
             allQuizView.setEnabled(false);
             addQuizView.setVisible(true);
             addQuizView.setLocationRelativeTo(null);
@@ -546,7 +547,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 e.getSource().equals(addQuizView.getBtnSave3())){
             addQuizView.setVisible(false);
             allQuizView.setEnabled(true);
-            allQuizView.setAlwaysOnTop(true);
             reAdminQuiz();
         }
         if (e.getSource().equals(quizView.getBtnSubmit())){
@@ -591,11 +591,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     public void windowClosed(WindowEvent we) {
         if (we.getSource().equals(addCourseView)){
             adminMainView.setEnabled(true);
-//            adminMainView.setAlwaysOnTop(true);
         }
         if (we.getSource().equals(addQuizView)){
             allQuizView.setEnabled(true);
-            allQuizView.setAlwaysOnTop(true);
         }
     }
     @Override

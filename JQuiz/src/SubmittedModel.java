@@ -7,6 +7,9 @@ import java.io.ObjectOutputStream;
 import java.util.*;
 public class SubmittedModel {
     private ArrayList<Submitted> submitted;
+    public SubmittedModel(){
+        
+    }
     public SubmittedModel(int courseId){
         submitted = new ArrayList<>();
         createSubmitted(courseId);
