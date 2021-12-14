@@ -566,12 +566,13 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //        submitted
         if (e.getSource().equals(quizView.getBtnSubmit())){
             ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
-            double score = 0;
+            double score = 0.0;
             for (int i=0; i<allQuiz.size(); i++){
                 String correct = allQuiz.get(i).getAnswer();
                 if (allQuiz.get(i).getType().equals("Choice")){
                     if (correct.equals(((ChoiceView)cardQuiz.getCardQuiz().get(i)).getButtonGroup1().getSelection().getActionCommand())){
-                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                        score += course.get(courseIndexCurrent).getCourseScore()*1.0/allQuiz.size();
+                        System.out.println(score);
                     } 
                 }
                 if (allQuiz.get(i).getType().equals("MultipleChoice")){
@@ -586,12 +587,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         answer += "D";
                     }
                     if (correct.equals(answer)){
-                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                        score += course.get(courseIndexCurrent).getCourseScore()*1.0/allQuiz.size();
                     }    
                 }
                 if (allQuiz.get(i).getType().equals("FillAnswer")){
                     if (correct.equals(((FillAnswerView)cardQuiz.getCardQuiz().get(i)).getTfAnswer().getText())){
-                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                        score += course.get(courseIndexCurrent).getCourseScore()*1.0/allQuiz.size();
                     }
                 }
             }
@@ -600,15 +601,17 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
             String formattedDateTime = currentDateTime.format(formatter);
             Submitted sendSubmit = new Submitted(userNameCurrent, (int) Math.round(score), formattedDateTime);
-            System.out.println(submitted + " Before");
-            submittedModel.saveData(courseIdCurrent, submitted);
             submittedModel.loadData(courseIdCurrent);
             submitted = submittedModel.getSubmitted();
-            System.out.println(submitted+" After");
             submitted.add(sendSubmit);
+            submittedModel.saveData(courseIdCurrent, submitted);
+            System.out.println(submitted + "Add Sub");
             
-//            Object[] objs = {userNameCurrent, (int) Math.round(score), formattedDateTime};
-//            scoreView.getTableModel().addRow(objs);
+            scoreView.setVisible(true);
+            scoreView.getTbScore().setModel(scoreView.getTableModel());
+            System.out.println(score);
+            Object[] objs = {userNameCurrent, (int) Math.round(score), formattedDateTime};
+            scoreView.getTableModel().addRow(objs);
         }
         if (e.getSource().equals(quizView.getBtnCourse())){
             quizView.dispose();

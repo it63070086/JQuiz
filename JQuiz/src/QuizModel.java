@@ -24,7 +24,7 @@ public class QuizModel{
             try (FileInputStream fin = new FileInputStream(f);
                 ObjectInputStream in = new ObjectInputStream(fin);){
                 quiz = (ArrayList<Quiz>) in.readObject();
-                System.out.println("Load Data to" + quizId + " Quiz");
+//                System.out.println("Load Data to" + quizId + " Quiz");
                 return quiz;
             } catch (Exception i) {
                 return null;
@@ -33,10 +33,10 @@ public class QuizModel{
         return null;
     }
     public void deleteData(int quizId){
-        System.out.println(quizId);
+//        System.out.println(quizId);
         File myObj = new File("quiz/"+quizId+".JQuiz"); 
         if (myObj.delete()) {
-          System.out.println("Deleted the file: " + myObj.getName());
+//          System.out.println("Deleted the file: " + myObj.getName());
         }
     }
 //    young miatongcum
@@ -45,7 +45,7 @@ public class QuizModel{
         try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
             oout.writeObject(quiz);
-            System.out.println("Save Quiz " +quizId);
+//            System.out.println("Save Quiz " +quizId);
             return true;
         } catch (Exception i) {
             return false;

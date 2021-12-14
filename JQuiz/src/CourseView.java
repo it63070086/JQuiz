@@ -4,7 +4,6 @@ public class CourseView extends javax.swing.JFrame {
     public CourseView() {
         initComponents();
     }
-
     public JLabel getLbCourseName() {
         return lbCourseName;
     }

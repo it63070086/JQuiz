@@ -8,16 +8,13 @@ import java.util.*;
 public class SubmittedModel {
     private ArrayList<Submitted> submitted;
     public SubmittedModel(){
-        
+        submitted = new ArrayList<>();
     }
     public SubmittedModel(int courseId){
         submitted = new ArrayList<>();
         createSubmitted(courseId);
     }
 
-    SubmittedModel(String userNameCurrent, int parseInt, String formattedDateTime) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     public ArrayList<Submitted> getSubmitted() {
         return submitted;
     }
@@ -31,14 +28,16 @@ public class SubmittedModel {
         }
     }
     public ArrayList<Submitted> loadData(int submittedId){
+        System.out.println("ID SUBMITTED " + submittedId);
         File f = new File("submitted/"+submittedId+".JQuiz");
         if (f.exists()) {
             try (FileInputStream fin = new FileInputStream(f);
                 ObjectInputStream in = new ObjectInputStream(fin);){
                 submitted = (ArrayList<Submitted>) in.readObject();
-                System.out.println("Load Data to" + submittedId + " Submitted");
+                System.out.println("Load Data to " + submittedId + " Submitted");
                 return submitted;
             } catch (Exception i) {
+                System.out.println("NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLlll");
                 return null;
             }
         }
