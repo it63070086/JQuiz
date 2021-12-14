@@ -1,33 +1,35 @@
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
-public class CourseView extends javax.swing.JFrame {
-    public CourseView() {
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class ScoreView extends javax.swing.JFrame {
+    private DefaultTableModel tableModel;
+    public ScoreView() {
         initComponents();
+        String col[] = {"Username", "Score", "Submit Time"};
+        tableModel  = new DefaultTableModel(col, 0);
+    }
+    public DefaultTableModel getTableModel() {
+        return tableModel;
+    }
+
+    public JButton getBtnCourse() {
+        return btnCourse;
     }
 
     public JLabel getLbCourseName() {
         return lbCourseName;
     }
 
-
     public JLabel getLbUserName() {
         return lbUserName;
     }
 
-
-    public JButton getBtnCourse() {
-        return btnCourse;
+    public JTable getTbScore() {
+        return tbScore;
     }
-
-    public JButton getBtnAllQuiz() {
-        return btnAllQuiz;
-    }
-
-    public JButton getBtnCourseScore() {
-        return btnCourseScore;
-    }
-    
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -40,9 +42,8 @@ public class CourseView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbCourseName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        btnAllQuiz = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        btnCourseScore = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbScore = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,27 +75,25 @@ public class CourseView extends javax.swing.JFrame {
         lbCourseName.setText("Problem Solving in Information Technology 2021 (IT) ");
         jPanel2.add(lbCourseName, java.awt.BorderLayout.PAGE_START);
 
-        jPanel3.setLayout(new java.awt.GridBagLayout());
+        jPanel3.setMinimumSize(new java.awt.Dimension(50, 26));
+        jPanel3.setLayout(new java.awt.CardLayout());
 
-        btnAllQuiz.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnAllQuiz.setText("Available Quiz");
-        btnAllQuiz.setPreferredSize(new java.awt.Dimension(240, 200));
-        jPanel3.add(btnAllQuiz, new java.awt.GridBagConstraints());
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton4.setText("Student Attend");
-        jButton4.setPreferredSize(new java.awt.Dimension(240, 200));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        tbScore.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        });
-        jPanel3.add(jButton4, new java.awt.GridBagConstraints());
+        ));
+        jScrollPane1.setViewportView(tbScore);
 
-        btnCourseScore.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnCourseScore.setText("Course Score");
-        btnCourseScore.setPreferredSize(new java.awt.Dimension(240, 200));
-        jPanel3.add(btnCourseScore, new java.awt.GridBagConstraints());
+        jPanel3.add(jScrollPane1, "card2");
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -110,10 +109,10 @@ public class CourseView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -124,13 +123,6 @@ public class CourseView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCourseActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -145,34 +137,33 @@ public class CourseView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CourseView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScoreView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CourseView().setVisible(true);
+                new ScoreView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAllQuiz;
     private javax.swing.JButton btnCourse;
-    private javax.swing.JButton btnCourseScore;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbCourseName;
     private javax.swing.JLabel lbUserName;
+    private javax.swing.JTable tbScore;
     // End of variables declaration//GEN-END:variables
 }

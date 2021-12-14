@@ -19,6 +19,10 @@ public class MultiChoiceView extends javax.swing.JPanel {
         this.lbB.setText(b);
         this.lbC.setText(c);
         this.lbD.setText(d);   
+        this.cbA.setActionCommand("A");
+        this.cbB.setActionCommand("B");
+        this.cbC.setActionCommand("C");
+        this.cbD.setActionCommand("D");
     }
     public JCheckBox getCbA() {
         return cbA;

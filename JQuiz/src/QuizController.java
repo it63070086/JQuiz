@@ -2,6 +2,9 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.awt.event.*;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class QuizController implements ActionListener, KeyListener, WindowListener, MouseListener{
@@ -20,6 +23,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private CardQuizModel cardQuiz = new CardQuizModel();
     private QuizView quizView = new QuizView();
     private SubmittedModel submittedModel = new SubmittedModel();
+    private ScoreView scoreView = new ScoreView();
     private int courseIdCurrent = 0;
     private int courseIndexCurrent = 0;
     private int lastestId = 0;
@@ -64,7 +68,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         allQuizView.getBtnCourse().addActionListener(this);
         quizView.getBtnSubmit().addActionListener(this);
         allQuizView.addWindowListener(this);
-        
+        courseView.getBtnCourseScore().addActionListener(this);
+        scoreView.getBtnCourse().addActionListener(this);
     }   
     public static void main(String[] args) {
         new QuizController();
@@ -272,7 +277,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 (!e.getSource().equals(addCourseView.getBtnCreateCourse()))){
             for (int i=0; i < cardCourse.getCardCourse().size(); i++){
                 if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnEnter())){
-                  courseView.setVisible(true);
+                    mainView.setVisible(false);
+                    courseView.setVisible(true);
                     courseView.setLocationRelativeTo(null);
                     courseView.getLbCourseName().setText(course.get(i).getCourseName());
                     courseView.getLbUserName().setText(userNameCurrent);
@@ -560,14 +566,62 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //        submitted
         if (e.getSource().equals(quizView.getBtnSubmit())){
             ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
+            double score = 0;
             for (int i=0; i<allQuiz.size(); i++){
+                String correct = allQuiz.get(i).getAnswer();
                 if (allQuiz.get(i).getType().equals("Choice")){
-//                    (()cardQuiz.getCardQuiz().get(i))
+                    if (correct.equals(((ChoiceView)cardQuiz.getCardQuiz().get(i)).getButtonGroup1().getSelection().getActionCommand())){
+                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                    } 
                 }
-                
+                if (allQuiz.get(i).getType().equals("MultipleChoice")){
+                    String answer = "";
+                    if (((MultiChoiceView)cardQuiz.getCardQuiz().get(i)).getCbA().isSelected()){
+                        answer += "A";
+                    }if (((MultiChoiceView)cardQuiz.getCardQuiz().get(i)).getCbB().isSelected()){
+                        answer += "B";
+                    }if (((MultiChoiceView)cardQuiz.getCardQuiz().get(i)).getCbC().isSelected()){
+                        answer += "C";
+                    }if (((MultiChoiceView)cardQuiz.getCardQuiz().get(i)).getCbD().isSelected()){
+                        answer += "D";
+                    }
+                    if (correct.equals(answer)){
+                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                    }    
+                }
+                if (allQuiz.get(i).getType().equals("FillAnswer")){
+                    if (correct.equals(((FillAnswerView)cardQuiz.getCardQuiz().get(i)).getTfAnswer().getText())){
+                        score += course.get(courseIndexCurrent).getCourseScore()/allQuiz.size();
+                    }
+                }
             }
-//            submittedModel.saveData(courseId, submitted)
-        } 
+            //                    Send To Submitted 
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+            String formattedDateTime = currentDateTime.format(formatter);
+            Submitted sendSubmit = new Submitted(userNameCurrent, (int) Math.round(score), formattedDateTime);
+            System.out.println(submitted + " Before");
+            submittedModel.saveData(courseIdCurrent, submitted);
+            submittedModel.loadData(courseIdCurrent);
+            submitted = submittedModel.getSubmitted();
+            System.out.println(submitted+" After");
+            submitted.add(sendSubmit);
+            
+//            Object[] objs = {userNameCurrent, (int) Math.round(score), formattedDateTime};
+//            scoreView.getTableModel().addRow(objs);
+        }
+        if (e.getSource().equals(quizView.getBtnCourse())){
+            quizView.dispose();
+            courseView.setVisible(true);
+        }
+        if (e.getSource().equals(courseView.getBtnCourseScore())){
+            courseView.setVisible(false);
+            scoreView.setVisible(true);
+        }
+        if (e.getSource().equals(scoreView.getBtnCourse())){
+            scoreView.dispose();
+            courseView.setVisible(true);
+        }
     }
     @Override
     public void keyTyped(KeyEvent ke) {

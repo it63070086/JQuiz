@@ -1,9 +1,7 @@
 
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 public class ChoiceView extends javax.swing.JPanel {
     public ChoiceView() {
         initComponents();
@@ -14,6 +12,10 @@ public class ChoiceView extends javax.swing.JPanel {
     }
     public ChoiceView(String question, String a, String b, String c, String d, String answer){
         initComponents();
+        rbtnA.setActionCommand("A");
+        rbtnB.setActionCommand("B");
+        rbtnC.setActionCommand("C");
+        rbtnD.setActionCommand("D");
         this.buttonGroup1.add(rbtnA);
         this.buttonGroup1.add(rbtnB);
         this.buttonGroup1.add(rbtnC);
@@ -23,6 +25,7 @@ public class ChoiceView extends javax.swing.JPanel {
         this.lbB.setText(b);
         this.lbC.setText(c);
         this.lbD.setText(d);
+        
         
     }
 

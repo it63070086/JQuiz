@@ -14,6 +14,10 @@ public class SubmittedModel {
         submitted = new ArrayList<>();
         createSubmitted(courseId);
     }
+
+    SubmittedModel(String userNameCurrent, int parseInt, String formattedDateTime) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public ArrayList<Submitted> getSubmitted() {
         return submitted;
     }
