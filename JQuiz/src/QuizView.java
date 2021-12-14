@@ -1,4 +1,9 @@
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
 public class QuizView extends javax.swing.JFrame {
 
     /**
@@ -8,6 +13,26 @@ public class QuizView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnSubmit() {
+        return btnSubmit;
+    }
+
+    public JButton getBtnCourse() {
+        return btnCourse;
+    }
+
+    public JLabel getLbCourseName() {
+        return lbCourseName;
+    }
+
+    public JLabel getLbUserName() {
+        return lbUserName;
+    }
+
+    public JPanel getCardPanel() {
+        return cardPanel;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -16,17 +41,16 @@ public class QuizView extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lbUserName = new javax.swing.JLabel();
+        btnCourse = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        lbCourseName = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cardPanel = new javax.swing.JPanel();
+        btnSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,59 +61,33 @@ public class QuizView extends javax.swing.JFrame {
         jLabel1.setText("JQuiz");
         jPanel1.add(jLabel1);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Thiraphop Phokied");
-        jPanel1.add(jLabel3);
+        lbUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbUserName.setText("Thiraphop Phokied");
+        jPanel1.add(lbUserName);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Course");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCourse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCourse.setText("Course");
+        btnCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCourseActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
+        jPanel1.add(btnCourse);
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Problem Solving in Information Technology 2021 (IT) ");
-        jPanel2.add(jLabel2, java.awt.BorderLayout.PAGE_START);
+        lbCourseName.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbCourseName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbCourseName.setText("Problem Solving in Information Technology 2021 (IT) ");
+        jPanel2.add(lbCourseName, java.awt.BorderLayout.PAGE_START);
 
-        jPanel3.setLayout(new java.awt.GridBagLayout());
+        cardPanel.setPreferredSize(new java.awt.Dimension(200, 200));
+        jScrollPane1.setViewportView(cardPanel);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jPanel3.add(jPanel4, new java.awt.GridBagConstraints());
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        jPanel3.add(jPanel5, gridBagConstraints);
-
-        jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
+        btnSubmit.setText("Submit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,9 +95,14 @@ public class QuizView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSubmit)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -108,16 +111,17 @@ public class QuizView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSubmit))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCourseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,14 +159,14 @@ public class QuizView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCourse;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbCourseName;
+    private javax.swing.JLabel lbUserName;
     // End of variables declaration//GEN-END:variables
 }
