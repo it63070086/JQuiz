@@ -84,7 +84,7 @@ public class LoginView extends javax.swing.JFrame {
         tfUsername.setBackground(new java.awt.Color(255, 255, 255));
         tfUsername.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tfUsername.setForeground(new java.awt.Color(0, 0, 0));
-        tfUsername.setText("123");
+        tfUsername.setText("superoof");
         tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsernameActionPerformed(evt);
@@ -112,7 +112,7 @@ public class LoginView extends javax.swing.JFrame {
 
         tfUserPassword.setBackground(new java.awt.Color(255, 255, 255));
         tfUserPassword.setForeground(new java.awt.Color(0, 0, 0));
-        tfUserPassword.setText("123");
+        tfUserPassword.setText("superoof1200");
 
         kGradientPanel3.setkEndColor(new java.awt.Color(255, 153, 153));
         kGradientPanel3.setkStartColor(new java.awt.Color(153, 153, 255));

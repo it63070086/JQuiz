@@ -1,7 +1,9 @@
+import java.awt.Dimension;
 import java.util.*;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.sql.*;
 import java.awt.event.*;
+import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
@@ -9,6 +11,8 @@ import java.util.logging.Logger;
 public class QuizController implements ActionListener, KeyListener, WindowListener, MouseListener{
     private ArrayList<Course> course = new ArrayList<>();
     private LoginView loginView = new LoginView();
+    private AdminModel adminModel = new AdminModel();
+    private StudentModel studentModel = new StudentModel();
     private RegView regView = new RegView();
     private MainView mainView = new MainView();
     private CourseModel courseModel = new CourseModel();
@@ -21,6 +25,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private AddQuizView addQuizView = new AddQuizView();
     private CardQuizModel cardQuiz = new CardQuizModel();
     private QuizView quizView = new QuizView();
+    private AllUserView allUserView = new AllUserView();
     private SubmittedModel submittedModel = new SubmittedModel();
     private ScoreView scoreView = new ScoreView();
     private int courseIdCurrent = 0;
@@ -70,6 +75,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         allQuizView.addWindowListener(this);
         courseView.getBtnCourseScore().addActionListener(this);
         scoreView.getBtnCourse().addActionListener(this);
+        adminMainView.getBtnUser().addActionListener(this);
     }   
     public static void main(String[] args) {
         new QuizController();
@@ -270,10 +276,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 (!e.getSource().equals(adminMainView.getBtnAddCourse())) && 
                 (!e.getSource().equals(adminMainView.getBtnCourse())) &&
                 (!e.getSource().equals(courseView.getBtnAllQuiz())) &&
+                (!e.getSource().equals(courseView.getBtnCourse())) &&
                 (!e.getSource().equals(allQuizView.getBtnAddQuiz())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave1())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave2())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave3())) &&
+                (!e.getSource().equals(adminMainView.getBtnUser())) &&
                 (!e.getSource().equals(addCourseView.getBtnCreateCourse()))){
             for (int i=0; i < cardCourse.getCardCourse().size(); i++){
                 if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnEnter())){
@@ -292,10 +300,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 (!e.getSource().equals(adminMainView.getBtnAddCourse())) && 
                 (!e.getSource().equals(adminMainView.getBtnCourse())) &&
                 (!e.getSource().equals(courseView.getBtnAllQuiz())) &&
+                (!e.getSource().equals(courseView.getBtnCourse())) &&
                 (!e.getSource().equals(allQuizView.getBtnAddQuiz())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave1())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave2())) &&
                 (!e.getSource().equals(addQuizView.getBtnSave3())) &&
+                (!e.getSource().equals(adminMainView.getBtnUser())) &&
                 (!e.getSource().equals(addCourseView.getBtnCreateCourse()))){
             int checkEvent = 0;
             String state = "btnNull";
@@ -396,7 +406,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         }
                     }
                     if (allQuiz.get(i).getType().equals("FillAnswer")){
-                        EditFillAnswerView editFillAnswerView = ((EditFillAnswerView)cardQuiz.getCardQuiz().get(i));
+                            EditFillAnswerView editFillAnswerView = ((EditFillAnswerView)cardQuiz.getCardQuiz().get(i));
                         if (e.getSource().equals(((EditFillAnswerView)cardQuiz.getCardQuiz().get(i)).getBtnDelQuiz())){
                             allQuizTmp.remove(i);
                         }
@@ -624,6 +634,56 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         if (e.getSource().equals(scoreView.getBtnCourse())){
             scoreView.setVisible(false);
             courseView.setVisible(true);
+        }
+        if (e.getSource().equals(adminMainView.getBtnUser())){
+            allUserView.setVisible(true);
+            allUserView.getCardUser().removeAll();
+            adminModel.load();
+            ArrayList<Admin> admin = adminModel.getAdmin();
+            for (int i=0; i<admin.size(); i++){
+                int x = i;
+                JPanel jpBtn = new JPanel(new BorderLayout());
+                jpBtn.setSize(200, 40);
+                JButton btnUser = new JButton();
+                btnUser.setText(admin.get(i).getUsername());
+                jpBtn.add(btnUser);
+                btnUser.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        allUserView.getTfId().setText(String.valueOf(admin.get(x).getId()));
+                        allUserView.getTfUsername().setText(admin.get(x).getUsername());
+                        allUserView.getTfPassword().setText(admin.get(x).getPassword());
+                        allUserView.getTfFullname().setText(admin.get(x).getFullname());
+                        allUserView.getTfEmail().setText(admin.get(x).getEmail());
+                        allUserView.getTfRole().setText(admin.get(x).getRole());
+                    }
+                });
+                allUserView.getCardUser().add(jpBtn);
+            }
+            studentModel.load();
+            ArrayList<Student> student = studentModel.getStudent();
+            for (int i=0; i<student.size(); i++){
+                int x = i;
+                JPanel jpBtn = new JPanel(new BorderLayout());
+                jpBtn.setSize(200, 40);
+                JButton btnUser = new JButton();
+                btnUser.setText(student.get(i).getUsername());
+                jpBtn.add(btnUser);
+                btnUser.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        allUserView.getTfId().setText(String.valueOf(student.get(x).getId()));
+                        allUserView.getTfUsername().setText(student.get(x).getUsername());
+                        allUserView.getTfPassword().setText(student.get(x).getPassword());
+                        allUserView.getTfFullname().setText(student.get(x).getFullname());
+                        allUserView.getTfEmail().setText(student.get(x).getEmail());
+                        allUserView.getTfRole().setText(student.get(x).getRole());
+                    }
+                });
+                allUserView.getCardUser().add(jpBtn);
+            }
+            allUserView.getCardUser().repaint();
+            
         }
     }
     @Override
