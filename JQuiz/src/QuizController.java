@@ -121,6 +121,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                             multiChoice.getChoiceC(),
                             multiChoice.getChoiceD(),
                             multiChoice.getAnswer()));
+                    System.out.println(multiChoice.getAnswer() + "RE QUiz");
                     quizView.getCardPanel().add(((MultiChoiceView)cardQuiz.getCardQuiz().get(i)));
                     quizView.getCardPanel().setVisible(true);
                     break;
@@ -235,6 +236,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             addCourseView.setLocationRelativeTo(null);
         }
             ArrayList<Course> data = courseModel.getCourse();
+            ArrayList<Submitted> submitted = submittedModel.getSubmitted();
 //            Create Course
         if (e.getSource().equals(addCourseView.getBtnCreateCourse())){
             
@@ -251,10 +253,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     addCourseView.getTfCourseRelease().getText(),
                     addCourseView.getTfCourseExpire().getText(),
                     userNameCurrent);
+                    new SubmittedModel(lastestId+1).getSubmitted();
+                    submittedModel.saveData(lastestId+1, submitted);
                     reAdminMainView();
                     addCourseView.dispose();
                     adminMainView.setEnabled(true);
-                    submittedModel.createSubmitted(courseIdCurrent);
+                    
         }
 //        Login WIth User
         if ((this.userRoleCurrent.equals("Student"))&& 
@@ -309,8 +313,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         courseModel.delete(course.get(i).getCourseID());
                         quizModel.deleteData(course.get(i).getCourseID());
                         state = "btnRemove";
-                        checkEvent = 1;
+                        submittedModel.deleteData(course.get(i).getCourseID());
                     }
+                    checkEvent = 1;
                     
                 }
             }
@@ -323,6 +328,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             else{
                 adminMainView.setVisible(false);
             }
+            
             if (checkEvent == 0){
                 System.out.println("test");
                 ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
@@ -365,19 +371,20 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                             String answer = "";
                             if (editMultiChoiceView.getCbA().isSelected()){
                                 answer += "A";
-                            }else if (editMultiChoiceView.getCbB().isSelected()){
+                            }if (editMultiChoiceView.getCbB().isSelected()){
                                 answer += "B";
-                            }else if (editMultiChoiceView.getCbC().isSelected()){
+                            }if (editMultiChoiceView.getCbC().isSelected()){
                                 answer += "C";
-                            }else if (editMultiChoiceView.getCbD().isSelected()){
+                            }if (editMultiChoiceView.getCbD().isSelected()){
                                 answer += "D";
                             }
+                            System.out.println(answer + " Edit Quiz MultipleChoice");
                             allQuizTmp.set(i, new MultipleChoice(i+1, 
                                     editMultiChoiceView.getTfQuestion().getText(), 
                                     editMultiChoiceView.getTfCBA().getText(),
-                                    editMultiChoiceView.getTfCBA().getText(),
-                                    editMultiChoiceView.getTfCBA().getText(), 
-                                    editMultiChoiceView.getTfCBA().getText(), 
+                                    editMultiChoiceView.getTfCBB().getText(),
+                                    editMultiChoiceView.getTfCBC().getText(), 
+                                    editMultiChoiceView.getTfCBD().getText(), 
                                     answer,
                                     "MultipleChoice"));
                         }
@@ -515,6 +522,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             if(addQuizView.getCbMCD().isSelected()){
                 answer += "D";
             }
+            System.out.println(answer);
             MultipleChoice quiz = new MultipleChoice(course.get(courseIndexCurrent).getQuiz().size() + 1, 
                     addQuizView.getTfQuestion2().getText(),
                     addQuizView.getMultiChoiceA().getText(),
@@ -549,9 +557,17 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             allQuizView.setEnabled(true);
             reAdminQuiz();
         }
+//        submitted
         if (e.getSource().equals(quizView.getBtnSubmit())){
-            
-        }
+            ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
+            for (int i=0; i<allQuiz.size(); i++){
+                if (allQuiz.get(i).getType().equals("Choice")){
+//                    (()cardQuiz.getCardQuiz().get(i))
+                }
+                
+            }
+//            submittedModel.saveData(courseId, submitted)
+        } 
     }
     @Override
     public void keyTyped(KeyEvent ke) {

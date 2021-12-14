@@ -27,7 +27,7 @@ public class SubmittedModel {
         }
     }
     public ArrayList<Submitted> loadData(int submittedId){
-        File f = new File("quiz/"+submittedId+".JQuiz");
+        File f = new File("submitted/"+submittedId+".JQuiz");
         if (f.exists()) {
             try (FileInputStream fin = new FileInputStream(f);
                 ObjectInputStream in = new ObjectInputStream(fin);){
@@ -42,13 +42,13 @@ public class SubmittedModel {
     }
     public void deleteData(int submittedId){
         System.out.println(submittedId);
-        File myObj = new File("quiz/"+submittedId+".JQuiz"); 
+        File myObj = new File("submitted/"+submittedId+".JQuiz"); 
         if (myObj.delete()) {
-          System.out.println("Deleted the file: " + myObj.getName());
+            System.out.println("Delete File : Submitted " + submittedId);
         }
     }
     public boolean saveData(int submittedId, ArrayList<Submitted> submitted){
-        File f = new File("quiz/"+submittedId+".JQuiz");
+        File f = new File("submitted/"+submittedId+".JQuiz");
         try(FileOutputStream fOut = new FileOutputStream(f);
             ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
             oout.writeObject(submitted);
