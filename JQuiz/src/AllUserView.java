@@ -8,6 +8,10 @@ public class AllUserView extends javax.swing.JFrame {
 
     public AllUserView() {
         initComponents();
+        this.btnSave.setVisible(false);
+        this.btnCancel.setVisible(false);
+        this.btnEdit.setEnabled(false);
+        this.btnDel.setEnabled(false);
     }
 
     public JButton getBtnAdd() {
@@ -49,6 +53,14 @@ public class AllUserView extends javax.swing.JFrame {
     public JTextField getTfUsername() {
         return tfUsername;
     }
+
+    public JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    public JButton getBtnSave() {
+        return btnSave;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -68,6 +80,8 @@ public class AllUserView extends javax.swing.JFrame {
         tfFullname = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         tfRole = new javax.swing.JTextField();
+        btnCancel = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
@@ -179,6 +193,18 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
         jPanel2.add(tfRole, gridBagConstraints);
+
+        btnCancel.setText("Cancel");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        jPanel2.add(btnCancel, gridBagConstraints);
+
+        btnSave.setText("SAVE");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 11;
+        jPanel2.add(btnSave, gridBagConstraints);
 
         jPanel3.setBackground(java.awt.Color.gray);
 
@@ -295,8 +321,10 @@ public class AllUserView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDel;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSave;
     private javax.swing.JPanel cardUser;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
