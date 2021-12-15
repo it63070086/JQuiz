@@ -30,6 +30,15 @@ public class ScoreView extends javax.swing.JFrame {
     public JTable getTbScore() {
         return tbScore;
     }
+
+    public JButton getBtnExportCSV() {
+        return btnExportCSV;
+    }
+
+    public JButton getBtnExportExcel() {
+        return btnExportExcel;
+    }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -39,6 +48,8 @@ public class ScoreView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lbUserName = new javax.swing.JLabel();
         btnCourse = new javax.swing.JButton();
+        btnExportExcel = new javax.swing.JButton();
+        btnExportCSV = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lbCourseName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -67,6 +78,12 @@ public class ScoreView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCourse);
+
+        btnExportExcel.setText("Export Excel");
+        jPanel1.add(btnExportExcel);
+
+        btnExportCSV.setText("Export CSV");
+        jPanel1.add(btnExportCSV);
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
@@ -157,6 +174,8 @@ public class ScoreView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCourse;
+    private javax.swing.JButton btnExportCSV;
+    private javax.swing.JButton btnExportExcel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

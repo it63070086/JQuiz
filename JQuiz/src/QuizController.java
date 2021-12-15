@@ -31,6 +31,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private AllUserView allUserView = new AllUserView();
     private SubmittedModel submittedModel = new SubmittedModel();
     private ScoreView scoreView = new ScoreView();
+    private ExportExcel exportExcel = new ExportExcel();
+    private ExportCSV exportCSV = new ExportCSV();
     private int courseIdCurrent = 0;
     private int courseIndexCurrent = 0;
     private int lastCourseId = 0;
@@ -83,6 +85,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         allQuizView.addWindowListener(this);
         courseView.getBtnCourseScore().addActionListener(this);
         scoreView.getBtnCourse().addActionListener(this);
+        scoreView.getBtnExportExcel().addActionListener(this);
+        scoreView.getBtnExportCSV().addActionListener(this);
         adminMainView.getBtnUser().addActionListener(this);
         allUserView.getBtnDel().addActionListener(this);
         allUserView.getBtnEdit().addActionListener(this);
@@ -285,6 +289,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     }
 //    fetch User
+
     public void reAllUserView() {
         allUserView.getCardUser().removeAll();
         allUserView.getCardUser().repaint();
@@ -351,6 +356,23 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void actionPerformed(ActionEvent e) {
+//      Export
+        if (e.getSource().equals(scoreView.getBtnExportExcel())) {
+            System.out.println("Excel");
+            if (exportExcel.exportExcel(courseIdCurrent, submittedModel.loadData(courseIdCurrent))) {
+                JOptionPane.showMessageDialog(null, "Export Excel File Success!", "Export Excel Success", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Export Excel File Fail!", "Export Excel Success", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        if (e.getSource().equals(scoreView.getBtnExportCSV())) {
+            System.out.println("CSV");
+            if (exportCSV.exportCSV(courseIdCurrent, submittedModel.loadData(courseIdCurrent))) {
+                JOptionPane.showMessageDialog(null, "Export CSV File Success!", "Export CSV Success", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Export CSV File Fail!", "Export CSV Success", JOptionPane.WARNING_MESSAGE);
+            }
+        }
 //        Show AddCourse
         if (e.getSource().equals(adminMainView.getBtnAddCourse())) {
             adminMainView.setEnabled(false);
@@ -417,6 +439,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 && (!e.getSource().equals(adminMainView.getBtnUser()))
                 && (!e.getSource().equals(courseView.getBtnCourseScore()))
                 && (!e.getSource().equals(scoreView.getBtnCourse()))
+                && (!e.getSource().equals(scoreView.getBtnExportCSV()))
+                && (!e.getSource().equals(scoreView.getBtnExportExcel()))
                 && (!e.getSource().equals(allUserView.getBtnDel()))
                 && (!e.getSource().equals(allUserView.getBtnAdd()))
                 && (!e.getSource().equals(allUserView.getBtnEdit()))
@@ -772,6 +796,19 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         if (e.getSource().equals(courseView.getBtnCourseScore())) {
             courseView.setVisible(false);
             scoreView.setVisible(true);
+            while (scoreView.getTableModel().getRowCount() > 0) {
+                scoreView.getTableModel().removeRow(0);
+            }
+            scoreView.getTbScore().repaint();
+            submittedModel.loadData(courseIdCurrent);
+            scoreView.getTbScore().setModel(scoreView.getTableModel());
+            submitted = submittedModel.getSubmitted();
+            for (int i = 0; i < submitted.size(); i++) {
+                Object[] objs = {submitted.get(i).getName(), (int) Math.round(submitted.get(i).getScore()), submitted.get(i).getDate()};
+                scoreView.getTableModel().addRow(objs);
+            }
+            scoreView.setVisible(true);
+
         }
         if (e.getSource().equals(scoreView.getBtnCourse())) {
             scoreView.setVisible(false);
@@ -861,16 +898,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         if (we.getSource().equals(scoreView)) {
 
-            scoreView.getTbScore().removeAll();
-//            scoreView.repaint();
-            submittedModel.loadData(courseIdCurrent);
-            scoreView.getTbScore().setModel(scoreView.getTableModel());
-            ArrayList<Submitted> submitted = submittedModel.getSubmitted();
-            for (int i = 0; i < submitted.size(); i++) {
-                Object[] objs = {submitted.get(i).getName(), (int) Math.round(submitted.get(i).getScore()), submitted.get(i).getDate()};
-                scoreView.getTableModel().addRow(objs);
-            }
-            scoreView.setVisible(true);
         }
     }
 

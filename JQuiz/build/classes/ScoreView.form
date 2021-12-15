@@ -78,6 +78,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCourseActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="btnExportExcel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Export Excel"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnExportCSV">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Export CSV"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
