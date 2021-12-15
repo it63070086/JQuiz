@@ -1,5 +1,4 @@
 
-import java.awt.Dimension;
 import java.util.*;
 import javax.swing.*;
 import java.sql.*;
@@ -45,27 +44,18 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private String state = "btnNull";
     private int checkEvent = 0;
 
-    public void ShowDataToForm() {
-        String selectSql = "SELECT * FROM course";
-        try {
-            pst = con.prepareStatement(selectSql);
-            rs = pst.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     public QuizController() {
         con = Connect.ConnectDB();
         loginView.setVisible(true);
         loginView.setLocationRelativeTo(null);
-//        addevent
+//        add event
         scoreView.addWindowListener(this);
         quizView.getBtnCourse().addActionListener(this);
         addCourseView.addWindowListener(this);
         loginView.getBtnReg().addActionListener(this);
         regView.getBtnReg().addActionListener(this);
         loginView.getBtnLogin().addMouseListener(this);
+        regView.addWindowListener(this);
         regView.getTfEmail().addKeyListener(this);
         mainView.addWindowListener(this);
         adminMainView.addWindowListener(this);
@@ -99,9 +89,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     public static void main(String[] args) {
         new QuizController();
     }
-
+//    re admin
     public void reAdminMainView() {
-        System.out.println("Test");
         adminMainView.getCardPanel().removeAll();
         adminMainView.getCardPanel().repaint();
         courseModel.load(quizModel);
@@ -155,8 +144,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         adminMainView.setLocationRelativeTo(null);
         adminMainView.setVisible(true);
     }
-//    quiz all
-
+//    re quiz
     public void reQuiz() {
         quizView.getCardPanel().removeAll();
         quizView.getCardPanel().repaint();
@@ -197,7 +185,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         quizView.setVisible(true);
     }
-
+// re adminQuiz
     public void reAdminQuiz() {
         allQuizView.getCardPanel().removeAll();
         allQuizView.getCardPanel().repaint();
@@ -205,7 +193,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
         cardQuiz.getCardQuiz().clear();
         for (int i = 0; i < allQuiz.size(); i++) {
-//            Choice Fetch
             switch (allQuiz.get(i).getType()) {
                 case "Choice":
                     Choice choice = ((Choice) allQuiz.get(i));
@@ -218,15 +205,22 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     EditChoiceView editChoiceView = ((EditChoiceView) cardQuiz.getCardQuiz().get(i));
                     editChoiceView.getBtnEditQuiz().addActionListener(this);
                     editChoiceView.getBtnDelQuiz().addActionListener(this);
-                    if (choice.getAnswer().equals("A")) {
-                        editChoiceView.getRbtnA().setSelected(true);
-                    } else if (choice.getAnswer().equals("B")) {
-                        editChoiceView.getRbtnB().setSelected(true);
-                    } else if (choice.getAnswer().equals("C")) {
-                        editChoiceView.getRbtnC().setSelected(true);
-                    } else if (choice.getAnswer().equals("D")) {
-                        editChoiceView.getRbtnD().setSelected(true);
-                    }
+            switch (choice.getAnswer()) {
+                case "A":
+                    editChoiceView.getRbtnA().setSelected(true);
+                    break;
+                case "B":
+                    editChoiceView.getRbtnB().setSelected(true);
+                    break;
+                case "C":
+                    editChoiceView.getRbtnC().setSelected(true);
+                    break;
+                case "D":
+                    editChoiceView.getRbtnD().setSelected(true);
+                    break;
+                default:
+                    break;
+            }
                     allQuizView.getCardPanel().add(((EditChoiceView) cardQuiz.getCardQuiz().get(i)));
                     allQuizView.getCardPanel().setVisible(true);
 //            MultipleChoice Fetch
@@ -305,19 +299,16 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             JButton btnUser = new JButton();
             btnUser.setText(admin.get(i).getUsername());
             jpBtn.add(btnUser);
-            btnUser.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    allUserView.getTfId().setText(String.valueOf(admin.get(x).getId()));
-                    allUserView.getTfUsername().setText(admin.get(x).getUsername());
-                    allUserView.getTfPassword().setText(admin.get(x).getPassword());
-                    allUserView.getTfFullname().setText(admin.get(x).getFullname());
-                    allUserView.getTfEmail().setText(admin.get(x).getEmail());
-                    allUserView.getTfRole().setText(admin.get(x).getRole());
-                    allUserView.getBtnEdit().setEnabled(true);
-                    allUserView.getBtnDel().setEnabled(true);
-                    allUserView.getBtnAdd().setEnabled(true);
-                }
+            btnUser.addActionListener((ActionEvent e) -> {
+                allUserView.getTfId().setText(String.valueOf(admin.get(x).getId()));
+                allUserView.getTfUsername().setText(admin.get(x).getUsername());
+                allUserView.getTfPassword().setText(admin.get(x).getPassword());
+                allUserView.getTfFullname().setText(admin.get(x).getFullname());
+                allUserView.getTfEmail().setText(admin.get(x).getEmail());
+                allUserView.getTfRole().setText(admin.get(x).getRole());
+                allUserView.getBtnEdit().setEnabled(true);
+                allUserView.getBtnDel().setEnabled(true);
+                allUserView.getBtnAdd().setEnabled(true);
             });
             allUserView.getCardUser().add(jpBtn);
         }
@@ -333,19 +324,16 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             JButton btnUser = new JButton();
             btnUser.setText(student.get(i).getUsername());
             jpBtn.add(btnUser);
-            btnUser.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    allUserView.getTfId().setText(String.valueOf(student.get(x).getId()));
-                    allUserView.getTfUsername().setText(student.get(x).getUsername());
-                    allUserView.getTfPassword().setText(student.get(x).getPassword());
-                    allUserView.getTfFullname().setText(student.get(x).getFullname());
-                    allUserView.getTfEmail().setText(student.get(x).getEmail());
-                    allUserView.getTfRole().setText(student.get(x).getRole());
-                    allUserView.getBtnEdit().setEnabled(true);
-                    allUserView.getBtnDel().setEnabled(true);
-                    allUserView.getBtnAdd().setEnabled(true);
-                }
+            btnUser.addActionListener((ActionEvent e) -> {
+                allUserView.getTfId().setText(String.valueOf(student.get(x).getId()));
+                allUserView.getTfUsername().setText(student.get(x).getUsername());
+                allUserView.getTfPassword().setText(student.get(x).getPassword());
+                allUserView.getTfFullname().setText(student.get(x).getFullname());
+                allUserView.getTfEmail().setText(student.get(x).getEmail());
+                allUserView.getTfRole().setText(student.get(x).getRole());
+                allUserView.getBtnEdit().setEnabled(true);
+                allUserView.getBtnDel().setEnabled(true);
+                allUserView.getBtnAdd().setEnabled(true);
             });
             allUserView.getCardUser().add(jpBtn);
             allUserView.getCardUser().repaint();
@@ -886,6 +874,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void windowOpened(WindowEvent we) {
+        
         if (we.getSource().equals(allQuizView)) {
             reAdminQuiz();
         }
@@ -903,6 +892,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void windowClosing(WindowEvent we) {
+        
     }
 
     @Override
@@ -912,6 +902,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         if (we.getSource().equals(addQuizView)) {
             allQuizView.setEnabled(true);
+        }
+        if (we.getSource().equals(regView)){
+            loginView.setVisible(true);
         }
     }
 
