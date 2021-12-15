@@ -121,7 +121,6 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 10;
         jPanel2.add(jLabel6, gridBagConstraints);
 
-        tfId.setBackground(null);
         tfId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfId.setForeground(new java.awt.Color(0, 0, 0));
         tfId.setMargin(new java.awt.Insets(0, 12, 0, 0));
@@ -131,7 +130,6 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         jPanel2.add(tfId, gridBagConstraints);
 
-        tfUsername.setBackground(null);
         tfUsername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfUsername.setForeground(new java.awt.Color(0, 0, 0));
         tfUsername.setMargin(new java.awt.Insets(0, 12, 0, 0));
@@ -141,7 +139,6 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         jPanel2.add(tfUsername, gridBagConstraints);
 
-        tfPassword.setBackground(null);
         tfPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfPassword.setForeground(new java.awt.Color(0, 0, 0));
         tfPassword.setMargin(new java.awt.Insets(0, 12, 0, 0));
@@ -151,17 +148,20 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         jPanel2.add(tfPassword, gridBagConstraints);
 
-        tfFullname.setBackground(null);
         tfFullname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfFullname.setForeground(new java.awt.Color(0, 0, 0));
         tfFullname.setMargin(new java.awt.Insets(0, 12, 0, 0));
         tfFullname.setPreferredSize(new java.awt.Dimension(200, 30));
+        tfFullname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFullnameActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
         jPanel2.add(tfFullname, gridBagConstraints);
 
-        tfEmail.setBackground(null);
         tfEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfEmail.setForeground(new java.awt.Color(0, 0, 0));
         tfEmail.setMargin(new java.awt.Insets(0, 12, 0, 0));
@@ -171,7 +171,6 @@ public class AllUserView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         jPanel2.add(tfEmail, gridBagConstraints);
 
-        tfRole.setBackground(null);
         tfRole.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tfRole.setForeground(new java.awt.Color(0, 0, 0));
         tfRole.setMargin(new java.awt.Insets(0, 12, 0, 0));
@@ -257,6 +256,10 @@ public class AllUserView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfFullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFullnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfFullnameActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

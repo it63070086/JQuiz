@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class QuizController implements ActionListener, KeyListener, WindowListener, MouseListener {
+
     private ArrayList<Course> course = new ArrayList<>();
     private LoginView loginView = new LoginView();
     private AdminModel adminModel = new AdminModel();
@@ -82,6 +83,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         courseView.getBtnCourseScore().addActionListener(this);
         scoreView.getBtnCourse().addActionListener(this);
         adminMainView.getBtnUser().addActionListener(this);
+        allUserView.getBtnDel().addActionListener(this);
+        allUserView.getBtnEdit().addActionListener(this);
+        allUserView.getBtnAdd().addActionListener(this);
     }
 
     public static void main(String[] args) {
@@ -122,9 +126,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     reAdminMainView();
                 }
             });
-            cardCourse.getCardCourse().get(i).getBtnRemove().addActionListener(new ActionListener(){
+            cardCourse.getCardCourse().get(i).getBtnRemove().addActionListener(new ActionListener() {
                 @Override
-                public void actionPerformed(ActionEvent e){
+                public void actionPerformed(ActionEvent e) {
                     ArrayList<CardCourseView> tmp = new ArrayList<>(cardCourse.getCardCourse());
                     int j = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
                     if (j == 0) {
@@ -138,7 +142,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     reAdminMainView();
                 }
             });
-            
+
         }
         adminMainView.setLocationRelativeTo(null);
         adminMainView.setVisible(true);
@@ -276,6 +280,55 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
 
     }
+    public void reAllUserView(){
+        allUserView.getCardUser().removeAll();
+        allUserView.getCardUser().repaint();
+        ArrayList<Admin> admin = adminModel.getAdmin();
+            for (int i = 0; i < admin.size(); i++) {
+                int x = i;
+                JPanel jpBtn = new JPanel(new BorderLayout());
+                jpBtn.setSize(200, 40);
+                JButton btnUser = new JButton();
+                btnUser.setText(admin.get(i).getUsername());
+                jpBtn.add(btnUser);
+                btnUser.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        allUserView.getTfId().setText(String.valueOf(admin.get(x).getId()));
+                        allUserView.getTfUsername().setText(admin.get(x).getUsername());
+                        allUserView.getTfPassword().setText(admin.get(x).getPassword());
+                        allUserView.getTfFullname().setText(admin.get(x).getFullname());
+                        allUserView.getTfEmail().setText(admin.get(x).getEmail());
+                        allUserView.getTfRole().setText(admin.get(x).getRole());
+                    }
+                });
+                allUserView.getCardUser().add(jpBtn);
+            }
+            studentModel.load();
+            ArrayList<Student> student = studentModel.getStudent();
+            for (int i = 0; i < student.size(); i++) {
+                int x = i;
+                JPanel jpBtn = new JPanel(new BorderLayout());
+                jpBtn.setSize(200, 40);
+                JButton btnUser = new JButton();
+                btnUser.setText(student.get(i).getUsername());
+                jpBtn.add(btnUser);
+                btnUser.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        allUserView.getTfId().setText(String.valueOf(student.get(x).getId()));
+                        allUserView.getTfUsername().setText(student.get(x).getUsername());
+                        allUserView.getTfPassword().setText(student.get(x).getPassword());
+                        allUserView.getTfFullname().setText(student.get(x).getFullname());
+                        allUserView.getTfEmail().setText(student.get(x).getEmail());
+                        allUserView.getTfRole().setText(student.get(x).getRole());
+                    }
+                });
+                allUserView.getCardUser().add(jpBtn);
+                allUserView.getCardUser().repaint();
+            }
+        allUserView.setVisible(true);
+    }
 //    Press BTN
 
     @Override
@@ -344,11 +397,16 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 && (!e.getSource().equals(addQuizView.getBtnSave2()))
                 && (!e.getSource().equals(addQuizView.getBtnSave3()))
                 && (!e.getSource().equals(adminMainView.getBtnUser()))
+                && (!e.getSource().equals(courseView.getBtnCourseScore()))
+                && (!e.getSource().equals(scoreView.getBtnCourse()))
+                && (!e.getSource().equals(allUserView.getBtnDel()))
+                && (!e.getSource().equals(allUserView.getBtnAdd()))
+                && (!e.getSource().equals(allUserView.getBtnEdit()))
                 && (!e.getSource().equals(addCourseView.getBtnCreateCourse()))) {
-            int checkEvent = 0;
-            String state = "btnNull";
+            checkEvent = 0;
+            state = "btnNull";
 //&&           
-            
+
             for (int i = 0; i < cardCourse.getCardCourse().size(); i++) {
 //                if (e.getSource().equals(cardCourse.getCardCourse().get(i).getBtnRemove())) {
 //                    int x = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
@@ -363,7 +421,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //
 //                }
             }
-
             switch (state) {
                 case "btnRemove":
                     cardCourse.getCardCourse().clear();
@@ -381,7 +438,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
                 ArrayList<Quiz> allQuizTmp = new ArrayList<>(allQuiz);
                 for (int i = 0; i < allQuiz.size(); i++) {
-
                     if (allQuiz.get(i).getType().equals("Choice")) {
                         EditChoiceView editChoiceView = ((EditChoiceView) cardQuiz.getCardQuiz().get(i));
                         Choice choice = ((Choice) allQuiz.get(i));
@@ -658,53 +714,39 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         if (e.getSource().equals(adminMainView.getBtnUser())) {
             allUserView.setVisible(true);
-            allUserView.getCardUser().removeAll();
             adminModel.load();
-            ArrayList<Admin> admin = adminModel.getAdmin();
-            for (int i = 0; i < admin.size(); i++) {
-                int x = i;
-                JPanel jpBtn = new JPanel(new BorderLayout());
-                jpBtn.setSize(200, 40);
-                JButton btnUser = new JButton();
-                btnUser.setText(admin.get(i).getUsername());
-                jpBtn.add(btnUser);
-                btnUser.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        allUserView.getTfId().setText(String.valueOf(admin.get(x).getId()));
-                        allUserView.getTfUsername().setText(admin.get(x).getUsername());
-                        allUserView.getTfPassword().setText(admin.get(x).getPassword());
-                        allUserView.getTfFullname().setText(admin.get(x).getFullname());
-                        allUserView.getTfEmail().setText(admin.get(x).getEmail());
-                        allUserView.getTfRole().setText(admin.get(x).getRole());
-                    }
-                });
-                allUserView.getCardUser().add(jpBtn);
-            }
-            studentModel.load();
-            ArrayList<Student> student = studentModel.getStudent();
-            for (int i = 0; i < student.size(); i++) {
-                int x = i;
-                JPanel jpBtn = new JPanel(new BorderLayout());
-                jpBtn.setSize(200, 40);
-                JButton btnUser = new JButton();
-                btnUser.setText(student.get(i).getUsername());
-                jpBtn.add(btnUser);
-                btnUser.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        allUserView.getTfId().setText(String.valueOf(student.get(x).getId()));
-                        allUserView.getTfUsername().setText(student.get(x).getUsername());
-                        allUserView.getTfPassword().setText(student.get(x).getPassword());
-                        allUserView.getTfFullname().setText(student.get(x).getFullname());
-                        allUserView.getTfEmail().setText(student.get(x).getEmail());
-                        allUserView.getTfRole().setText(student.get(x).getRole());
-                    }
-                });
-                allUserView.getCardUser().add(jpBtn);
-            }
-            allUserView.getCardUser().repaint();
+            reAllUserView();
+            
 
+        }
+        if (e.getSource().equals(allUserView.getBtnDel())){
+            if (allUserView.getTfRole().getText().equals("Admin")){
+                adminModel.delete(Integer.parseInt(allUserView.getTfId().getText()));
+                reAllUserView();
+            }else if(allUserView.getTfRole().getText().equals("Student")){
+                studentModel.delete(Integer.parseInt(allUserView.getTfId().getText()));
+                reAllUserView();
+                
+            }
+        }
+        if (e.getSource().equals(allUserView.getBtnEdit())){
+            if (allUserView.getTfRole().getText().equals("Admin")){
+                adminModel.edit(Integer.parseInt(allUserView.getTfId().getText()),
+                        allUserView.getTfUsername().getText(),
+                        allUserView.getTfPassword().getText(),
+                        allUserView.getTfFullname().getText(),
+                        allUserView.getTfEmail().getText(),
+                        allUserView.getTfRole().getText());
+                reAllUserView();
+            }else if(allUserView.getTfRole().getText().equals("Student")){
+                studentModel.edit(Integer.parseInt(allUserView.getTfId().getText()),
+                        allUserView.getTfUsername().getText(),
+                        allUserView.getTfPassword().getText(),
+                        allUserView.getTfFullname().getText(),
+                        allUserView.getTfEmail().getText(),
+                        allUserView.getTfRole().getText());
+                reAllUserView();
+            }
         }
     }
 

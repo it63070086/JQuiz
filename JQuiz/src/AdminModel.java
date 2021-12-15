@@ -52,7 +52,7 @@ public class AdminModel {
         }
     }
     public void delete(int userId){
-        String deleteSql = "DELETE FROM user WHERE courseId='"+userId+"'";
+        String deleteSql = "DELETE FROM user WHERE userId='"+userId+"'";
         try {
             pst = con.prepareStatement(deleteSql);
             pst.execute();
