@@ -1,40 +1,86 @@
 import java.util.*;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AdminModel {
-    private ArrayList<Admin> Admin;
+    private ArrayList<Admin> admin;
+    private Connection con = null;
+    private ResultSet rs = null;
+    private PreparedStatement pst = null;
     public AdminModel(){
-        Admin = new ArrayList<Admin>();
+        admin = new ArrayList<>();
+        con = Connect.ConnectDB();
     }
-    public boolean loadData(){
-        File f = new File("dataAdmin.dat");
-        if (f.exists()) {
-            try (FileInputStream fin = new FileInputStream("dataAdmin.dat");
-                ObjectInputStream in = new ObjectInputStream(fin);){
-                Admin = (ArrayList<Admin>) in.readObject();
-                return true;
-            } catch (Exception i) {
-                return false;
+    public static void main(String[] args) {
+    }
+    public void load(){
+        String selectSql = "SELECT * FROM user WHERE userRole = 'Admin'";
+        try {
+            pst = con.prepareStatement(selectSql);
+            rs = pst.executeQuery();
+            admin.clear();
+            while (rs.next()){
+                Admin aAdmin = new Admin(Integer.parseInt(rs.getString("userId")),
+                                                            rs.getString("userName"),
+                                                            rs.getString("userPassword"),
+                                                            rs.getString("userFullname"),
+                                                            rs.getString("userEmail"),
+                                                            rs.getString("userRole"));
+                admin.add(aAdmin);
             }
-        }
-    return false;
-    }
-    public boolean saveData(){
-        try(FileOutputStream fOut = new FileOutputStream("dataAdmin.dat");
-            ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
-            oout.writeObject(Admin);
-            return true;
-        } catch (Exception i) {
-            return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public void save(String username, String password, String fullname, String email, String role){
+        String selectSql = "INSERT INTO user (userName, userPassword, userFullname, userEmail, userRole) VALUES (?, ?, ?, ?, ?);";
+        try {
+            pst = con.prepareStatement(selectSql);   
+            pst.setString(1, username);
+            pst.setString(2, password);
+            pst.setString(3, fullname);
+            pst.setString(4, email);
+            pst.setString(5, role);
+            pst.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void delete(int userId){
+        String deleteSql = "DELETE FROM user WHERE userId='"+userId+"'";
+        try {
+            pst = con.prepareStatement(deleteSql);
+            pst.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void edit(int id, String username, String password, String fullname, String email, String role){
+        String selectSql = "UPDATE user SET userName=?, userPassword=?, userFullname=?, userEmail=?, userRole=? WHERE userId=?;";
+        try {
+            pst = con.prepareStatement(selectSql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            pst.setString(3, fullname);
+            pst.setString(4, email);
+            pst.setString(5, role);
+            pst.setString(6, String.valueOf(id));
+            pst.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public ArrayList<Admin> getAdmin() {
-        return Admin;
+        return admin;
     }
 
-    public void setAdmin(ArrayList<Admin> Admin) {
-        this.Admin = Admin;
+    public void setAdmin(ArrayList<Admin> admin) {
+        this.admin = admin;
     }
     
     

@@ -8,7 +8,4 @@ public class CardCourseModel {
     public ArrayList<CardCourseView> getCardCourse(){
         return cardCourse;
     }
-    public void loadData(){
-       
-    }
 }

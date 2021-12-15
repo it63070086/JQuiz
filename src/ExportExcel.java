@@ -16,7 +16,7 @@ public class ExportExcel {
     public ExportExcel(){
         
     }
-    public boolean export(int submittedId, ArrayList<Submitted> submitInformation){
+    public boolean exportExcel(int submittedId, ArrayList<Submitted> submitInformation){
         WritableWorkbook wworkbook;
             try {
                   wworkbook = Workbook.createWorkbook(new File("submittedReport/CouresReport"+submittedId+".xls"));
