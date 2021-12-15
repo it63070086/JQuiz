@@ -17,7 +17,6 @@ public class AdminModel {
         con = Connect.ConnectDB();
     }
     public static void main(String[] args) {
-        new AdminModel().load();
     }
     public void load(){
         String selectSql = "SELECT * FROM user WHERE userRole = 'Admin'";
