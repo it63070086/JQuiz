@@ -60,7 +60,9 @@ public class AllQuizView extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         cardPanel = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("All Quiz");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

@@ -170,7 +170,9 @@ public class AddQuizView extends javax.swing.JFrame {
         jPanel19 = new javax.swing.JPanel();
         tfAnswer = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Add Quiz");
+        setResizable(false);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 204, 204));
