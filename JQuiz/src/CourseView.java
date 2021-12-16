@@ -42,11 +42,6 @@ public class CourseView extends javax.swing.JFrame {
     public JButton getBtnAllQuiz() {
         return btnAllQuiz;
     }
-
-    public JButton getBtnAttend() {
-        return btnAttend;
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -66,7 +61,7 @@ public class CourseView extends javax.swing.JFrame {
         btnAllQuiz = new javax.swing.JButton();
         stdpanel = new keeptoo.KGradientPanel();
         jLabel6 = new javax.swing.JLabel();
-        btnAttend = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         scorepanel = new keeptoo.KGradientPanel();
         jLabel7 = new javax.swing.JLabel();
         btnCourseScore = new javax.swing.JButton();
@@ -75,8 +70,6 @@ public class CourseView extends javax.swing.JFrame {
         lbCourseName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Course");
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -225,12 +218,12 @@ public class CourseView extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/students.png"))); // NOI18N
 
-        btnAttend.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        btnAttend.setForeground(new java.awt.Color(255, 255, 255));
-        btnAttend.setText("Student Attend");
-        btnAttend.setBorder(null);
-        btnAttend.setContentAreaFilled(false);
-        btnAttend.setFocusable(false);
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Student Attend");
+        jButton4.setBorder(null);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setFocusable(false);
 
         javax.swing.GroupLayout stdpanelLayout = new javax.swing.GroupLayout(stdpanel);
         stdpanel.setLayout(stdpanelLayout);
@@ -240,7 +233,7 @@ public class CourseView extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
-            .addComponent(btnAttend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         stdpanelLayout.setVerticalGroup(
             stdpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +241,7 @@ public class CourseView extends javax.swing.JFrame {
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAttend, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         scorepanel.setkEndColor(new java.awt.Color(204, 204, 255));
@@ -412,9 +405,9 @@ public class CourseView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAllQuiz;
-    private javax.swing.JButton btnAttend;
     private javax.swing.JButton btnCourse;
     private javax.swing.JButton btnCourseScore;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;

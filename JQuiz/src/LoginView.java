@@ -51,8 +51,7 @@ public class LoginView extends javax.swing.JFrame {
         kGradientPanel4 = new keeptoo.KGradientPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
-        setResizable(false);
+        setTitle("LOGIN");
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 204, 204));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 255));
@@ -61,16 +60,15 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("LOGIN");
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Login With Username");
 
-        tfUsername.setBackground(new java.awt.Color(255, 255, 255));
-        tfUsername.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tfUsername.setForeground(new java.awt.Color(0, 0, 0));
+        tfUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tfUsername.setText("superoof");
+        tfUsername.setMargin(new java.awt.Insets(0, 10, 0, 0));
+        tfUsername.setPreferredSize(new java.awt.Dimension(6, 20));
         tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsernameActionPerformed(evt);
@@ -93,7 +91,6 @@ public class LoginView extends javax.swing.JFrame {
         );
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Password");
 
         kGradientPanel3.setkEndColor(new java.awt.Color(255, 153, 153));
@@ -118,7 +115,6 @@ public class LoginView extends javax.swing.JFrame {
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnLogin.setText("LOGIN");
-        btnLogin.setToolTipText("");
 
         javax.swing.GroupLayout kGradientPanel5Layout = new javax.swing.GroupLayout(kGradientPanel5);
         kGradientPanel5.setLayout(kGradientPanel5Layout);
@@ -136,21 +132,20 @@ public class LoginView extends javax.swing.JFrame {
 
         btnReg.setBackground(new java.awt.Color(255, 255, 255));
         btnReg.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        btnReg.setForeground(new java.awt.Color(0, 0, 0));
         btnReg.setText("Don't have an account? Sign up");
         btnReg.setBorder(null);
         btnReg.setContentAreaFilled(false);
 
         btnForgot.setBackground(new java.awt.Color(255, 255, 255));
-        btnForgot.setForeground(new java.awt.Color(0, 0, 0));
         btnForgot.setText("Forgot password?");
         btnForgot.setBorder(null);
         btnForgot.setContentAreaFilled(false);
         btnForgot.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        tfUserPassword.setBackground(new java.awt.Color(255, 255, 255));
         tfUserPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tfUserPassword.setForeground(new java.awt.Color(0, 0, 0));
+        tfUserPassword.setText("superoof1200");
+        tfUserPassword.setMargin(new java.awt.Insets(0, 10, 0, 0));
+        tfUserPassword.setPreferredSize(new java.awt.Dimension(6, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,10 +160,10 @@ public class LoginView extends javax.swing.JFrame {
                     .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                     .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-                    .addComponent(tfUsername)
+                    .addComponent(tfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnForgot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfUserPassword))
+                    .addComponent(tfUserPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

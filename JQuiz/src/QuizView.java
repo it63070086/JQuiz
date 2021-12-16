@@ -45,6 +45,9 @@ public class QuizView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cardPanel = new javax.swing.JPanel();
+        choiceView1 = new ChoiceView();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         kGradientPanel3 = new keeptoo.KGradientPanel();
@@ -61,13 +64,23 @@ public class QuizView extends javax.swing.JFrame {
         kGradientPanel5 = new keeptoo.KGradientPanel();
         btnSubmit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cardPanel = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         choiceView2 = new ChoiceView();
         choiceView3 = new ChoiceView();
         choiceView4 = new ChoiceView();
 
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        cardPanel.setBackground(new java.awt.Color(255, 255, 255));
+        cardPanel.setPreferredSize(new java.awt.Dimension(200, 5000));
+        cardPanel.add(choiceView1);
+
+        jScrollPane2.setViewportView(cardPanel);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Quiz Question");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -227,18 +240,18 @@ public class QuizView extends javax.swing.JFrame {
             .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
 
-        cardPanel.setLayout(new javax.swing.BoxLayout(cardPanel, javax.swing.BoxLayout.PAGE_AXIS));
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.PAGE_AXIS));
 
         choiceView2.setBackground(java.awt.Color.white);
-        cardPanel.add(choiceView2);
+        jPanel3.add(choiceView2);
 
         choiceView3.setBackground(java.awt.Color.white);
-        cardPanel.add(choiceView3);
+        jPanel3.add(choiceView3);
 
         choiceView4.setBackground(java.awt.Color.white);
-        cardPanel.add(choiceView4);
+        jPanel3.add(choiceView4);
 
-        jScrollPane1.setViewportView(cardPanel);
+        jScrollPane1.setViewportView(jPanel3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -333,6 +346,7 @@ public class QuizView extends javax.swing.JFrame {
     private javax.swing.JButton btnCourse;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JPanel cardPanel;
+    private ChoiceView choiceView1;
     private ChoiceView choiceView2;
     private ChoiceView choiceView3;
     private ChoiceView choiceView4;
@@ -342,7 +356,9 @@ public class QuizView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private keeptoo.KGradientPanel kGradientPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
     private keeptoo.KGradientPanel kGradientPanel3;

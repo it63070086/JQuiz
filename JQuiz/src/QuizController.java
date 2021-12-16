@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class QuizController implements ActionListener, KeyListener, WindowListener, MouseListener {
-    
+
     private ArrayList<Course> course = new ArrayList<>();
     private SendEmail sendEmail = new SendEmail();
     private LoginView loginView = new LoginView();
@@ -50,7 +50,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     private String userNameCurrent = "NOT FOUND CURRENT USER";
     private String state = "btnNull";
     private int checkEvent = 0;
-    
+
     public QuizController() {
         con = Connect.ConnectDB();
         loginView.setVisible(true);
@@ -95,10 +95,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         loginView.getBtnForgot().addActionListener(this);
         rePasswordView.getBtnSubmit().addActionListener(this);
         adminMainView.addWindowListener(this);
-        quizView.addWindowListener(this);
-        courseView.getBtnAttend().addActionListener(this);
     }
-    
+
     public static void main(String[] args) {
         new QuizController();
     }
@@ -135,10 +133,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     System.out.println(course.get(x).getCourseID());
                     courseIndexCurrent = x;
                     checkEvent = 1;
-                    if (userRoleCurrent.equals("Admin")) {
-                        reAdminMainView();
-                    }
-                    
+                    reAdminMainView();
                 }
             });
             cardCourse.getCardCourse().get(i).getBtnRemove().addActionListener(new ActionListener() {
@@ -160,13 +155,13 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     adminMainView.setVisible(true);
                 }
             });
-            
+
         }
         if (!state.equals("btnEnter")) {
             adminMainView.setLocationRelativeTo(null);
             adminMainView.setVisible(true);
         }
-        
+
     }
 //    re quiz
 
@@ -213,7 +208,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 // re adminQuiz
 
     public void reAdminQuiz() {
-        System.out.println("readminQuiz");
         allQuizView.getCardPanel().removeAll();
         allQuizView.getCardPanel().repaint();
         System.out.println("Will Load " + courseIdCurrent);
@@ -294,7 +288,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         allQuizView.setVisible(true);
         allQuizView.setLocationRelativeTo(null);
     }
-    
+
     public void reMainView() {
         mainView.getCardPanel().removeAll();
         courseModel.load(quizModel);
@@ -307,7 +301,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             mainView.setVisible(true);
             mainView.setLocationRelativeTo(null);
         }
-        
+
     }
 //    fetch User
 
@@ -391,41 +385,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void actionPerformed(ActionEvent e) {
-//      Button Attend
-
-        if (e.getSource().equals(courseView.getBtnAttend())) {
-            ArrayList<Submitted> submitted = submittedModel.loadData(courseIdCurrent);
-            double allScore = 0;
-            int highestScore = 0;
-            int yourFirstScore = 0;
-            int yourLastScore = 0;
-            int count = 0;
-            if (submitted.size() != 0) {
-                for (Submitted i : submitted) {
-                    allScore += i.getScore();
-                    if (i.getScore() >= highestScore) {
-                        highestScore = i.getScore();
-                    }
-                    if (i.getName().equals(userNameCurrent)) {
-                        if (count == 0) {
-                            yourFirstScore = i.getScore();
-                        }
-                        yourLastScore = i.getScore();
-                        count++;
-                    }
-                }
-                JOptionPane.showMessageDialog(null,
-                        "Your First Submit: " + yourFirstScore
-                        + "\nYour Last Submit: " + yourLastScore
-                        + "\nHighest Score: " + highestScore
-                        + "\nAverage Score: " + allScore / submitted.size()
-                        + "\nSubmitted Time: " + submitted.size(),
-                        "All Score!", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "It's no Submit yet.", "Can't Find Score", JOptionPane.WARNING_MESSAGE);
-            }
-            
-        }
 //      Export
         if (e.getSource().equals(scoreView.getBtnExportExcel())) {
             System.out.println("Excel");
@@ -465,7 +424,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //            Create Course
         if (e.getSource().equals(addCourseView.getBtnCreateCourse())) {
             System.out.println("Test");
-            
+
             Instant instant1 = addCourseView.getDpRelease().getValue().toInstant();
             Instant instant2 = addCourseView.getDpExpire().getValue().toInstant();
             LocalDate localDate1 = instant1.atZone(ZoneId.systemDefault()).toLocalDate();
@@ -473,7 +432,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             ZoneId defaultZoneId = ZoneId.systemDefault();
             LocalDate localDate = LocalDate.of(LocalDate.now().getYear(), LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
             Date date = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
-            
+
             try {
                 System.out.println(addCourseView.getTfCourseScore().getText() + " | 1");
                 int score = Integer.parseInt(addCourseView.getTfCourseScore().getText());
@@ -502,7 +461,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Score invalid input, Please number only");
             }
-            
+
         }
 //        Login WIth User
         if ((this.userRoleCurrent.equals("Student"))
@@ -514,7 +473,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 && (!e.getSource().equals(addQuizView.getBtnSave1()))
                 && (!e.getSource().equals(addQuizView.getBtnSave2()))
                 && (!e.getSource().equals(loginView.getBtnReg()))
-                && (!e.getSource().equals(courseView.getBtnAllQuiz()))
                 && (!e.getSource().equals(rePasswordView.getBtnSubmit()))
                 && (!e.getSource().equals(addQuizView.getBtnSave3()))
                 && (!e.getSource().equals(adminMainView.getBtnUser()))
@@ -529,7 +487,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     courseView.getLbUserName().setText(userNameCurrent);
                     courseIdCurrent = course.get(i).getCourseID();
                     courseIndexCurrent = i;
-                    mainView.setVisible(false);
                 }
             }
         }
@@ -543,7 +500,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 && (!e.getSource().equals(loginView.getBtnReg()))
                 && (!e.getSource().equals(courseView.getBtnAllQuiz()))
                 && (!e.getSource().equals(courseView.getBtnCourse()))
-                && (!e.getSource().equals(courseView.getBtnAttend()))
                 && (!e.getSource().equals(allQuizView.getBtnAddQuiz()))
                 && (!e.getSource().equals(addQuizView.getBtnSave1()))
                 && (!e.getSource().equals(addQuizView.getBtnSave2()))
@@ -576,7 +532,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     adminMainView.setVisible(false);
                     break;
             }
-            
+
             if (checkEvent == 0) {
                 ArrayList<Quiz> allQuiz = quizModel.loadData(courseIdCurrent);
                 ArrayList<Quiz> allQuizTmp = new ArrayList<>(allQuiz);
@@ -647,12 +603,12 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         }
                     }
                 }
-                
+
                 quizModel.saveData(courseIdCurrent, allQuizTmp);
                 reAdminQuiz();
-                
+
             }
-            
+
         }
 //        Save user
         if (e.getSource().equals(allUserView.getBtnSave())) {
@@ -677,7 +633,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 allUserView.getBtnCancel().setVisible(false);
                 allUserView.getBtnSave().setVisible(false);
             }
-            
+
         }
 //        Cancel User
         if (e.getSource().equals(allUserView.getBtnCancel())) {
@@ -720,7 +676,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
 //        Submit Register View
         if (e.getSource().equals(regView.getBtnReg())) {
-            System.out.println("test");
             String username = regView.getTfUsername().getText();
             String password = regView.getTfPassword().getText();
             String fullname = regView.getTfFirstname().getText() + " " + regView.getTfLastname().getText();
@@ -753,17 +708,15 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        if (e.getSource().equals(allQuizView.getBtnCourse())) {  //แก้เปิดหน้าซ้อน
+        if (e.getSource().equals(allQuizView.getBtnCourse())) {
             allQuizView.dispose();
-            /*reAdminMainView();
-            adminMainView.setVisible(true);*/
+            reAdminMainView();
+            adminMainView.setVisible(true);
         }
 //        Login
 
         if (e.getSource().equals(adminMainView.getBtnCourse())) {
             reAdminMainView();
-            adminMainView.repaint();
-            adminMainView.setVisible(true);
         }
         if (e.getSource().equals(mainView.getBtnCourse())) {
             reMainView();
@@ -792,6 +745,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 allQuizView.getLbUsername().setText(userNameCurrent);
                 scoreView.getLbCourseName().setText(course.get(courseIndexCurrent).getCourseName());
                 scoreView.getLbUserName().setText(userNameCurrent);
+
                 reAdminQuiz();
             } else {
                 quizView.setVisible(true);
@@ -803,7 +757,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 scoreView.getLbUserName().setText(userNameCurrent);
                 reQuiz();
             }
-            
+
         }
 //        Add Quiz
         if (e.getSource().equals(addQuizView.getBtnSave1())) {
@@ -876,7 +830,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     } catch (NullPointerException ne) {
                         error = 1;
                     }
-                    
+
                 }
                 if (allQuiz.get(i).getType().equals("MultipleChoice")) {
                     String answer = "";
@@ -904,7 +858,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         score += course.get(courseIndexCurrent).getCourseScore() * 1.0 / allQuiz.size();
                     }
                 }
-                
+
             }
             //                    Send To Submitted 
             if (error == 0) {
@@ -925,15 +879,13 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             } else {
                 JOptionPane.showMessageDialog(null, "Please input All Question");
             }
-            
+
         }
         if (e.getSource().equals(quizView.getBtnCourse())) {
             quizView.dispose();
             courseView.setVisible(true);
         }
         if (e.getSource().equals(courseView.getBtnCourseScore())) {
-            scoreView.getLbCourseName().setText(course.get(courseIndexCurrent).getCourseName());
-            scoreView.getLbUserName().setText(userNameCurrent);
             courseView.setVisible(false);
             scoreView.setVisible(true);
             while (scoreView.getTableModel().getRowCount() > 0) {
@@ -948,7 +900,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 scoreView.getTableModel().addRow(objs);
             }
             scoreView.setVisible(true);
-            
+
         }
         if (e.getSource().equals(scoreView.getBtnCourse())) {
             scoreView.setVisible(false);
@@ -975,8 +927,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 int j = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
                 if (j == 0) {
                     studentModel.delete(Integer.parseInt(allUserView.getTfId().getText()));
-                    allUserView.getBtnDel().setEnabled(false);
-                    allUserView.getBtnEdit().setEnabled(false);
                 }
             }
             reAllUserView();
@@ -984,7 +934,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 //        Edit
         if (e.getSource().equals(allUserView.getBtnEdit())) {
             if (allUserView.getJcbRole().getSelectedItem().equals("Admin")) {
-                int j = JOptionPane.showConfirmDialog(null, "Are you sure to Edit this course", "Are You Sure?", JOptionPane.YES_NO_OPTION);
+                int j = JOptionPane.showConfirmDialog(null, "Are you sure to delete this course", "choose one", JOptionPane.YES_NO_OPTION);
                 if (j == 0) {
                     adminModel.edit(Integer.parseInt(allUserView.getTfId().getText()),
                             allUserView.getTfUsername().getText(),
@@ -1029,23 +979,23 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     JOptionPane.showMessageDialog(null, "Your password send to your email Please Check your email", "", JOptionPane.INFORMATION_MESSAGE);
                     rePasswordView.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Not found user Please Check Username Fullname and Email", "", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "not found user Please Check Username Fullname and Email", "", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }
-    
+
     @Override
     public void keyTyped(KeyEvent ke) {
     }
-    
+
     @Override
     public void keyPressed(KeyEvent ke) {
     }
-    
+
     @Override
     public void keyReleased(KeyEvent ke) {
         if (!regView.getTfEmail().getText().contains("@")) {
@@ -1058,11 +1008,11 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void windowOpened(WindowEvent we) {
-        
+
         if (we.getSource().equals(allQuizView)) {
             reAdminQuiz();
         }
-        
+
         if (we.getSource().equals(mainView)) {
             reMainView();
         }
@@ -1071,14 +1021,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             adminMainView.repaint();
             adminMainView.setVisible(true);
         }
-        
+
     }
-    
+
     @Override
     public void windowClosing(WindowEvent we) {
-        
+
     }
-    
+
     @Override
     public void windowClosed(WindowEvent we) {
         if (we.getSource().equals(mainView)) {
@@ -1112,35 +1062,28 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             scoreView.dispose();
             courseView.setVisible(true);
         }
-        if (we.getSource().equals(quizView)) {
-            quizView.dispose();
-            courseView.setVisible(true);
-        }
-        if (we.getSource().equals(allQuizView)) {
-            allQuizView.dispose();
-            courseView.setVisible(true);
-        }
     }
-    
+
     @Override
     public void windowIconified(WindowEvent we) {
     }
-    
+
     @Override
     public void windowDeiconified(WindowEvent we) {
     }
-    
+
     @Override
     public void windowActivated(WindowEvent we) {
     }
-    
+
     @Override
     public void windowDeactivated(WindowEvent we) {
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent me) {
         if (me.getSource().equals(loginView.getBtnLogin())) {
+            reAdminMainView();
             String username = loginView.getTfUsername().getText();
             String userPassWord = loginView.getTfUserPassword().getText();
             String findSql = "SELECT userName, userPassword, userRole FROM user WHERE userName = '" + username + "' AND userPassword = '" + userPassWord + "'";
@@ -1156,13 +1099,11 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         adminMainView.setVisible(true);
                         adminMainView.setLocationRelativeTo(null);
                         this.userRoleCurrent = "Admin";
-                        reAdminMainView();
                     } else {
                         loginView.setVisible(false);
                         mainView.setVisible(true);
                         mainView.setLocationRelativeTo(null);
                         this.userRoleCurrent = "Student";
-                        reMainView();
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Username or Password Incorrect", "Invalid Information", JOptionPane.WARNING_MESSAGE);
@@ -1170,22 +1111,21 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             } catch (SQLException ex) {
                 Logger.getLogger(QuizController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
-    
+
     @Override
     public void mousePressed(MouseEvent me) {
     }
-    
+
     @Override
     public void mouseReleased(MouseEvent me) {
     }
-    
+
     @Override
     public void mouseEntered(MouseEvent me) {
     }
-    
+
     @Override
     public void mouseExited(MouseEvent me) {
     }

@@ -46,8 +46,6 @@ public class MainView extends javax.swing.JFrame {
         cardCourseView4 = new CardCourseView();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Main Course");
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
