@@ -15,8 +15,8 @@ public class ExportCSV {
     public ExportCSV(){
         
     }
-    public boolean exportCSV(int submittedId, ArrayList<Submitted> submitInformation){
-        File file = new File("submittedReport/CouresReport"+submittedId+".csv");
+    public boolean exportCSV(int submittedId, ArrayList<Submitted> submitInformation, String address){
+        File file = new File(address+".csv");
     try {
         // create FileWriter object with file as parameter
         FileWriter outputfile = new FileWriter(file);

@@ -5,6 +5,7 @@
  */
 import java.io.File; 
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import jxl.Workbook; 
 import jxl.write.*; 
 
@@ -16,10 +17,11 @@ public class ExportExcel {
     public ExportExcel(){
         
     }
-    public boolean exportExcel(int submittedId, ArrayList<Submitted> submitInformation){
+    public boolean exportExcel(int submittedId, ArrayList<Submitted> submitInformation, String address){
         WritableWorkbook wworkbook;
             try {
-                  wworkbook = Workbook.createWorkbook(new File("submittedReport/CouresReport"+submittedId+".xls"));
+                  wworkbook = Workbook.createWorkbook(new File(address+".xls"));
+            
                   //Sheet name
                   WritableSheet wsheet = wworkbook.createSheet("CouresReport"+submittedId, 0);
                   Label label =new Label(0, 0, "Name");

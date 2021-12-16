@@ -36,8 +36,8 @@ public class CourseModel {
             pst = con.prepareStatement(selectSql);   
             pst.setString(1, name);
             pst.setString(2, String.valueOf(score));
-            pst.setString(3, "2008-11-11");
-            pst.setString(4, "2008-11-11");
+            pst.setString(3, release);
+            pst.setString(4, expire);
             pst.setString(5, owner);
             pst.execute();
         } catch (SQLException ex) {

@@ -1,4 +1,5 @@
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 
@@ -35,6 +36,10 @@ public class Course {
     }
 
     Course(int size, String text, int parseInt, String text0, JTextField tfCourseExpire, ArrayList<Quiz> quiz) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Course(int i, String text, int parseInt, LocalDate localDate1, LocalDate localDate2, String userNameCurrent, ArrayList<Quiz> quiz) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
