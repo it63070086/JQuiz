@@ -12,6 +12,7 @@ public class ScoreView extends javax.swing.JFrame {
         initComponents();
         String col[] = {"Username", "Score", "Submit Time"};
         tableModel  = new DefaultTableModel(col, 0);
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getBtnExportCSV() {

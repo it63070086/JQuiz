@@ -21,6 +21,7 @@ public class AllUserView extends javax.swing.JFrame {
      */
     public AllUserView() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     public JComboBox<String> getJcbRole() {

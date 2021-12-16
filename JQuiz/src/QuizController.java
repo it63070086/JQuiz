@@ -72,6 +72,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         mainView.getBtnCourse().addActionListener(this);
         courseView.getBtnCourse().addActionListener(this);
         courseView.getBtnAllQuiz().addActionListener(this);
+        courseView.addWindowListener(this);
         allQuizView.getBtnAddQuiz().addActionListener(this);
         addQuizView.addWindowListener(this);
         addQuizView.getBtnSave1().addActionListener(this);
@@ -326,6 +327,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 allUserView.getBtnEdit().setEnabled(true);
                 allUserView.getBtnDel().setEnabled(true);
                 allUserView.getBtnAdd().setEnabled(true);
+                allUserView.getBtnSave().setVisible(false);
+                allUserView.getBtnCancel().setVisible(false);
             });
             allUserView.getCardUser().add(jpBtn);
         }
@@ -351,6 +354,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 allUserView.getBtnEdit().setEnabled(true);
                 allUserView.getBtnDel().setEnabled(true);
                 allUserView.getBtnAdd().setEnabled(true);
+                allUserView.getBtnSave().setVisible(false);
+                allUserView.getBtnCancel().setVisible(false);
             });
             allUserView.getCardUser().add(jpBtn);
             allUserView.getCardUser().repaint();
@@ -685,8 +690,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             }
         }
         if (e.getSource().equals(allQuizView.getBtnCourse())) {
-            allQuizView.setVisible(false);
+            allQuizView.dispose();
             reAdminMainView();
+            adminMainView.setVisible(true);
         }
 //        Login
 
@@ -999,7 +1005,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             loginView.getTfUserPassword().setText("");
             allUserView.dispose();
             addCourseView.dispose();
-            
+        }
+        if (we.getSource().equals(courseView)){
+            System.out.println("CourseView Close");
+            if (userRoleCurrent.equals("Admin")){
+                adminMainView.setVisible(true);
+            }else{
+                mainView.setVisible(true);
+            }
         }
     }
 
