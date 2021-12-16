@@ -59,9 +59,6 @@ public class AllQuizView extends javax.swing.JFrame {
         kGradientPanel7 = new keeptoo.KGradientPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         cardPanel = new javax.swing.JPanel();
-        editChoiceView1 = new EditChoiceView();
-        editChoiceView2 = new EditChoiceView();
-        editChoiceView3 = new EditChoiceView();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -269,10 +266,6 @@ public class AllQuizView extends javax.swing.JFrame {
         cardPanel.setMaximumSize(new java.awt.Dimension(293, 237));
         cardPanel.setMinimumSize(new java.awt.Dimension(293, 237));
         cardPanel.setLayout(new javax.swing.BoxLayout(cardPanel, javax.swing.BoxLayout.PAGE_AXIS));
-        cardPanel.add(editChoiceView1);
-        cardPanel.add(editChoiceView2);
-        cardPanel.add(editChoiceView3);
-
         jScrollPane2.setViewportView(cardPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -342,9 +335,6 @@ public class AllQuizView extends javax.swing.JFrame {
     private javax.swing.JButton btnAddQuiz;
     private javax.swing.JButton btnCourse;
     private javax.swing.JPanel cardPanel;
-    private EditChoiceView editChoiceView1;
-    private EditChoiceView editChoiceView2;
-    private EditChoiceView editChoiceView3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -315,6 +315,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             JPanel jpBtn = new JPanel(new BorderLayout());
             jpBtn.setSize(200, 40);
             JButton btnUser = new JButton();
+            btnUser.setBackground(new java.awt.Color(153, 255, 153));
+            btnUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            btnUser.setForeground(new java.awt.Color(0, 0, 0));
+            btnUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+            btnUser.setMargin(new java.awt.Insets(0, 0, 0, 0));
+            btnUser.setMaximumSize(new java.awt.Dimension(200, 40));
+            btnUser.setMinimumSize(new java.awt.Dimension(200, 40));
+            btnUser.setPreferredSize(new java.awt.Dimension(195, 40));
             btnUser.setText(admin.get(i).getUsername());
             jpBtn.add(btnUser);
             btnUser.addActionListener((ActionEvent e) -> {
@@ -342,6 +350,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             JPanel jpBtn = new JPanel(new BorderLayout());
             jpBtn.setSize(200, 40);
             JButton btnUser = new JButton();
+            btnUser.setBackground(new java.awt.Color(204, 204, 255));
+            btnUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+            btnUser.setForeground(new java.awt.Color(0, 0, 0));
+            btnUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+            btnUser.setMargin(new java.awt.Insets(0, 0, 0, 0));
+            btnUser.setMaximumSize(new java.awt.Dimension(200, 40));
+            btnUser.setMinimumSize(new java.awt.Dimension(200, 40));
+            btnUser.setPreferredSize(new java.awt.Dimension(195, 40));
             btnUser.setText(student.get(i).getUsername());
             jpBtn.add(btnUser);
             btnUser.addActionListener((ActionEvent e) -> {
@@ -726,7 +742,6 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 allQuizView.getLbUsername().setText(userNameCurrent);
                 scoreView.getLbCourseName().setText(course.get(courseIndexCurrent).getCourseName());
                 scoreView.getLbUserName().setText(userNameCurrent);
-                
 
                 reAdminQuiz();
             } else {
@@ -805,14 +820,14 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             for (int i = 0; i < allQuiz.size(); i++) {
                 String correct = allQuiz.get(i).getAnswer();
                 if (allQuiz.get(i).getType().equals("Choice")) {
-                    try{
+                    try {
                         if (correct.equals(((ChoiceView) cardQuiz.getCardQuiz().get(i)).getButtonGroup1().getSelection().getActionCommand())) {
-                        score += course.get(courseIndexCurrent).getCourseScore() * 1.0 / allQuiz.size();
-                    }
-                    }catch(NullPointerException ne){
+                            score += course.get(courseIndexCurrent).getCourseScore() * 1.0 / allQuiz.size();
+                        }
+                    } catch (NullPointerException ne) {
                         error = 1;
                     }
-                    
+
                 }
                 if (allQuiz.get(i).getType().equals("MultipleChoice")) {
                     String answer = "";
@@ -831,7 +846,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     if (correct.equals(answer)) {
                         score += course.get(courseIndexCurrent).getCourseScore() * 1.0 / allQuiz.size();
                     }
-                    if (answer.equals("")){
+                    if (answer.equals("")) {
                         error = 1;
                     }
                 }
@@ -840,30 +855,27 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                         score += course.get(courseIndexCurrent).getCourseScore() * 1.0 / allQuiz.size();
                     }
                 }
-                
+
             }
             //                    Send To Submitted 
-            if (error == 0){
+            if (error == 0) {
                 LocalDateTime currentDateTime = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-            String formattedDateTime = currentDateTime.format(formatter);
-            Submitted sendSubmit = new Submitted(userNameCurrent, (int) Math.round(score), formattedDateTime);
-            submittedModel.loadData(courseIdCurrent);
-            submitted = submittedModel.getSubmitted();
-            submitted.add(sendSubmit);
-            submittedModel.saveData(courseIdCurrent, submitted);
-            JOptionPane.showMessageDialog(null,
-                    "Your Score Is " + (int) Math.round(score) + "/" + course.get(courseIndexCurrent).getCourseScore() + "\nPercentage " + (int) Math.round(score) * 100 / course.get(courseIndexCurrent).getCourseScore() + "%",
-                    "Your Score",
-                    JOptionPane.INFORMATION_MESSAGE);
-            quizView.setVisible(false);
-            courseView.setVisible(true);
-            }else{
+                DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+                String formattedDateTime = currentDateTime.format(formatter);
+                Submitted sendSubmit = new Submitted(userNameCurrent, (int) Math.round(score), formattedDateTime);
+                submittedModel.loadData(courseIdCurrent);
+                submitted = submittedModel.getSubmitted();
+                submitted.add(sendSubmit);
+                submittedModel.saveData(courseIdCurrent, submitted);
+                JOptionPane.showMessageDialog(null,
+                        "Your Score Is " + (int) Math.round(score) + "/" + course.get(courseIndexCurrent).getCourseScore() + "\nPercentage " + (int) Math.round(score) * 100 / course.get(courseIndexCurrent).getCourseScore() + "%",
+                        "Your Score",
+                        JOptionPane.INFORMATION_MESSAGE);
+                quizView.setVisible(false);
+                courseView.setVisible(true);
+            } else {
                 JOptionPane.showMessageDialog(null, "Please input All Question");
             }
-
-            
-            
 
         }
         if (e.getSource().equals(quizView.getBtnCourse())) {
@@ -1004,16 +1016,19 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         if (we.getSource().equals(adminMainView)) {
             reAdminMainView();
         }
-        
+
     }
 
     @Override
     public void windowClosing(WindowEvent we) {
-        
+
     }
 
     @Override
     public void windowClosed(WindowEvent we) {
+        if (we.getSource().equals(mainView)){
+            loginView.setVisible(true);
+        }
         if (we.getSource().equals(addCourseView)) {
             adminMainView.setEnabled(true);
         }
@@ -1071,6 +1086,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     adminMainView.getLbUsername().setText(rs.getString("userName"));
+                    mainView.getLbUsername().setText(rs.getString("userName"));
                     this.userNameCurrent = rs.getString("userName");
                     if (rs.getString("userRole").equals("Admin")) {
                         loginView.setVisible(false);

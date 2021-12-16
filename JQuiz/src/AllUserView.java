@@ -126,10 +126,12 @@ public class AllUserView extends javax.swing.JFrame {
         cardUser.setForeground(new java.awt.Color(204, 204, 255));
         cardUser.setLayout(new javax.swing.BoxLayout(cardUser, javax.swing.BoxLayout.Y_AXIS));
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2.setBackground(new java.awt.Color(153, 255, 153));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Superoof");
-        jButton2.setBorder(null);
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton2.setMaximumSize(new java.awt.Dimension(200, 40));
         jButton2.setMinimumSize(new java.awt.Dimension(200, 40));
         jButton2.setPreferredSize(new java.awt.Dimension(195, 40));

@@ -409,14 +409,6 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
             <Property name="axis" type="int" value="3"/>
           </Layout>
-          <SubComponents>
-            <Component class="EditChoiceView" name="editChoiceView1">
-            </Component>
-            <Component class="EditChoiceView" name="editChoiceView2">
-            </Component>
-            <Component class="EditChoiceView" name="editChoiceView3">
-            </Component>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

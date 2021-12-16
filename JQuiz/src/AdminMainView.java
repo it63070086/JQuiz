@@ -14,8 +14,8 @@ public class AdminMainView extends javax.swing.JFrame {
     }
     public JButton getBtnAddCourse() {
         return btnAddCourse;
-    }
-
+    } 
+    
     public JButton getBtnCourse() {
         return btnCourse;
     }
