@@ -399,8 +399,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         ArrayList<Submitted> submitted = submittedModel.getSubmitted();
 //            Create Course
         if (e.getSource().equals(addCourseView.getBtnCreateCourse())) {
-            addCourseView.getTfCourseName().setText("");
-            addCourseView.getTfCourseScore().setText("");
+            System.out.println("Test");
+            
             Instant instant1 = addCourseView.getDpRelease().getValue().toInstant();
             Instant instant2 = addCourseView.getDpExpire().getValue().toInstant();
             LocalDate localDate1 = instant1.atZone(ZoneId.systemDefault()).toLocalDate();
@@ -410,7 +410,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
             Date date = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
 
             try {
+                System.out.println(addCourseView.getTfCourseScore().getText()+" | 1");
                 int score = Integer.parseInt(addCourseView.getTfCourseScore().getText());
+                System.out.println(score+" | 2");
                 data.add(new Course(lastCourseId + 1,
                         addCourseView.getTfCourseName().getText(),
                         Integer.parseInt(addCourseView.getTfCourseScore().getText()),
