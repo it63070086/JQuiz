@@ -1,4 +1,4 @@
-import javax.swing.ButtonGroup;
+
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -16,21 +16,18 @@ public class EditChoiceView extends javax.swing.JPanel {
     }
     public EditChoiceView(String question, String a, String b, String c, String d, String answer){
         initComponents();
+        this.tfQuestion.setText(question);
+        this.tfChoiceA.setText(a);
+        this.tfChoiceC.setText(b);
+        this.tfChoiceB.setText(c);
+        this.tfChoiceD.setText(d);
         this.buttonGroup1.add(rbtnA);
         this.buttonGroup1.add(rbtnB);
         this.buttonGroup1.add(rbtnC);
         this.buttonGroup1.add(rbtnD);
-        this.tfQuestion.setText(question);
-        this.tfChoiceA.setText(a);
-        this.tfChoiceB.setText(b);
-        this.tfChoiceC.setText(c);
-        this.tfChoiceD.setText(d);
         
     }
-    public ButtonGroup getButtonGroup1() {
-        return buttonGroup1;
-    }
-    
+
     public JButton getBtnDelQuiz() {
         return btnDelQuiz;
     }
@@ -38,6 +35,8 @@ public class EditChoiceView extends javax.swing.JPanel {
     public JButton getBtnEditQuiz() {
         return btnEditQuiz;
     }
+    
+   
 
     public JRadioButton getRbtnA() {
         return rbtnA;
@@ -64,11 +63,11 @@ public class EditChoiceView extends javax.swing.JPanel {
     }
 
     public JTextField getTfChoiceB() {
-        return tfChoiceB;
+        return tfChoiceC;
     }
 
     public JTextField getTfChoiceC() {
-        return tfChoiceC;
+        return tfChoiceB;
     }
 
     public JTextField getTfChoiceD() {
@@ -82,34 +81,141 @@ public class EditChoiceView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        tfChoiceA = new javax.swing.JTextField();
+        rbtnA = new javax.swing.JRadioButton();
+        tfChoiceB = new javax.swing.JTextField();
+        rbtnB = new javax.swing.JRadioButton();
+        tfChoiceC = new javax.swing.JTextField();
+        rbtnC = new javax.swing.JRadioButton();
+        tfChoiceD = new javax.swing.JTextField();
+        rbtnD = new javax.swing.JRadioButton();
+        tfQuestion = new javax.swing.JTextField();
         kGradientPanel2 = new keeptoo.KGradientPanel();
         btnDelQuiz = new javax.swing.JButton();
         kGradientPanel3 = new keeptoo.KGradientPanel();
         btnEditQuiz = new javax.swing.JButton();
-        rbtnA = new javax.swing.JRadioButton();
-        rbtnB = new javax.swing.JRadioButton();
-        rbtnC = new javax.swing.JRadioButton();
-        rbtnD = new javax.swing.JRadioButton();
-        tfQuestion = new javax.swing.JTextField();
-        tfChoiceA = new javax.swing.JTextField();
-        tfChoiceB = new javax.swing.JTextField();
-        tfChoiceC = new javax.swing.JTextField();
-        tfChoiceD = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 204, 204));
+        kGradientPanel1.setLayout(new java.awt.CardLayout(12, 12));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.black);
+        jLabel2.setText("Question");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        jPanel1.add(jLabel2, gridBagConstraints);
+
+        tfChoiceA.setBackground(new java.awt.Color(204, 204, 255));
+        tfChoiceA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfChoiceA.setMaximumSize(new java.awt.Dimension(200, 20));
+        tfChoiceA.setMinimumSize(new java.awt.Dimension(200, 20));
+        tfChoiceA.setPreferredSize(new java.awt.Dimension(200, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(tfChoiceA, gridBagConstraints);
+
+        rbtnA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbtnA.setForeground(java.awt.Color.black);
+        rbtnA.setText("(A)");
+        rbtnA.setContentAreaFilled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        jPanel1.add(rbtnA, gridBagConstraints);
+
+        tfChoiceB.setBackground(new java.awt.Color(204, 204, 255));
+        tfChoiceB.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfChoiceB.setMaximumSize(new java.awt.Dimension(200, 20));
+        tfChoiceB.setMinimumSize(new java.awt.Dimension(200, 20));
+        tfChoiceB.setPreferredSize(new java.awt.Dimension(200, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(tfChoiceB, gridBagConstraints);
+
+        rbtnB.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbtnB.setForeground(java.awt.Color.black);
+        rbtnB.setText("(B)");
+        rbtnB.setContentAreaFilled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 3;
+        jPanel1.add(rbtnB, gridBagConstraints);
+
+        tfChoiceC.setBackground(new java.awt.Color(204, 204, 255));
+        tfChoiceC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfChoiceC.setMaximumSize(new java.awt.Dimension(200, 20));
+        tfChoiceC.setMinimumSize(new java.awt.Dimension(200, 20));
+        tfChoiceC.setPreferredSize(new java.awt.Dimension(200, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(tfChoiceC, gridBagConstraints);
+
+        rbtnC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbtnC.setForeground(java.awt.Color.black);
+        rbtnC.setText("(C)");
+        rbtnC.setContentAreaFilled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        jPanel1.add(rbtnC, gridBagConstraints);
+
+        tfChoiceD.setBackground(new java.awt.Color(204, 204, 255));
+        tfChoiceD.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfChoiceD.setMaximumSize(new java.awt.Dimension(200, 20));
+        tfChoiceD.setMinimumSize(new java.awt.Dimension(200, 20));
+        tfChoiceD.setPreferredSize(new java.awt.Dimension(200, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(tfChoiceD, gridBagConstraints);
+
+        rbtnD.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbtnD.setForeground(java.awt.Color.black);
+        rbtnD.setText("(D)");
+        rbtnD.setContentAreaFilled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 4;
+        jPanel1.add(rbtnD, gridBagConstraints);
+
+        tfQuestion.setBackground(new java.awt.Color(204, 204, 255));
+        tfQuestion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 18;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel1.add(tfQuestion, gridBagConstraints);
 
         kGradientPanel2.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel2.setkGradientFocus(100);
@@ -120,17 +226,27 @@ public class EditChoiceView extends javax.swing.JPanel {
         btnDelQuiz.setText("DELETE");
         btnDelQuiz.setBorder(null);
         btnDelQuiz.setContentAreaFilled(false);
+        btnDelQuiz.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btnDelQuiz.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnDelQuiz.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnDelQuiz.setPreferredSize(new java.awt.Dimension(100, 50));
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnDelQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+            .addComponent(btnDelQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnDelQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+            .addComponent(btnDelQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 9;
+        jPanel1.add(kGradientPanel2, gridBagConstraints);
 
         kGradientPanel3.setkEndColor(new java.awt.Color(204, 204, 255));
         kGradientPanel3.setkGradientFocus(100);
@@ -141,156 +257,168 @@ public class EditChoiceView extends javax.swing.JPanel {
         btnEditQuiz.setText("EDIT");
         btnEditQuiz.setBorder(null);
         btnEditQuiz.setContentAreaFilled(false);
+        btnEditQuiz.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnEditQuiz.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnEditQuiz.setPreferredSize(new java.awt.Dimension(100, 50));
 
         javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
         kGradientPanel3.setLayout(kGradientPanel3Layout);
         kGradientPanel3Layout.setHorizontalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnEditQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+            .addComponent(btnEditQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         kGradientPanel3Layout.setVerticalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnEditQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        rbtnA.setBackground(new java.awt.Color(204, 204, 255));
-        rbtnA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 9;
+        jPanel1.add(kGradientPanel3, gridBagConstraints);
 
-        rbtnB.setBackground(new java.awt.Color(204, 204, 255));
-        rbtnB.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel3.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel3.setOpaque(false);
+        jPanel3.setPreferredSize(new java.awt.Dimension(0, 10));
 
-        rbtnC.setBackground(new java.awt.Color(204, 204, 255));
-        rbtnC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        rbtnD.setBackground(new java.awt.Color(204, 204, 255));
-        rbtnD.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfQuestion.setBackground(new java.awt.Color(204, 204, 255));
-        tfQuestion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        tfQuestion.setText("jTextField1");
-        tfQuestion.setBorder(null);
-
-        tfChoiceA.setBackground(new java.awt.Color(204, 204, 255));
-        tfChoiceA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tfChoiceA.setText("jTextField2");
-        tfChoiceA.setBorder(null);
-
-        tfChoiceB.setBackground(new java.awt.Color(204, 204, 255));
-        tfChoiceB.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tfChoiceB.setText("jTextField3");
-        tfChoiceB.setBorder(null);
-
-        tfChoiceC.setBackground(new java.awt.Color(204, 204, 255));
-        tfChoiceC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tfChoiceC.setText("jTextField4");
-        tfChoiceC.setBorder(null);
-
-        tfChoiceD.setBackground(new java.awt.Color(204, 204, 255));
-        tfChoiceD.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tfChoiceD.setText("jTextField5");
-        tfChoiceD.setBorder(null);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(rbtnC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbtnA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfChoiceA)
-                            .addComponent(tfChoiceC))))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(rbtnD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbtnB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfChoiceB)
-                            .addComponent(tfChoiceD))))
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tfQuestion)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tfQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tfChoiceA)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbtnA)
-                        .addComponent(rbtnB))
-                    .addComponent(tfChoiceB))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rbtnD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfChoiceD)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rbtnC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfChoiceC))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel4.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel4.setOpaque(false);
+        jPanel4.setPreferredSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel4, gridBagConstraints);
+
+        jPanel5.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel5.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel5.setOpaque(false);
+        jPanel5.setPreferredSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel5, gridBagConstraints);
+
+        jPanel6.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel6.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel6.setOpaque(false);
+        jPanel6.setPreferredSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel6, gridBagConstraints);
+
+        jPanel7.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel7.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel7.setOpaque(false);
+        jPanel7.setPreferredSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 20;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel7, gridBagConstraints);
+
+        jPanel8.setMaximumSize(new java.awt.Dimension(0, 10));
+        jPanel8.setMinimumSize(new java.awt.Dimension(0, 10));
+        jPanel8.setOpaque(false);
+        jPanel8.setPreferredSize(new java.awt.Dimension(0, 10));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel8, gridBagConstraints);
+
+        kGradientPanel1.add(jPanel1, "card2");
+
+        add(kGradientPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -298,11 +426,14 @@ public class EditChoiceView extends javax.swing.JPanel {
     private javax.swing.JButton btnDelQuiz;
     private javax.swing.JButton btnEditQuiz;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private keeptoo.KGradientPanel kGradientPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
     private keeptoo.KGradientPanel kGradientPanel3;

@@ -12,6 +12,7 @@ public class ScoreView extends javax.swing.JFrame {
         initComponents();
         String col[] = {"Username", "Score", "Submit Time"};
         tableModel  = new DefaultTableModel(col, 0);
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getBtnExportCSV() {
@@ -71,7 +72,7 @@ public class ScoreView extends javax.swing.JFrame {
         lbCourseName = new javax.swing.JLabel();
         kGradientPanel4 = new keeptoo.KGradientPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

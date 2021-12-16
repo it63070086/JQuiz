@@ -1,17 +1,6 @@
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JTextField;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author pc
- */
 public class Course {
     private int CourseID;
     private String CourseName;
@@ -20,9 +9,7 @@ public class Course {
     private String CourseExpire;
     private String CourseOwner;
     private ArrayList<Quiz> Quiz;
-    
     public Course(){
-        
     }
     public Course(int CourseID, String CourseName, int CourseScore, String CourseRelease, String CourseExpire, String CourseOwner, ArrayList<Quiz> Quiz){
         setCourseID(CourseID);
@@ -33,8 +20,11 @@ public class Course {
         setCourseOwner(CourseOwner);
         setQuiz(Quiz);
     }
-
     Course(int size, String text, int parseInt, String text0, JTextField tfCourseExpire, ArrayList<Quiz> quiz) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Course(int i, String text, int parseInt, LocalDate localDate1, LocalDate localDate2, String userNameCurrent, ArrayList<Quiz> quiz) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
