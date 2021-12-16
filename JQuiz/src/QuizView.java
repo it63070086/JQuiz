@@ -63,7 +63,7 @@ public class QuizView extends javax.swing.JFrame {
         kGradientPanel5 = new keeptoo.KGradientPanel();
         btnSubmit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -209,7 +209,6 @@ public class QuizView extends javax.swing.JFrame {
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         cardPanel.setBackground(new java.awt.Color(255, 255, 255));
-        cardPanel.setMinimumSize(new java.awt.Dimension(10, 10));
         cardPanel.setPreferredSize(new java.awt.Dimension(200, 5000));
         jScrollPane2.setViewportView(cardPanel);
 
