@@ -158,6 +158,9 @@ public class ChoiceView extends javax.swing.JPanel {
 
         lbA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbA.setText("jLabel2");
+        lbA.setMaximumSize(new java.awt.Dimension(56, 20));
+        lbA.setMinimumSize(new java.awt.Dimension(56, 20));
+        lbA.setPreferredSize(new java.awt.Dimension(56, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -181,6 +184,9 @@ public class ChoiceView extends javax.swing.JPanel {
 
         lbB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbB.setText("jLabel3");
+        lbB.setMaximumSize(new java.awt.Dimension(56, 20));
+        lbB.setMinimumSize(new java.awt.Dimension(56, 20));
+        lbB.setPreferredSize(new java.awt.Dimension(56, 20));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -209,6 +215,9 @@ public class ChoiceView extends javax.swing.JPanel {
 
         lbC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbC.setText("jLabel4");
+        lbC.setMaximumSize(new java.awt.Dimension(56, 20));
+        lbC.setMinimumSize(new java.awt.Dimension(56, 20));
+        lbC.setPreferredSize(new java.awt.Dimension(56, 20));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -232,6 +241,9 @@ public class ChoiceView extends javax.swing.JPanel {
 
         lbD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbD.setText("jLabel5");
+        lbD.setMaximumSize(new java.awt.Dimension(56, 20));
+        lbD.setMinimumSize(new java.awt.Dimension(56, 20));
+        lbD.setPreferredSize(new java.awt.Dimension(56, 20));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -303,7 +315,7 @@ public class ChoiceView extends javax.swing.JPanel {
             .addGroup(kGradientPanel5Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         kGradientPanel5Layout.setVerticalGroup(
             kGradientPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,14 +335,14 @@ public class ChoiceView extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(224, 224, 224))
+                .addGap(214, 214, 214))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,11 +354,15 @@ public class ChoiceView extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

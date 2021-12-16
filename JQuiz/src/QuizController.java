@@ -150,6 +150,9 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
                     }
                     checkEvent = 1;
                     reAdminMainView();
+                    System.out.println("RePaint");
+                    adminMainView.repaint();
+                    adminMainView.setVisible(true);
                 }
             });
 
@@ -1015,6 +1018,8 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
         }
         if (we.getSource().equals(adminMainView)) {
             reAdminMainView();
+            adminMainView.repaint();
+            adminMainView.setVisible(true);
         }
 
     }
@@ -1026,7 +1031,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
 
     @Override
     public void windowClosed(WindowEvent we) {
-        if (we.getSource().equals(mainView)){
+        if (we.getSource().equals(mainView)) {
             loginView.setVisible(true);
         }
         if (we.getSource().equals(addCourseView)) {
@@ -1078,6 +1083,7 @@ public class QuizController implements ActionListener, KeyListener, WindowListen
     @Override
     public void mouseClicked(MouseEvent me) {
         if (me.getSource().equals(loginView.getBtnLogin())) {
+            reAdminMainView();
             String username = loginView.getTfUsername().getText();
             String userPassWord = loginView.getTfUserPassword().getText();
             String findSql = "SELECT userName, userPassword, userRole FROM user WHERE userName = '" + username + "' AND userPassword = '" + userPassWord + "'";
