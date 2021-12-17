@@ -3,16 +3,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author jessa
- */
 public class RegView extends javax.swing.JFrame {
 
     /**
@@ -73,7 +63,6 @@ public class RegView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         tfLastname = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        tfPassword = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
         kGradientPanel4 = new keeptoo.KGradientPanel();
@@ -84,13 +73,14 @@ public class RegView extends javax.swing.JFrame {
         kGradientPanel3 = new keeptoo.KGradientPanel();
         btnReg = new javax.swing.JButton();
         lbEmail = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        tfPassword = new javax.swing.JPasswordField();
         kGradientPanel2 = new keeptoo.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Register");
+        setResizable(false);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 153, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(204, 204, 255));
@@ -127,9 +117,6 @@ public class RegView extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("Password");
-
-        tfPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tfPassword.setPreferredSize(new java.awt.Dimension(73, 21));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("EMAIL");
@@ -208,6 +195,7 @@ public class RegView extends javax.swing.JFrame {
         btnReg.setForeground(new java.awt.Color(255, 255, 255));
         btnReg.setText("CONFIRM");
         btnReg.setContentAreaFilled(false);
+        btnReg.setFocusable(false);
 
         javax.swing.GroupLayout kGradientPanel3Layout = new javax.swing.GroupLayout(kGradientPanel3);
         kGradientPanel3.setLayout(kGradientPanel3Layout);
@@ -221,13 +209,6 @@ public class RegView extends javax.swing.JFrame {
         );
 
         lbEmail.setForeground(new java.awt.Color(255, 51, 51));
-        lbEmail.setText("jLabel11");
-
-        jLabel12.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel12.setText("jLabel12");
-
-        jLabel13.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel13.setText("jLabel13");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -242,28 +223,22 @@ public class RegView extends javax.swing.JFrame {
                             .addComponent(tfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfFirstname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfLastname)
-                            .addComponent(tfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfEmail)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(29, 29, 29)
                                 .addComponent(lbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel13))
+                            .addComponent(jLabel7)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(kGradientPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                             .addComponent(kGradientPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                             .addComponent(kGradientPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                             .addComponent(kGradientPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))))
+                            .addComponent(kGradientPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                            .addComponent(tfPassword))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -272,9 +247,7 @@ public class RegView extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel12))
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
@@ -292,11 +265,9 @@ public class RegView extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addComponent(kGradientPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kGradientPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -428,8 +399,6 @@ public class RegView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnReg;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -450,7 +419,7 @@ public class RegView extends javax.swing.JFrame {
     private javax.swing.JTextField tfEmail;
     private javax.swing.JTextField tfFirstname;
     private javax.swing.JTextField tfLastname;
-    private javax.swing.JTextField tfPassword;
+    private javax.swing.JPasswordField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 }

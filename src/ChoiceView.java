@@ -40,8 +40,10 @@ public class ChoiceView extends javax.swing.JPanel {
         this.lbB.setText(b);
         this.lbC.setText(c);
         this.lbD.setText(d);
-        
-        
+        this.rbtnA.setText(a);
+        this.rbtnB.setText(b);
+        this.rbtnC.setText(c);
+        this.rbtnD.setText(d);
     }
 
     public ButtonGroup getButtonGroup1() {
@@ -152,58 +154,35 @@ public class ChoiceView extends javax.swing.JPanel {
         kGradientPanel4.setkStartColor(new java.awt.Color(204, 204, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbtnA.setBackground(new java.awt.Color(255, 255, 255));
         rbtnA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(rbtnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 43));
 
         lbA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbA.setText("jLabel2");
         lbA.setMaximumSize(new java.awt.Dimension(56, 20));
         lbA.setMinimumSize(new java.awt.Dimension(56, 20));
         lbA.setPreferredSize(new java.awt.Dimension(56, 20));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(rbtnA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbtnA, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-            .addComponent(lbA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel2.add(lbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 394, 43));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbtnB.setBackground(new java.awt.Color(255, 255, 255));
         rbtnB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel4.add(rbtnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 43));
 
         lbB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbB.setText("jLabel3");
         lbB.setMaximumSize(new java.awt.Dimension(56, 20));
         lbB.setMinimumSize(new java.awt.Dimension(56, 20));
         lbB.setPreferredSize(new java.awt.Dimension(56, 20));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(rbtnB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbtnB, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-            .addComponent(lbB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel4.add(lbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 395, 43));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbtnC.setBackground(new java.awt.Color(255, 255, 255));
         rbtnC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -212,53 +191,28 @@ public class ChoiceView extends javax.swing.JPanel {
                 rbtnCActionPerformed(evt);
             }
         });
+        jPanel5.add(rbtnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 43));
 
         lbC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbC.setText("jLabel4");
         lbC.setMaximumSize(new java.awt.Dimension(56, 20));
         lbC.setMinimumSize(new java.awt.Dimension(56, 20));
         lbC.setPreferredSize(new java.awt.Dimension(56, 20));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(rbtnC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbC, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbtnC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-            .addComponent(lbC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel5.add(lbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 395, 43));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rbtnD.setBackground(new java.awt.Color(255, 255, 255));
         rbtnD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel6.add(rbtnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 43));
 
         lbD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbD.setText("jLabel5");
         lbD.setMaximumSize(new java.awt.Dimension(56, 20));
         lbD.setMinimumSize(new java.awt.Dimension(56, 20));
         lbD.setPreferredSize(new java.awt.Dimension(56, 20));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(rbtnD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rbtnD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-            .addComponent(lbD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel6.add(lbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 393, 43));
 
         javax.swing.GroupLayout kGradientPanel4Layout = new javax.swing.GroupLayout(kGradientPanel4);
         kGradientPanel4.setLayout(kGradientPanel4Layout);
@@ -269,7 +223,7 @@ public class ChoiceView extends javax.swing.JPanel {
                 .addGroup(kGradientPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );

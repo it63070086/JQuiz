@@ -2,16 +2,6 @@
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author jessa
- */
 public class CourseView extends javax.swing.JFrame {
 
     /**
@@ -21,6 +11,18 @@ public class CourseView extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JLabel getLbAllQuiz() {
+        return lbAllQuiz;
+    }
+
+    public JLabel getLbAttend() {
+        return lbAttend;
+    }
+
+    public JLabel getLbCourseScore() {
+        return lbCourseScore;
+    }
+    
     public JButton getBtnCourseScore() {
         return btnCourseScore;
     }
@@ -42,6 +44,11 @@ public class CourseView extends javax.swing.JFrame {
     public JButton getBtnAllQuiz() {
         return btnAllQuiz;
     }
+
+    public JButton getBtnAttend() {
+        return btnAttend;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -57,19 +64,21 @@ public class CourseView extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         panelquiz = new keeptoo.KGradientPanel();
-        jLabel3 = new javax.swing.JLabel();
+        lbAllQuiz = new javax.swing.JLabel();
         btnAllQuiz = new javax.swing.JButton();
         stdpanel = new keeptoo.KGradientPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        lbAttend = new javax.swing.JLabel();
+        btnAttend = new javax.swing.JButton();
         scorepanel = new keeptoo.KGradientPanel();
-        jLabel7 = new javax.swing.JLabel();
+        lbCourseScore = new javax.swing.JLabel();
         btnCourseScore = new javax.swing.JButton();
         kGradientPanel5 = new keeptoo.KGradientPanel();
         kGradientPanel7 = new keeptoo.KGradientPanel();
         lbCourseName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Course");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -179,7 +188,7 @@ public class CourseView extends javax.swing.JFrame {
         panelquiz.setkEndColor(new java.awt.Color(204, 204, 255));
         panelquiz.setkStartColor(new java.awt.Color(255, 204, 204));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quiz (1).png"))); // NOI18N
+        lbAllQuiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/quiz (1).png"))); // NOI18N
 
         btnAllQuiz.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnAllQuiz.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +208,7 @@ public class CourseView extends javax.swing.JFrame {
             panelquizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelquizLayout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(lbAllQuiz)
                 .addGap(29, 29, 29))
             .addComponent(btnAllQuiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -207,7 +216,7 @@ public class CourseView extends javax.swing.JFrame {
             panelquizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelquizLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(jLabel3)
+                .addComponent(lbAllQuiz)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAllQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -216,14 +225,14 @@ public class CourseView extends javax.swing.JFrame {
         stdpanel.setkStartColor(new java.awt.Color(204, 204, 255));
         stdpanel.setPreferredSize(new java.awt.Dimension(200, 400));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/students.png"))); // NOI18N
+        lbAttend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/students.png"))); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Student Attend");
-        jButton4.setBorder(null);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setFocusable(false);
+        btnAttend.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        btnAttend.setForeground(new java.awt.Color(255, 255, 255));
+        btnAttend.setText("Student Attend");
+        btnAttend.setBorder(null);
+        btnAttend.setContentAreaFilled(false);
+        btnAttend.setFocusable(false);
 
         javax.swing.GroupLayout stdpanelLayout = new javax.swing.GroupLayout(stdpanel);
         stdpanel.setLayout(stdpanelLayout);
@@ -231,24 +240,24 @@ public class CourseView extends javax.swing.JFrame {
             stdpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(stdpanelLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbAttend, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAttend, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         stdpanelLayout.setVerticalGroup(
             stdpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stdpanelLayout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(jLabel6)
+                .addComponent(lbAttend)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnAttend, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         scorepanel.setkEndColor(new java.awt.Color(204, 204, 255));
         scorepanel.setkStartColor(new java.awt.Color(255, 204, 204));
         scorepanel.setPreferredSize(new java.awt.Dimension(200, 400));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/score.png"))); // NOI18N
+        lbCourseScore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/score.png"))); // NOI18N
 
         btnCourseScore.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         btnCourseScore.setForeground(new java.awt.Color(255, 255, 255));
@@ -263,7 +272,7 @@ public class CourseView extends javax.swing.JFrame {
             scorepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scorepanelLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel7)
+                .addComponent(lbCourseScore)
                 .addContainerGap(34, Short.MAX_VALUE))
             .addComponent(btnCourseScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -271,7 +280,7 @@ public class CourseView extends javax.swing.JFrame {
             scorepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scorepanelLayout.createSequentialGroup()
                 .addContainerGap(67, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(lbCourseScore)
                 .addGap(18, 18, 18)
                 .addComponent(btnCourseScore, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -405,14 +414,11 @@ public class CourseView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAllQuiz;
+    private javax.swing.JButton btnAttend;
     private javax.swing.JButton btnCourse;
     private javax.swing.JButton btnCourseScore;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -421,7 +427,10 @@ public class CourseView extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel5;
     private keeptoo.KGradientPanel kGradientPanel7;
     private keeptoo.KGradientPanel kGradientPanel8;
+    private javax.swing.JLabel lbAllQuiz;
+    private javax.swing.JLabel lbAttend;
     private javax.swing.JLabel lbCourseName;
+    private javax.swing.JLabel lbCourseScore;
     private javax.swing.JLabel lbUserName;
     private keeptoo.KGradientPanel panelquiz;
     private keeptoo.KGradientPanel scorepanel;

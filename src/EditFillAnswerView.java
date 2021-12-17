@@ -41,7 +41,7 @@ public class EditFillAnswerView extends javax.swing.JPanel {
     }
 
     public JTextField getTfQuestion() {
-        return tfAnswer;
+        return tfQuestion1;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

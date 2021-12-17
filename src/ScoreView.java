@@ -73,6 +73,8 @@ public class ScoreView extends javax.swing.JFrame {
         kGradientPanel4 = new keeptoo.KGradientPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Course Score");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -145,8 +147,12 @@ public class ScoreView extends javax.swing.JFrame {
             .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
         );
 
+        btnExportCSV.setBackground(new java.awt.Color(204, 255, 204));
+        btnExportCSV.setForeground(java.awt.Color.black);
         btnExportCSV.setText("Export CSV");
 
+        btnExportExcel.setBackground(new java.awt.Color(153, 255, 153));
+        btnExportExcel.setForeground(java.awt.Color.black);
         btnExportExcel.setText("Export Excel");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
