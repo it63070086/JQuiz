@@ -31,6 +31,10 @@ public class MultiChoiceView extends javax.swing.JPanel {
         this.cbB.setActionCommand("B");
         this.cbC.setActionCommand("C");
         this.cbD.setActionCommand("D");
+        this.cbA.setText(a);
+        this.cbB.setText(b);
+        this.cbC.setText(c);
+        this.cbD.setText(d);
     }
     public JCheckBox getCbA() {
         return cbA;
@@ -134,76 +138,41 @@ public class MultiChoiceView extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(0, 42));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbA.setBackground(new java.awt.Color(255, 255, 255));
         cbA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(cbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 42));
 
         lbA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbA.setText("jLabel2");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(cbA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbA, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cbA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-            .addComponent(lbA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel2.add(lbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 400, 42));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbB.setBackground(new java.awt.Color(255, 255, 255));
         cbB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel3.add(cbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 42));
 
         lbB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbB.setText("jLabel3");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(cbB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cbB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-            .addComponent(lbB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel3.add(lbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 401, 42));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(0, 42));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbC.setBackground(new java.awt.Color(255, 255, 255));
         cbC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel4.add(cbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 42));
 
         lbC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbC.setText("jLabel4");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(cbC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cbC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-            .addComponent(lbC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel4.add(lbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 413, 42));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbD.setBackground(new java.awt.Color(255, 255, 255));
         cbD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -212,24 +181,11 @@ public class MultiChoiceView extends javax.swing.JPanel {
                 cbDActionPerformed(evt);
             }
         });
+        jPanel5.add(cbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 42));
 
         lbD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbD.setText("jLabel5");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(cbD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cbD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-            .addComponent(lbD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPanel5.add(lbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 0, 413, 42));
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 08:44 AM
+-- Generation Time: Dec 17, 2021 at 03:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -36,13 +36,6 @@ CREATE TABLE `course` (
   `courseOwner` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `course`
---
-
-INSERT INTO `course` (`courseId`, `courseName`, `courseScore`, `courseRelease`, `courseExpire`, `courseOwner`) VALUES
-(1, 'Test', 10, '2021-12-08', '2021-12-08', 'Oof');
-
 -- --------------------------------------------------------
 
 --
@@ -63,7 +56,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userId`, `userName`, `userPassword`, `userFullName`, `userEmail`, `userRole`) VALUES
-(1, 'superoof', 'superoof1200', 'Thiraphop Phokied', 'superoof.th@gmail.com', 'Admin');
+(1, 'superoof', 'superoof1200', 'Thiraphop Phokied', 'superoof.th@gmail.com', 'Admin'),
+(2, 'user1', 'user1200', 'User Student', 'user@gmail.com', 'Student'),
+(4, 'user2', 'user1200', 'Thiraphop Phokied', 'user@1200.com', 'Student');
 
 --
 -- Indexes for dumped tables
@@ -89,13 +84,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `courseId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `courseId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -23,11 +23,11 @@ public class EditMultiChoiceView extends javax.swing.JPanel {
     }
     public EditMultiChoiceView(String question, String a, String b, String c, String d, String answer){
         initComponents();
-        this.tfCBC.setText(question);
-        this.tfCBC.setText(a);
-        this.tfCBC.setText(b);
+        this.tfQuestion.setText(question);
+        this.tfCBA.setText(a);
+        this.tfCBB.setText(b);
         this.tfCBC.setText(c);
-        this.tfCBC.setText(d);   
+        this.tfCBD.setText(d);   
     }
 
     public JButton getBtnDelQuiz() {
@@ -55,11 +55,11 @@ public class EditMultiChoiceView extends javax.swing.JPanel {
     }
 
     public JTextField getTfCBA() {
-        return tfCBC;
+        return tfCBA;
     }
 
     public JTextField getTfCBB() {
-        return tfCBC;
+        return tfCBB;
     }
 
     public JTextField getTfCBC() {
@@ -67,11 +67,11 @@ public class EditMultiChoiceView extends javax.swing.JPanel {
     }
 
     public JTextField getTfCBD() {
-        return tfCBC;
+        return tfCBD;
     }
 
     public JTextField getTfQuestion() {
-        return tfCBC;
+        return tfQuestion;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
